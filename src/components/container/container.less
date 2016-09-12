@@ -1,0 +1,19 @@
+@import "../../styles/index.less";
+
+.container {
+  background-color: @color-background-container;
+  max-width: @max-width-container;
+  min-width: @min-width-container;
+  // outline: @width-gap solid @color-background-container;
+  overflow: hidden;
+  padding: @padding-container;
+  width: 100%;
+}
+
+@media (min-width: @width-container-breakpoint) {
+  .container {
+    max-width: unit((@max-width-container + @width-gap-double),px);
+    outline: 0;
+    padding: @padding-container-desktop;
+  }
+}

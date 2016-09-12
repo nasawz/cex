@@ -1,0 +1,152 @@
+
+//
+// Colors
+//
+
+// Common colors
+// Add so _custom.scss can override it
+@color-text: #333;
+@color-text-muted: #777;
+
+@color-background: #fff;
+@color-background-over: rgba(0, 0, 0, .05);
+@color-background-back: #f3f3f3;
+
+@color-border: #ddd;
+
+// `body` and `container`
+@color-text-body: @color-text;
+@color-background-body: @color-background-back;
+@color-background-container: @color-background;
+
+// Links
+// hsl is easy to modify
+@color-text-link: hsl(210, 100%, 50%);
+// Use rgba so it can nesting
+@color-background-active: rgba(0, 0, 0, .1);
+
+// Codes
+@color-background-code: @color-background-over;
+@color-background-pre: @color-background-over;
+
+// `blockquote`
+@color-text-blockquote: @color-text-muted;
+
+// `mark`
+@color-background-mark: #ff0;
+
+// Tables
+@color-background-table: @color-background;
+@color-background-th: @color-background-over;
+
+// Forms
+// For `input`s which is not a button
+@color-background-input: @color-background;
+// For focused input
+@color-border-input-focus: hsl(210, 100%, 60%);
+// For buttons
+@color-background-btn: @color-background-back;
+@color-text-btn-primary: @color-background;
+@color-background-btn-primary: hsl(120, 50%, 50%);
+@color-text-btn-danger: hsl(0, 100%, 40%);
+
+//
+// Spacing
+//
+
+@width-gap: 15px;
+@width-gap-double: 30px;
+@width-gap-half: 7px;
+
+@width-padding-input: 5px;
+@width-border: 1px;
+@width-padding-border-input: unit((@width-padding-input + @width-border),px);
+
+//
+// layouts
+//
+
+@width-scrollbar: 17px;
+
+@padding-container: 0 @width-gap @width-gap;
+@padding-container-desktop: 0 @width-gap-double @width-gap;
+
+@min-width-container: 320px;
+@max-width-container: 768px - @width-gap-double;
+// So won't have scroll-x on device which width is 1025px
+@width-container-breakpoint: unit((1024px + @width-scrollbar),px);
+
+
+
+//
+// Typography
+//
+
+// 1rem = 10px
+@rem-base: 10px;
+
+@font-size: 1.8rem;
+
+// h4, h5, h6 is not very useful, so we set them to the same size of normal
+// font-size, but with @font-weight-bold
+@font-size-h1: 3.2rem;
+@font-size-h2: 2.6rem;
+@font-size-h3: 2.4rem;
+@font-size-h4: 2.2rem;
+@font-size-h5: 2rem;
+@font-size-h6: 1.8rem;
+
+@font-size-pre: 1.3rem;
+
+@font-size-small: 85%;
+@font-size-code: @font-size-small;
+@font-size-address: @font-size-small;
+@font-size-sub-sup: 75%;
+
+@line-height: 1.5;
+
+// line-height need to be set to pre, not code
+@line-height-pre: 1.2;
+
+@font-weight-bold: 600;
+
+@font-family:
+  // Safari for OS X and iOS (San Francisco)
+  -apple-system,
+  // Chrome for OS X (San Francisco)
+  BlinkMacSystemFont,
+  // Windows
+  'Segoe UI',
+  // Android
+  'Roboto',
+  // Linux
+  'Oxygen', // KDE
+  'Ubuntu',
+  'Cantarell', // GNOME
+  // Firefox OS [R.I.P.]
+  'Fira Sans',
+  // Older Android
+  'Droid Sans',
+  // Chinese font for OSX and iOS
+  'Hiragino Sans GB',
+  // Chinese font for Windows
+  'Microsoft Yahei', '微软雅黑',
+  // Basic web fallback
+  Arial, Helvetica, STHeiti, sans-serif,
+  // Emoji
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+
+// TODO Chinese font-family for pre code
+// https://github.com/xcatliu/mobi.css/issues/8
+@font-family-monospace: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+@padding-code: 2px 3px;
+
+@border-left-blockquote: @width-padding-input solid @color-border;
+
+@border-top-hr: @width-border solid @color-border;
+
+
+
+// Set the default max-height to scroll-view
+@max-height-scroll-view: 300px;

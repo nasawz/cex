@@ -1,0 +1,16 @@
+// Layout
+
+.scroll-view() {
+  max-height: @max-height-scroll-view;
+  overflow: auto;
+}
+
+.flex-container() {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.flex-width(@percentage) {
+  flex-basis: @percentage;
+  max-width: @percentage;
+}
