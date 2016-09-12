@@ -1,0 +1,29 @@
+{
+  "name": "cex",
+  "version": "0.0.1",
+  "description": "针对社群产品研发的移动端 WEB UI 库",
+  "main": "./lib",
+  "scripts": {
+    "lint": "eslint 'src/**/*.@(js|jsx)'",
+    "pretest": "npm run lint",
+    "test": "mocha --compilers js:babel-core/register --recursive",
+    "test:watch": "npm run test -- --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://211.149.154.87/ces/cex.git"
+  },
+  "author": "nasa.wang",
+  "license": "ISC",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.14.0",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "eslint": "^3.5.0",
+    "eslint-plugin-react": "^6.2.0",
+    "mocha": "^3.0.2",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.15.1"
+  }
+}
