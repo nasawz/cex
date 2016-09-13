@@ -1,18 +1,37 @@
 /**
  * create by 王喆(nasa127@gmail.com) on 2016-09-12T05:04:09.839Z
  */
-// import React from 'react'
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 import Flexbox from '../src/components/flexbox/flexbox.jsx'
-import Container from '../src/components/container/container.jsx'
+import Scroll from '../src/components/scroll/scroll.jsx'
 
+function onRefresh() {
+    // console.log('onRefresh')
+}
+function onInfinite() {
+    // console.log('onInfinite')
+}
 ReactDOM.render(
     <Flexbox className="flex-center">
-        <Container>
-          <h1>Mobi.css</h1>
-        </Container>
+        <Scroll onRefresh={onRefresh} onInfinite={onInfinite}>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+            <h1>cex</h1>
+        </Scroll>
     </Flexbox>,
     document.getElementById('container')
 )
