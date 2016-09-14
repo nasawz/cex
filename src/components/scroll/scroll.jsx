@@ -16,13 +16,16 @@ const Scroll = React.createClass({
         })
     },
     touchMove(e){
-
+        console.log(this.el.scrollTop);
         if (this.el.scrollTop > 0 || !this.state.touching) {
             return
         }
         let diff = e.targetTouches[0].pageY - this.startY
         if (diff > 0) e.preventDefault()
-        this.state.top = Math.pow(diff, 0.8) + (this.state.state === 2 ? this.offset : 0)
+        // console.log(diff);
+        this.setState({
+            top: Math.pow(diff, 0.8) + (this.state.state === 2 ? this.offset : 0)
+        })
         if (this.state.state === 2) { // in refreshing
             return
         }
@@ -100,7 +103,7 @@ const Scroll = React.createClass({
         }
     },
     componentDidMount() {
-        this.el = ReactDOM.findDOMNode(this)
+        this.el = ReactDOM.findDOMNode(this.refs.scroll)
     },
     getInitialState() {
         this.startY = 0
@@ -148,17 +151,20 @@ const Scroll = React.createClass({
             'touching' : this.state.touching,
         }
         return (
-            <div
-                className={classNames(this.props.className,classes)}
-                style={style}
-                onScroll={scrollEvent}
-                onTouchStart={touchstartEvent}
-                onTouchMove={touchmoveEvent}
-                onTouchEnd={touchendEvent} >
-                <div className='scroll-inner' style={{'transform':'translate3d(0, ' + this.state.top + 'px, 0)'}}>
-                    { this.renderRefreshLayer() }
-                    { children }
-                    { this.renderInfiniteLayer() }
+            <div className='xscroll'>
+                <div
+                    ref='scroll'
+                    className={classNames(this.props.className,classes)}
+                    style={style}
+                    onScroll={scrollEvent}
+                    onTouchStart={touchstartEvent}
+                    onTouchMove={touchmoveEvent}
+                    onTouchEnd={touchendEvent} >
+                    <div className='scroll-inner' style={{'transform':'translate3d(0, ' + this.state.top + 'px, 0)'}}>
+                        { this.renderRefreshLayer() }
+                        { children }
+                        { this.renderInfiniteLayer() }
+                    </div>
                 </div>
             </div>
         )
