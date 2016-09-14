@@ -108,6 +108,23 @@ const Swiper = React.createClass({
         this.setAutoPlay()
         this.updateChildren()
     },
+    renderBullets(){
+        let bullets = this.props.children.map((item,i) => {
+            i = i+1
+            let classes = {
+                'bullet': true,
+                'active': (this.state.activeIndex === i || (this.state.activeIndex === this.amount - 1 && i === 1) || (this.state.activeIndex === 0 && i === this.amount - 2) )?true:''
+            }
+            return (
+                <div key={i} className={classNames(classes)}></div>
+            )
+        })
+        return (
+            <div className="bullets">
+              { bullets }
+            </div>
+        )
+    },
     render () {
         let {style,children} = this.props
         let classes = {
@@ -129,6 +146,7 @@ const Swiper = React.createClass({
                         })}
                     <SwiperItem ref='swiper-item-last' className='swiper-item-last'>2</SwiperItem>
                 </div>
+                { this.renderBullets() }
             </Flexbox>
         )
     }

@@ -1,6 +1,9 @@
 /**
  * create by nasa.wang
  */
+
+@import "../../styles/index.less";
+
 .swiper {
     overflow: hidden;
     width: 100%;
@@ -8,6 +11,30 @@
 
     .swiper-inner {
         display: flex;
+    }
+
+    .bullets {
+        position: absolute;
+        left: 0;
+        bottom: @width-gap-half;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .bullet {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        background: white;
+        margin: 0 4px;
+        opacity: .6;
+
+        &.active {
+            background-color: @color-primary;
+            opacity: .9;
+        }
     }
 }
 
