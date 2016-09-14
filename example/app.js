@@ -58,7 +58,12 @@ import ReactDOM from 'react-dom'
 // ------------------
 import List from '../src/components/list/list.jsx'
 import ItemCell from '../src/components/list/item-cell.jsx'
+import Item from '../src/components/list/item.jsx'
 import ItemTitle from '../src/components/list/item-title.jsx'
+import ItemContent from '../src/components/list/item-content.jsx'
+import ItemTitleRow from '../src/components/list/item-title-row.jsx'
+import ItemSubtitle from '../src/components/list/item-sub-title.jsx'
+import ItemText from '../src/components/list/item-text.jsx'
 import ItemMedia from '../src/components/list/item-media.jsx'
 import ItemDivider from '../src/components/list/item-divider.jsx'
 import ItemTitleAfter from '../src/components/list/item-title-after.jsx'
@@ -122,6 +127,52 @@ ReactDOM.render(
                 <Badge>66</Badge>
             </ItemTitleAfter>
         </ItemCell>
+        <ItemDivider>更多</ItemDivider>
+        <Item>
+            <ItemContent>
+                <ItemTitleRow>
+                    <ItemTitle>德玛西亚</ItemTitle>
+                    <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                </ItemTitleRow>
+                <ItemSubtitle>
+                    网通二区
+                </ItemSubtitle>
+                <ItemText>
+                    德玛西亚，原为著名竞技游戏英雄联盟中的一个势力，也是中国区一个服务器（网通二区）的名称。
+                </ItemText>
+            </ItemContent>
+        </Item>
+        <Item>
+            <ItemMedia>
+                <img src="http://ugc.qpic.cn/gbar_pic/PYnx3ZdPvsTiaj9aNylwCQbvWIcE2J9lRBkUxb5Sx1s9H7AqhrKx3zw/"/>
+            </ItemMedia>
+            <ItemContent>
+                <ItemTitleRow>
+                    <ItemTitle>德玛西亚</ItemTitle>
+                    <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                </ItemTitleRow>
+                <ItemSubtitle>
+                    网通二区
+                </ItemSubtitle>
+                <ItemText>
+                    德玛西亚，原为著名竞技游戏英雄联盟中的一个势力，也是中国区一个服务器（网通二区）的名称。
+                </ItemText>
+            </ItemContent>
+        </Item>
+        <Item link>
+            <ItemContent>
+                <ItemTitleRow>
+                    <ItemTitle>德玛西亚</ItemTitle>
+                    <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                </ItemTitleRow>
+                <ItemSubtitle>
+                    网通二区
+                </ItemSubtitle>
+                <ItemText>
+                    德玛西亚，原为著名竞技游戏英雄联盟中的一个势力，也是中国区一个服务器（网通二区）的名称。
+                </ItemText>
+            </ItemContent>
+        </Item>
     </List>,
     document.getElementById('container')
 )
