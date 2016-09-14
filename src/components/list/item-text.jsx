@@ -9,11 +9,6 @@ import './item-text.less'
 
 
 const ItemText = React.createClass({
-    getDefaultProps: function() {
-        return {
-            link: false
-        }
-    },
     render () {
         let {style,children} = this.props
         let classes = {

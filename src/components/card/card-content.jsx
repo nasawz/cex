@@ -5,21 +5,23 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import './item-sub-title.less'
+import './card-content.less'
 
 
-const ItemSubtitle = React.createClass({
+const CardContent = React.createClass({
     render () {
         let {style,children} = this.props
         let classes = {
-            'cex-item-sub-title' : true
+            'cex-card-content' : true
         }
         return (
             <div className={classNames(this.props.className,classes)} style={style}>
-                {children}
+                <div className="cex-card-content-inner">
+                    {children}
+                </div>
             </div>
         )
     }
 })
 
-export default ItemSubtitle
+export default CardContent

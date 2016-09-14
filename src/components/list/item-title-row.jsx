@@ -9,11 +9,6 @@ import './item-title-row.less'
 
 
 const ItemTitleRow = React.createClass({
-    getDefaultProps: function() {
-        return {
-            link: false
-        }
-    },
     render () {
         let {style,children} = this.props
         let classes = {

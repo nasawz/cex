@@ -1,0 +1,26 @@
+/**
+ * create by nasa.wang
+ */
+
+ @import "../../styles/index.less";
+
+.cex-card-header{
+  // border-radius: 2px 2px 0 0;
+  border-radius: 0;
+  font-size: 18px;
+  .hairline(bottom, @color-border);
+  min-height: 40px;
+  position: relative;
+  padding: 4px @width-gap;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .cex-card-title{
+    color: @color-text;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow:hidden; word-wrap:
+    break-word;
+    flex: 1;
+  }
+}

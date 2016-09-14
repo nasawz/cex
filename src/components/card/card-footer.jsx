@@ -5,14 +5,14 @@
 import React from 'react'
 import classNames from 'classnames'
 
-import './item-sub-title.less'
+import './card-footer.less'
 
 
-const ItemSubtitle = React.createClass({
+const CardFooter = React.createClass({
     render () {
         let {style,children} = this.props
         let classes = {
-            'cex-item-sub-title' : true
+            'cex-card-footer' : true
         }
         return (
             <div className={classNames(this.props.className,classes)} style={style}>
@@ -22,4 +22,4 @@ const ItemSubtitle = React.createClass({
     }
 })
 
-export default ItemSubtitle
+export default CardFooter
