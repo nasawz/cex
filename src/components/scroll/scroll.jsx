@@ -1,5 +1,5 @@
 /**
- * create by    <div /> nasa.wang
+ * create by nasa.wang
  */
 
 import React from 'react'
@@ -16,7 +16,6 @@ const Scroll = React.createClass({
         })
     },
     touchMove(e){
-        console.log(this.el.scrollTop);
         if (this.el.scrollTop > 0 || !this.state.touching) {
             return
         }
