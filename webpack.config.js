@@ -31,7 +31,8 @@ module.exports = {
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'url?limit=25000'
-            }
+            },
+            { test: /\.(eot|woff|ttf|svg)/, loader: 'file-loader?name=[name].[ext]' }
         ]
     },
     postcss: [autoprefixer],

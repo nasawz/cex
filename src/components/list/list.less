@@ -1,0 +1,20 @@
+/**
+ * create by nasa.wang
+ */
+
+@import "../../styles/index.less";
+
+.cex-list {
+  margin: 16px 0;
+  &:first-child {
+    margin-top: 0;
+  }
+  width: 100%;
+  background: #FFF;
+  .hairline(top, @color-border);
+  .hairline(bottom, @color-border);
+  position: relative;
+  .cex-item:last-child{
+    .hairline-remove(bottom);
+  }
+}
