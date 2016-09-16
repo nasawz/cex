@@ -1,0 +1,61 @@
+/**
+ * create by nasa.wang
+ */
+
+ @import "../../styles/index.less";
+
+.cex-float-button{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  width: 56px;
+  height: 56px;
+  background-color: @color-text;
+  border: none;
+  appearance: none;
+  text-decoration: none;
+  margin: 0;
+  outline: 0;
+  transition-duration: 300ms;
+  transform: translate3d(0, 0, 0);
+  border-radius: 50%;
+  color: #FFF;
+  .flex-shrink(0);
+  .depth(2);
+  &:active {
+    .depth(3);
+  }
+  .active-highlight()
+}
+
+.cex-float-button-fixed{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+}
+
+.cex-float-button-primary{
+  background-color: @color-primary;
+}
+
+.cex-float-button-carbon{
+  background-color: @color-carbon;
+}
+
+.cex-float-button-red{
+  background-color: @color-red;
+}
+
+.cex-float-button-green{
+  background-color: @color-green;
+}
+
+.cex-float-button-blue{
+  background-color: @color-blue;
+}
+
+.cex-float-button-amber{
+  background-color: @color-amber;
+}
