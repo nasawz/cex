@@ -286,15 +286,14 @@ import HeaderBar from '../src/components/bar/header-bar.jsx'
 import IconButton from '../src/components/icon/icon-button.jsx'
 // import Avatar from '../src/components/image/avatar.jsx'
 import BarTools from '../src/components/bar/bar-tools.jsx'
+import Swiper from '../src/components/swiper/swiper.jsx'
+import SwiperItem from '../src/components/swiper/swiper-item.jsx'
+
 function onChangeIndex(index){
     console.log(index)
 }
 ReactDOM.render(
     <div>
-        <Tab onChangeIndex={onChangeIndex}>
-            <TabItem>广场</TabItem>
-            <TabItem>精华</TabItem>
-        </Tab>
         <HeaderBar>
             <Tab className='center' onChangeIndex={onChangeIndex}>
                 <TabItem>广场</TabItem>
@@ -305,6 +304,19 @@ ReactDOM.render(
                 <IconButton icon='icon-account_circle' />
             </BarTools>
         </HeaderBar>
+        <Swiper autoPlay={1500}>
+            <SwiperItem>
+                <img src='http://ces00.b0.upaiyun.com/2016/08/02/upload_0346647a1bc17378a2ba46a5d91fb259.jpg!480x174' />
+            </SwiperItem>
+            <SwiperItem>
+                <img src='http://ces00.b0.upaiyun.com/2016/07/26/upload_53acf1c9b27df936e728796a0be3effe.jpg!480x174' />
+            </SwiperItem>
+        </Swiper>
+        <Tab onChangeIndex={onChangeIndex}>
+            <TabItem>广场</TabItem>
+            <TabItem>精华</TabItem>
+        </Tab>
+
         <HeaderBar>
             <BarTools>
                 <IconButton icon='icon-arrow_back' />
