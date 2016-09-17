@@ -19,9 +19,12 @@ const IconButton = React.createClass({
     },
     render () {
         let {children,style,size,icon,color} = this.props
+        let classes = {
+            'cex-icon-gap':children?true:false
+        }
         return (
             <Flexbox className={classNames(this.props.className,'cex-icon-button','flex-center','flex-middle')} style={style}>
-                <Icon icon={icon} color={color} size={size}></Icon>
+                <Icon className={classNames(classes)} icon={icon} color={color} size={size}></Icon>
                 { children }
             </Flexbox>
         )

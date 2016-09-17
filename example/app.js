@@ -282,7 +282,10 @@ import ReactDOM from 'react-dom'
 // ------------------
 import Tab from '../src/components/tab/tab.jsx'
 import TabItem from '../src/components/tab/tab-item.jsx'
-
+import HeaderBar from '../src/components/bar/header-bar.jsx'
+import IconButton from '../src/components/icon/icon-button.jsx'
+// import Avatar from '../src/components/image/avatar.jsx'
+import BarTools from '../src/components/bar/bar-tools.jsx'
 function onChangeIndex(index){
     console.log(index)
 }
@@ -292,6 +295,29 @@ ReactDOM.render(
             <TabItem>广场</TabItem>
             <TabItem>精华</TabItem>
         </Tab>
+        <HeaderBar>
+            <Tab className='center' onChangeIndex={onChangeIndex}>
+                <TabItem>广场</TabItem>
+                <TabItem>精华</TabItem>
+                <TabItem>消息</TabItem>
+            </Tab>
+            <BarTools>
+                <IconButton icon='icon-account_circle' />
+            </BarTools>
+        </HeaderBar>
+        <HeaderBar>
+            <BarTools>
+                <IconButton icon='icon-arrow_back' />
+            </BarTools>
+            <Tab className='center' onChangeIndex={onChangeIndex}>
+                <TabItem>广场</TabItem>
+                <TabItem>精华</TabItem>
+                <TabItem>消息</TabItem>
+            </Tab>
+            <BarTools>
+                <IconButton icon='icon-account_circle' />
+            </BarTools>
+        </HeaderBar>
     </div>,
     document.getElementById('container')
 )
