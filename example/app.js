@@ -270,12 +270,28 @@ import ReactDOM from 'react-dom'
 // )
 
 // ------------------
-import FloatButton from '../src/components/button/float-buttom.jsx'
+// import FloatButton from '../src/components/button/float-buttom.jsx'
+//
+//
+// ReactDOM.render(
+//     <div>
+//         <FloatButton icon='icon-add_a_photo' fixed/>
+//     </div>,
+//     document.getElementById('container')
+// )
+// ------------------
+import Tab from '../src/components/tab/tab.jsx'
+import TabItem from '../src/components/tab/tab-item.jsx'
 
-
+function onChangeIndex(index){
+    console.log(index)
+}
 ReactDOM.render(
     <div>
-        <FloatButton icon='icon-add_a_photo' fixed/>
+        <Tab onChangeIndex={onChangeIndex}>
+            <TabItem>广场</TabItem>
+            <TabItem>精华</TabItem>
+        </Tab>
     </div>,
     document.getElementById('container')
 )
