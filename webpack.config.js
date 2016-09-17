@@ -21,7 +21,7 @@ module.exports = {
             {
                 test: /\.js[x]?$/,
                 exclude: /node_modules/,
-                loader: 'babel'
+                loader: 'babel',
             }, {
                 test: /\.less$/,
                 loader: ExtractTextPlugin.extract('css!postcss!less')
@@ -31,8 +31,10 @@ module.exports = {
             }, {
                 test: /\.(png|jpg)$/,
                 loader: 'url?limit=25000'
-            },
-            { test: /\.(eot|woff|ttf|svg)/, loader: 'file-loader?name=[name].[ext]' }
+            }, {
+                test: /\.(eot|woff|ttf|svg)/,
+                loader: 'file-loader?name=[name].[ext]'
+            }
         ]
     },
     postcss: [autoprefixer],
