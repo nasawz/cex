@@ -83,7 +83,7 @@ var devConfig = {
         new webpack.optimize.OccurrenceOrderPlugin(true),
         new CopyWebpackPlugin([
             {
-                from: 'src/libs/',
+                from: configWebpack.path.src+'/libs/',
                 to: 'libs/'
             }
         ]),
