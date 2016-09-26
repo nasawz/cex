@@ -63,6 +63,7 @@ var devConfig = {
             'redux': 'redux/dist/redux',
             'react-redux': 'react-redux/dist/react-redux',
             'safe': path.join(configWebpack.path.src, '/modules/common/safe.jsx'),
+            'cex': path.join(configWebpack.path.cex),
             // 'utils': path.join(configWebpack.path.src, '/js/common/utils'),
             // 'spin': path.join(configWebpack.path.src, '/js/common/spin'),
             // 'spinner': path.join(configWebpack.path.src, '/page/common/components/spinner/'),

@@ -108,6 +108,9 @@ const Swiper = React.createClass({
         this.setAutoPlay()
         this.updateChildren()
     },
+    componentWillUnmount() {
+        clearInterval(this.interval)
+    },
     renderBullets(){
         let bullets = this.props.children.map((item,i) => {
             i = i+1

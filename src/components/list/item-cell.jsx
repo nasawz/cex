@@ -9,9 +9,14 @@ import './item-cell.less'
 
 
 const ItemCell = React.createClass({
+    onClick(){
+        if (this.props.onClickLink) {
+            this.props.onClickLink(this.props.link)
+        }
+    },
     getDefaultProps: function() {
         return {
-            link: false
+            link: null
         }
     },
     render () {
@@ -21,7 +26,7 @@ const ItemCell = React.createClass({
             'cex-item-link' : this.props.link?true:''
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={style}>
+            <div onClick={this.onClick} className={classNames(this.props.className,classes)} style={style}>
                 {children}
             </div>
         )
