@@ -30,13 +30,17 @@ var devConfig = {
                 loader: 'babel',
             }, {
                 test: /\.less$/,
-                loader: ExtractTextPlugin.extract('css!postcss!less')
+                loader: ExtractTextPlugin.extract('css!postcss!less',{
+                    publicPath:'../'
+                })
             }, {
                 test: /\.css/,
-                loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
+                loader: ExtractTextPlugin.extract('style!css!postcss',{
+                    publicPath:'../'
+                })
             }, {
                 test: /\.(eot|woff|ttf|svg)/,
-                loader: 'file-loader?name=[name].[ext]'
+                loader: 'url-loader?limit=1000&name=fonts/[name].[ext]'
             }, {
                 test: /\.html$/,
                 loader: 'html-loader'
@@ -79,7 +83,7 @@ var devConfig = {
         new webpack.optimize.OccurrenceOrderPlugin(true),
         new CopyWebpackPlugin([
             {
-                from: configWebpack.path.src+'/libs/',
+                from: 'src/libs/',
                 to: 'libs/'
             }
         ]),
@@ -90,11 +94,13 @@ var devConfig = {
         //     cssProcessorOptions: { discardComments: {removeAll: true } },
         //     canPrint: true
         // }),
-        new ExtractTextPlugin('./css/[name].css', {filenamefilter: function(filename) {
-            // 由于entry里的chunk现在都带上了js/，因此，这些chunk require的css文件，前面也会带上./js的路径
-            // 因此要去掉才能生成到正确的路径/css/xxx.css，否则会变成/css/js/xxx.css
-            return filename.replace('/js', '')
-        }}),
+        new ExtractTextPlugin('./css/[name].css', {
+            filenamefilter: function(filename) {
+                return filename.replace('/js', '')
+            },
+            allChunks: true,
+            disable: false,
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoErrorsPlugin()
     ],
