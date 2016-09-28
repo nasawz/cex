@@ -10,7 +10,7 @@ const Flexbox = React.createClass({
     render () {
         let {style,children} = this.props
         return (
-            <div className={classNames(this.props.className,'flexbox')} style={style}>
+            <div className={classNames(this.props.className,'cex-flexbox')} style={style}>
                 {children}
             </div>
         )

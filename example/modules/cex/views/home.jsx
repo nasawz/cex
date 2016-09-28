@@ -38,6 +38,11 @@ const Home = React.createClass({
                         floatbutton
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','button']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        button
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','list']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         list

@@ -1,0 +1,189 @@
+@button-warn-bg-color: #EF4F4F;
+@button-warn-active-color: #C13E3E;
+
+@cexBtnDefaultGap:15px;
+@cexBtnHeight:42px;
+@cexBtnMiniHeight:1.9;
+@cexBtnFontSize:18px;
+@cexBtnFontColor:#FFFFFF;
+@cexBtnDisabledFontColor:rgba(255,255,255,.6);
+@cexBtnActiveFontColor:rgba(255,255,255,.4);
+@cexBtnMiniFontSize:14px;
+@cexBtnBorderRadius:5px;
+
+@cexBtnDefaultBg:#F7F7F7;
+@cexBtnDefaultActiveBg:#DEDEDE;
+@cexBtnDefaultFontColor:#454545;
+@cexBtnDefaultDisabledFontColor:#C9C9C9;
+@cexBtnDefaultActiveFontColor:#A1A1A1;
+
+@cexBtnPrimaryBg:#04BE02;
+@cexBtnPrimaryActiveBg:#039702;
+
+@cexBtnWarnBg:@button-warn-bg-color;
+@cexBtnWarnActiveBg:@button-warn-active-color;
+
+@cexCellFontSize:17px;
+@cexCellsMarginTop:unit(20 / @cexCellFontSize, em);
+
+// tapcolor
+.setTapColor(@c:rgba(0,0,0,0)) {
+    -webkit-tap-highlight-color: @c;
+}
+
+.cex-button {
+    &.cex-button-mini {
+        margin: 0 2px;
+        line-height: @cexBtnMiniHeight;
+        font-size: @cexBtnMiniFontSize;
+        padding: 0 .75em;
+        display: inline-block;
+    }
+}
+
+button, input {
+    &.cex-button {
+        width: 100%;
+        border-width: 0;
+        outline: 0;
+        -webkit-appearance: none;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &.cex-button-inline,&.cex-button-mini {
+        width: auto;
+    }
+}
+
+/*gap between btn*/
+.cex-button + .cex-button {
+    margin-top: @cexBtnDefaultGap;
+}
+
+.cex-button.cex-button-inline + .cex-button.cex-button-inline {
+    margin-top: auto;
+    margin-left: @cexBtnDefaultGap;
+}
+
+.cex-button_area {
+    margin: @cexCellsMarginTop @cexBtnDefaultGap .3em;
+    &.cex-button_area-inline {
+        display: flex;
+        .cex-button {
+            margin-top: auto;
+            margin-right: @cexBtnDefaultGap;
+            width: 100%;
+            flex: 1;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+}
+
+// cex-button_global
+
+.cex-button {
+    position: relative;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+    font-size: @cexBtnFontSize;
+    text-align: center;
+    text-decoration: none;
+    color: @cexBtnFontColor;
+    line-height: unit(@cexBtnHeight/@cexBtnFontSize);
+    border-radius: @cexBtnBorderRadius;
+    .setTapColor();
+    overflow: hidden;
+    &:after {
+        content: " ";
+        width: 200%;
+        height: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border: 1px solid rgba(0, 0, 0, .2);
+        transform: scale(.5);
+        transform-origin: 0 0;
+        box-sizing: border-box;
+        border-radius: @cexBtnBorderRadius*2;
+    }
+
+    &.cex-button-inline {
+        display: inline-block;
+    }
+}
+
+// cex-button-default
+.cex-button-default {
+    background-color: @cexBtnDefaultBg;
+    color: @cexBtnDefaultFontColor;
+    &:not(.cex-button-disabled):visited {
+        color: @cexBtnDefaultFontColor;
+    }
+    &:not(.cex-button-disabled):active {
+        color: @cexBtnDefaultActiveFontColor;
+        background-color: @cexBtnDefaultActiveBg;
+    }
+}
+// cex-button-primary
+.cex-button-primary {
+    background-color: @cexBtnPrimaryBg;
+    &:not(.cex-button-disabled):visited {
+        color: @cexBtnFontColor;
+    }
+    &:not(.cex-button-disabled):active {
+        color: @cexBtnActiveFontColor;
+        background-color: @cexBtnPrimaryActiveBg;
+    }
+}
+// cex-button-warn
+.cex-button-warn {
+    background-color: @cexBtnWarnBg;
+    &:not(.cex-button-disabled):visited {
+        color: @cexBtnFontColor;
+    }
+    &:not(.cex-button-disabled):active {
+        color: @cexBtnActiveFontColor;
+        background-color: @cexBtnWarnActiveBg;
+    }
+}
+// cex-button-disabled
+.cex-button-disabled {
+    color: @cexBtnDisabledFontColor;
+    &.cex-button-default {
+        color: @cexBtnDefaultDisabledFontColor;
+    }
+}
+// cex-button-plain
+.cex-button-plain-primary {
+    color: @cexBtnPrimaryBg;
+    border: 1px solid @cexBtnPrimaryBg;
+    button&, input& {
+        border-width: 1px;
+        background-color: transparent;
+    }
+    &:active {
+        border-color: @cexBtnPrimaryActiveBg;
+    }
+    &:after {
+        border-width: 0;
+    }
+}
+
+.cex-button-plain-default {
+    color: #5A5A5A;
+    border: 1px solid #5A5A5A;
+    button&, input& {
+        border-width: 1px;
+        background-color: transparent;
+    }
+    &:after {
+        border-width: 0;
+    }
+}

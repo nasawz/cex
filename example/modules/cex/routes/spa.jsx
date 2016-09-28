@@ -9,6 +9,7 @@ import Swiper from '../views/vswiper.jsx'
 import List from '../views/vlist.jsx'
 import Card from '../views/vcard.jsx'
 import FloatButton from '../views/vfloatButton.jsx'
+import Button from '../views/vbutton.jsx'
 import Tab from '../views/vtab.jsx'
 
 const Routes = React.createClass({
@@ -28,6 +29,7 @@ const Routes = React.createClass({
         '/list': 'list',
         '/card': 'card',
         '/floatbutton': 'floatbutton',
+        '/button': 'button',
         '/tab': 'tab',
     },
     render () {
@@ -54,6 +56,9 @@ const Routes = React.createClass({
     },
     floatbutton(params) {
         return <FloatButton params={params} />
+    },
+    button(params) {
+        return <Button params={params} />
     },
     tab(params) {
         return <Tab params={params} />
