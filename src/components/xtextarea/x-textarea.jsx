@@ -6,6 +6,7 @@ import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
 import ItemCell from '../list/item-cell.jsx'
+import Flexbox from '../flexbox/flexbox.jsx'
 import merge from 'lodash/merge'
 
 import './x-textarea.less'
@@ -44,14 +45,33 @@ const XTextArea = React.createClass({
     renderCounter(){
         if (this.props.showCounter && this.props.max) {
             return (
-                <div className="x-textarea-counter"><span>{this.state.count}</span>/{this.props.max}</div>
+                <div className="cex-x-textarea-counter"><span>{this.state.count}</span>/{this.props.max}</div>
             )
+        }
+    },
+    renderExt(){
+        let {children} = this.props
+        if (children) {
+            return (
+                <Flexbox>
+                    <div className='row'>
+                        <div className='col-1-2' style={{paddingLeft:'0px'}}>
+                            { children }
+                        </div>
+                        <div className='col-1-2' style={{paddingRight:'0px'}}>
+                            { this.renderCounter() }
+                        </div>
+                    </div>
+                </Flexbox>
+            )
+        }else{
+            return this.renderCounter()
         }
     },
     render () {
         let {style} = this.props
         let classes = {
-            'x-textarea' : true
+            'cex-x-textarea' : true
         }
         let _style = {
             flexDirection: 'column'
@@ -78,7 +98,7 @@ const XTextArea = React.createClass({
                     placeholder={this.props.placeholder}
                     defaultValue={this.props.value} onChange={this.onChange}>
                 </textarea>
-                { this.renderCounter() }
+                { this.renderExt() }
             </ItemCell>
         )
     }
