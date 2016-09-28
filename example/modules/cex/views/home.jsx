@@ -78,6 +78,11 @@ const Home = React.createClass({
                         emoticonspicker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','textarea']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        textarea
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }

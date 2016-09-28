@@ -15,6 +15,7 @@ import Grid from '../views/vgrid.jsx'
 import VEmoticonsPicker from '../views/vemoticonspicker.jsx'
 import VImageGroup from '../views/vimagegroup.jsx'
 import VLabel from '../views/vlabel.jsx'
+import VTextArea from '../views/vtextarea.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -39,6 +40,7 @@ const Routes = React.createClass({
         '/label': 'label',
         '/imagegroup': 'imagegroup',
         '/emoticonspicker': 'emoticonspicker',
+        '/textarea': 'textarea',
     },
     render () {
         return (
@@ -82,6 +84,9 @@ const Routes = React.createClass({
     },
     emoticonspicker(params) {
         return <VEmoticonsPicker params={params} />
+    },
+    textarea(params) {
+        return <VTextArea params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
