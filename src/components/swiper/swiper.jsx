@@ -141,7 +141,7 @@ const Swiper = React.createClass({
                 style={style}>
                 <div
                     className='swiper-inner'
-                    style={{ 'transform': 'translate3d('+(- this.state.activeIndex * 100 + this.state.diff / this.state.width * 100)+'%, 0, 0)' }}
+                    style={{ 'transform': 'translate3d('+(- this.state.activeIndex * 100 + this.state.diff / this.state.width * 100)+'%, 0, 0)', 'WebkitTransform': 'translate3d('+(- this.state.activeIndex * 100 + this.state.diff / this.state.width * 100)+'%, 0, 0)' }}
                     onTransitionEnd={this.transitionEnd}>
                     <SwiperItem ref='swiper-item-first' className='swiper-item-first'>1</SwiperItem>
                         {React.Children.map(children, (element, idx) => {
