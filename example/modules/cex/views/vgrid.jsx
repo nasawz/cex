@@ -22,25 +22,25 @@ const VGrid = React.createClass({
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-spa'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-spa'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-account_circle'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-account_circle'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-search'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-search'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-spa'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-spa'/></GridIcon>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-account_circle'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-account_circle'/></GridIcon>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-search'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-search'/></GridIcon>
                     </Grid>
                 </Grids>
                 <Divider>small</Divider>
@@ -58,32 +58,32 @@ const VGrid = React.createClass({
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-spa'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-spa'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-account_circle'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-account_circle'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-search'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-search'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-add_a_photo'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-add_a_photo'/></GridIcon>
                         <GridLabel>label</GridLabel>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-spa'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-spa'/></GridIcon>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-account_circle'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-account_circle'/></GridIcon>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-search'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-search'/></GridIcon>
                     </Grid>
                     <Grid>
-                        <GridIcon><Icon className='icon-add_a_photo'/></GridIcon>
+                        <GridIcon><Icon size={28} className='icon-add_a_photo'/></GridIcon>
                     </Grid>
                 </Grids>
             </div>
