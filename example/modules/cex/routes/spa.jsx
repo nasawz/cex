@@ -12,6 +12,9 @@ import FloatButton from '../views/vfloatButton.jsx'
 import Button from '../views/vbutton.jsx'
 import Tab from '../views/vtab.jsx'
 import Grid from '../views/vgrid.jsx'
+import VEmoticonsPicker from '../views/vemoticonspicker.jsx'
+import VImageGroup from '../views/vimagegroup.jsx'
+import VLabel from '../views/vlabel.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -33,6 +36,9 @@ const Routes = React.createClass({
         '/button': 'button',
         '/tab': 'tab',
         '/grid': 'grid',
+        '/label': 'label',
+        '/imagegroup': 'imagegroup',
+        '/emoticonspicker': 'emoticonspicker',
     },
     render () {
         return (
@@ -67,6 +73,15 @@ const Routes = React.createClass({
     },
     grid(params) {
         return <Grid params={params} />
+    },
+    label(params) {
+        return <VLabel params={params} />
+    },
+    imagegroup(params) {
+        return <VImageGroup params={params} />
+    },
+    emoticonspicker(params) {
+        return <VEmoticonsPicker params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

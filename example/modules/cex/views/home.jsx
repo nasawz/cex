@@ -63,6 +63,21 @@ const Home = React.createClass({
                         grid
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','label']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        label
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','imagegroup']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        imagegroup
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','emoticonspicker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        emoticonspicker
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
