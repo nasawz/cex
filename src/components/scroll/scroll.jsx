@@ -120,9 +120,9 @@ const Scroll = React.createClass({
             <div className='pull-to-refresh-layer'>
                 <div className='preloader'></div>
                 <div className='pull-to-refresh-arrow'></div>
-                <span className='label-down'>Pull Down to Refresh</span>
-                <span className='label-up'>Release to Refresh</span>
-                <span className='label-refresh'>Refreshing...</span>
+                <span className='label-down'>下拉刷新</span>
+                <span className='label-up'>释放更新</span>
+                <span className='label-refresh'>加载中...</span>
             </div>
         )
     },
@@ -131,7 +131,7 @@ const Scroll = React.createClass({
         return (
             <div className="infinite-layer">
                 <div className="infinite-preloader"></div>
-                <div>Loading...</div>
+                <div>加载中...</div>
             </div>
         )
     },
