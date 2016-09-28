@@ -21,7 +21,7 @@ const Tab = React.createClass({
     getDefaultProps() {
         return {
             lineWidth:3,
-            activeColor:'#04be02',
+            activeColor:'#02A882',
             defaultColor: '#666',
             animate: true,
             index: 0
