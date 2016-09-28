@@ -70,6 +70,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "gulp-sftp": "^0.1.5",
+    "react-lazy-load": "^3.0.10",
     "run-sequence": "^1.2.2",
     "trim": "0.0.1",
     "vinyl-ftp": "^0.5.0"

@@ -28,6 +28,11 @@ const Home = React.createClass({
                         scroll
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','lazyimage']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        lazyimage
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','card']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         card
