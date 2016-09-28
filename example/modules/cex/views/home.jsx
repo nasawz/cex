@@ -58,6 +58,11 @@ const Home = React.createClass({
                         tab
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','grid']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        grid
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }

@@ -11,6 +11,7 @@ import Card from '../views/vcard.jsx'
 import FloatButton from '../views/vfloatButton.jsx'
 import Button from '../views/vbutton.jsx'
 import Tab from '../views/vtab.jsx'
+import Grid from '../views/vgrid.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -31,6 +32,7 @@ const Routes = React.createClass({
         '/floatbutton': 'floatbutton',
         '/button': 'button',
         '/tab': 'tab',
+        '/grid': 'grid',
     },
     render () {
         return (
@@ -62,6 +64,9 @@ const Routes = React.createClass({
     },
     tab(params) {
         return <Tab params={params} />
+    },
+    grid(params) {
+        return <Grid params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
