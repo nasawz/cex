@@ -150,7 +150,7 @@ const Scroll = React.createClass({
             'touching' : this.state.touching,
         }
         return (
-            <div className='xscroll'>
+            <div className='cex-scroll'>
                 <div
                     ref='scroll'
                     className={classNames(this.props.className,classes)}
