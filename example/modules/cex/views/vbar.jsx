@@ -82,6 +82,71 @@ const VBar = React.createClass({
                     </BarToolsGroup>
                     <div><XButton mini type='primary'>发表</XButton></div>
                 </ToolBar>
+                <ToolBar>
+                        <BarTools>
+                            <IconButton icon='icon-photo' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-tag_faces' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-keyboard_voice' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-videocam' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-library_music' />
+                        </BarTools>
+                </ToolBar>
+                <Divider>tool bar with img</Divider>
+                <ToolBar>
+                        <BarTools>
+                            <IconButton icon='icon-photo' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-tag_faces' />
+                        </BarTools>
+                        <div className='icon-shafa' />
+                        <BarTools>
+                            <IconButton icon='icon-videocam' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-library_music' />
+                        </BarTools>
+                </ToolBar>
+                <ToolBar>
+                        <BarTools>
+                            <IconButton icon='icon-photo' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-tag_faces' />
+                        </BarTools>
+                        <div className='icon-huangguan' />
+                        <BarTools>
+                            <IconButton icon='icon-videocam' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-library_music' />
+                        </BarTools>
+                </ToolBar>
+                <ToolBar>
+                        <BarTools>
+                            <IconButton icon='icon-photo' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-tag_faces' />
+                        </BarTools>
+                        <div style={{width:'44px'}}>
+                            <img src={require('../../../img/logo.png')} />
+                        </div>
+                        <BarTools>
+                            <IconButton icon='icon-videocam' />
+                        </BarTools>
+                        <BarTools>
+                            <IconButton icon='icon-library_music' />
+                        </BarTools>
+                </ToolBar>
             </div>
         )
     }

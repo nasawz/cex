@@ -12,24 +12,27 @@ module.exports = {
     contextTypes: {
         runType: PropTypes.string.isRequired
     },
-    generatePath(params,querys){
-        if (this.context.runType == 'spa') {
+    generatePath(params,querys,runType){
+        if (!runType) runType = this.context.runType
+        if (runType == 'spa') {
             return '/'+join(params,'/')+(querys?'?'+stringify(querys):'')
         }else{
             return join(params,'-')+'.html'+(querys?'?'+stringify(querys):'')
         }
     },
-    navTo(params,querys){
+    navTo(params,querys,runType){
+        if (!runType) runType = this.context.runType
         let path = this.generatePath(params,querys)
-        if (this.context.runType == 'spa') {
+        if (runType == 'spa') {
             navigate(path)
         }else{
             window.location.href = path
         }
     },
-    navReplace(params,querys){
+    navReplace(params,querys,runType){
+        if (!runType) runType = this.context.runType
         let path = this.generatePath(params,querys)
-        if (this.context.runType == 'spa') {
+        if (runType == 'spa') {
             replaceNavigate(path)
         }else{
             window.location.href = path
