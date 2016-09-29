@@ -20,7 +20,7 @@ const VImageGroup = React.createClass({
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
                 </ImageGroup>
-                <Divider>多张度</Divider>
+                <Divider>多张图</Divider>
                 <ImageGroup>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
