@@ -13,10 +13,13 @@ const ImageItem = React.createClass({
         }
     },
     componentDidMount(){
-        this.el = ReactDOM.findDOMNode(this)
-        this.setState({
-            height: this.el.getBoundingClientRect().width
-        })
+        let self = this
+        setTimeout(function () {
+            self.el = ReactDOM.findDOMNode(self)
+            self.setState({
+                height: self.el.getBoundingClientRect().width
+            })
+        }, 500);
     },
     render () {
         let {style} = this.props

@@ -16,6 +16,8 @@ import ItemText from 'cex/components/list/item-text.jsx'
 import ItemTitleRow from 'cex/components/list/item-title-row.jsx'
 import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 import IconButton from 'cex/components/icon/icon-button.jsx'
+import IamgeGroup from 'cex/components/image/image-group.jsx'
+import IamgeItem from 'cex/components/image/image-item.jsx'
 
 const VCard = React.createClass({
     render () {
@@ -83,6 +85,100 @@ const VCard = React.createClass({
                             </Item>
                         </List>
                     </CardContent>
+                    <CardFooter>
+                        <IconButton icon='icon-favorite'>喜欢</IconButton>
+                        <IconButton icon='icon-chat'>评论</IconButton>
+                    </CardFooter>
+                </Card>
+                <Card>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <ItemMedia>
+                                    <img src="http://ugc.qpic.cn/gbar_pic/PYnx3ZdPvsTiaj9aNylwCQbvWIcE2J9lRBkUxb5Sx1s9H7AqhrKx3zw/"/>
+                                </ItemMedia>
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                        <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle>
+                                    <IamgeGroup>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <IamgeItem />
+                                        <IamgeItem />
+                                        <IamgeItem />
+                                        <IamgeItem />
+                                        <IamgeItem />
+                                    </IamgeGroup>
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+
+                    <CardFooter>
+                        <IconButton icon='icon-favorite'>喜欢</IconButton>
+                        <IconButton icon='icon-chat'>评论</IconButton>
+                    </CardFooter>
+                </Card>
+                <Card>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <ItemMedia>
+                                    <img src="http://ugc.qpic.cn/gbar_pic/PYnx3ZdPvsTiaj9aNylwCQbvWIcE2J9lRBkUxb5Sx1s9H7AqhrKx3zw/"/>
+                                </ItemMedia>
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                        <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle>
+                                    <IamgeGroup>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+
+                                    </IamgeGroup>
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+
+                    <CardFooter>
+                        <IconButton icon='icon-favorite'>喜欢</IconButton>
+                        <IconButton icon='icon-chat'>评论</IconButton>
+                    </CardFooter>
+                </Card>
+                <Card>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <ItemMedia>
+                                    <img src="http://ugc.qpic.cn/gbar_pic/PYnx3ZdPvsTiaj9aNylwCQbvWIcE2J9lRBkUxb5Sx1s9H7AqhrKx3zw/"/>
+                                </ItemMedia>
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                        <ItemTitleAfter>2014-12-23</ItemTitleAfter>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle>
+                                    <IamgeGroup>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+
+                                    </IamgeGroup>
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+
                     <CardFooter>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
