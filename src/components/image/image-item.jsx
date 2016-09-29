@@ -1,6 +1,7 @@
 import React, { PropTypes } from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
+import LazyImage from './lazy-image'
 import './image-item.less'
 
 const ImageItem = React.createClass({
@@ -22,7 +23,7 @@ const ImageItem = React.createClass({
         }
         return (
             <div className={classNames(this.props.className , classes)} style={{'height':this.state.height}}>
-                <img src={this.props.src} />
+                <LazyImage src={this.props.src} />
             </div>
         )
     }
