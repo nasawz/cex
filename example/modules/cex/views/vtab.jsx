@@ -37,34 +37,6 @@ const VTab = React.createClass({
                     <TabItem>精华</TabItem>
                 </Tab>
 
-                <HeaderBar>
-                    <BarTools>
-                        <IconButton icon='icon-arrow_back' />
-                    </BarTools>
-                    <Tab className='center' onChangeIndex={this.onChangeIndex}>
-                        <TabItem>广场</TabItem>
-                        <TabItem>精华</TabItem>
-                        <TabItem>消息</TabItem>
-                    </Tab>
-                    <BarTools>
-                        <IconButton icon='icon-account_circle' />
-                    </BarTools>
-                </HeaderBar>
-                <HeaderBar>
-
-                    <Tab className='center' onChangeIndex={this.onChangeIndex}>
-                        <TabItem>广场</TabItem>
-                        <TabItem>精华</TabItem>
-                    </Tab>
-                    <BarToolsGroup>
-                        <BarTools>
-                            <IconButton icon='icon-account_circle' />
-                        </BarTools>
-                        <BarTools>
-                            <IconButton icon='icon-account_circle' />
-                        </BarTools>
-                    </BarToolsGroup>
-                </HeaderBar>
             </div>
         )
     }

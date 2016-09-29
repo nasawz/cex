@@ -6,6 +6,8 @@ import Routes from './routes/spa.jsx'
 const App = React.createFactory(Routes)
 import {navigate} from 'react-mini-router'
 
+import '../../style/index.less'
+
 ReactDOM.render(
     <div>
         {App({ root:'/example' })}

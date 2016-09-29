@@ -135,13 +135,18 @@ const Swiper = React.createClass({
             'transition': this.state.transition,
             'touching': this.state.touching
         }
+        let translateX = - this.state.activeIndex * 100 + this.state.diff / this.state.width * 100+'%'
+        let innerStyle = {
+          'transform': 'translate3d('+translateX+', 0, 0)',
+          'WebkitTransform': 'translate3d('+translateX+', 0, 0)'
+        }
         return (
             <Flexbox
                 className={classNames(this.props.className,classes)}
                 style={style}>
                 <div
                     className='swiper-inner'
-                    style={{ 'transform': 'translate3d('+(- this.state.activeIndex * 100 + this.state.diff / this.state.width * 100)+'%, 0, 0)' }}
+                    style={innerStyle}
                     onTransitionEnd={this.transitionEnd}>
                     <SwiperItem ref='swiper-item-first' className='swiper-item-first'>1</SwiperItem>
                         {React.Children.map(children, (element, idx) => {

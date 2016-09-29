@@ -9,7 +9,7 @@ var config = require('./config'),
 
 var HtmlResWebpackPlugin = require('html-res-webpack-plugin'),
     ExtractTextPlugin = require('extract-text-webpack-plugin-steamer'),
-    // OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
+    OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
     CopyWebpackPlugin = require('copy-webpack-plugin-hash')
 
 var forEach = require('lodash/forEach')
@@ -88,12 +88,12 @@ var devConfig = {
             }
         ]),
         new webpack.optimize.CommonsChunkPlugin('vendor', 'js/vendor.js'),
-        // new OptimizeCssAssetsPlugin({
-        //     assetNameRegExp: /\.css$/g,
-        //     cssProcessor: require('cssnano'),
-        //     cssProcessorOptions: { discardComments: {removeAll: true } },
-        //     canPrint: true
-        // }),
+        new OptimizeCssAssetsPlugin({
+            assetNameRegExp: /\.css$/g,
+            cssProcessor: require('cssnano'),
+            cssProcessorOptions: { discardComments: {removeAll: true } },
+            canPrint: true
+        }),
         new ExtractTextPlugin('./css/[name].css', {
             filenamefilter: function(filename) {
                 return filename.replace('/js', '')

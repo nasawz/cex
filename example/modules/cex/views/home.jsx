@@ -12,6 +12,7 @@ import ItemCell from 'cex/components/list/item-cell.jsx'
 // import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 // import Badge from 'cex/components/badge/badge.jsx'
 // import Icon from 'cex/components/icon/icon.jsx'
+import Flexbox from 'cex/components/flexbox/flexbox.jsx'
 
 import NavigateMixin from '../../common/navigate-mixin.js'
 
@@ -23,9 +24,24 @@ const Home = React.createClass({
     render () {
         return (
             <List>
+                <Flexbox className='flex-center'>
+                    <div  style={{width:'220',padding:'20px'}}>
+                        <img src={require('../../../img/logo.png')} />
+                    </div>
+                </Flexbox>
+                <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        bar
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','scroll']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         scroll
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','lazyimage']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        lazyimage
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','card']}} onClickLink={this.onClickLink}>

@@ -17,7 +17,7 @@ const BarToolsGroup = React.createClass({
     render () {
         let {style,children} = this.props
         let classes = {
-            'bar-tools-group' : true,
+            'cex-bar-tools-group' : true,
             'flex-center': true,
             'flex-middle': true
         }
