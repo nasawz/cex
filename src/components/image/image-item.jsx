@@ -19,7 +19,7 @@ const ImageItem = React.createClass({
             self.setState({
                 height: self.el.getBoundingClientRect().width
             })
-        }, 500);
+        }, 500)
     },
     render () {
         let {style} = this.props
