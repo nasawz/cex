@@ -1,7 +1,9 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 import LazyImage from './lazy-image'
+import merge from 'lodash/merge'
+
 import './image-item.less'
 
 const ImageItem = React.createClass({
@@ -17,12 +19,15 @@ const ImageItem = React.createClass({
         })
     },
     render () {
-        let {style,children} = this.props
+        let {style} = this.props
         let classes = {
             'cex-image-item' : true
         }
+        let _style = {
+            height: this.state.height
+        }
         return (
-            <div className={classNames(this.props.className , classes)} style={{'height':this.state.height}}>
+            <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
                 <LazyImage src={this.props.src} />
             </div>
         )

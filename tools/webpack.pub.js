@@ -53,7 +53,7 @@ var prodConfig = {
                     // 压缩png图片
                     'image-webpack?{progressive:true, optimizationLevel: 7, interlaced: false, pngquant:{quality: "65-90", speed: 4}}'
                 ],
-                include: path.resolve(configWebpack.path.src)
+                include: [path.resolve(configWebpack.path.src),path.resolve(configWebpack.path.cex)]
             }, {
                 test: /\.ico$/,
                 loader: 'url-loader?name=[name].[ext]',
@@ -86,7 +86,7 @@ var prodConfig = {
     },
     postcss: function () {
         return [require('autoprefixer'), require('precss')]
-    },    
+    },
     plugins: [
         // remove previous pub folder
         new Clean(['dist'], {root: path.resolve()}),

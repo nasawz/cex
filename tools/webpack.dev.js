@@ -49,7 +49,7 @@ var devConfig = {
                 loaders: [
                     'url-loader?limit=1000&name=img/[name].[ext]',
                 ],
-                include: path.resolve(configWebpack.path.src)
+                include: [path.resolve(configWebpack.path.src),path.resolve(configWebpack.path.cex)]
             }, {
                 test: /\.ico$/,
                 loader: 'url-loader?name=[name].[ext]',

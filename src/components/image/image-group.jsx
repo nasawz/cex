@@ -23,11 +23,11 @@ const ImageGroup = React.createClass({
             'cex-img-four' : children.length == 4 ? true : false ,
         }
         return (
-            <div className={classNames(classes)}>
+            <div className={classNames(classes)} style={style}>
                 {React.Children.map(children, (element) => {
                     return React.cloneElement(element, {
                         className : classNames(classes_item)
-                        })
+                    })
                 })}
             </div>
         )
