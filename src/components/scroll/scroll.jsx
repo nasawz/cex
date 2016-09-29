@@ -149,6 +149,10 @@ const Scroll = React.createClass({
             'refreshing' : (this.state.state === 2),
             'touching' : this.state.touching,
         }
+        let innerStyle = {
+          'transform': 'translate3d(0, ' + this.state.top + 'px, 0)',
+          'WebkitTransform': 'translate3d(0, ' + this.state.top + 'px, 0)'
+        }
         return (
             <div className='cex-scroll'>
                 <div
@@ -159,7 +163,7 @@ const Scroll = React.createClass({
                     onTouchStart={touchstartEvent}
                     onTouchMove={touchmoveEvent}
                     onTouchEnd={touchendEvent} >
-                    <div className='scroll-inner' style={{'transform':'translate3d(0, ' + this.state.top + 'px, 0)'}}>
+                    <div className='scroll-inner' style={innerStyle}>
                         { this.renderRefreshLayer() }
                         { children }
                         { this.renderInfiniteLayer() }
