@@ -150,8 +150,8 @@ const Scroll = React.createClass({
             'touching' : this.state.touching,
         }
         let innerStyle = {
-          'transform': 'translate3d(0, ' + this.state.top + 'px, 0)',
-          'WebkitTransform': 'translate3d(0, ' + this.state.top + 'px, 0)'
+            'transform': 'translate3d(0, ' + this.state.top + 'px, 0)',
+            'WebkitTransform': 'translate3d(0, ' + this.state.top + 'px, 0)'
         }
         return (
             <div className='cex-scroll'>

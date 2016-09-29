@@ -79,6 +79,9 @@ var devConfig = {
             // 'pure-render-decorator': path.join(configWebpack.path.src, '/js/common/pure-render-decorator'),
         }
     },
+    postcss: function () {
+        return [require('autoprefixer'), require('precss')]
+    },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(true),
         new CopyWebpackPlugin([

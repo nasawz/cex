@@ -84,6 +84,9 @@ var prodConfig = {
             // 'pure-render-decorator': path.join(configWebpack.path.src, '/js/common/pure-render-decorator'),
         }
     },
+    postcss: function () {
+        return [require('autoprefixer'), require('precss')]
+    },    
     plugins: [
         // remove previous pub folder
         new Clean(['dist'], {root: path.resolve()}),

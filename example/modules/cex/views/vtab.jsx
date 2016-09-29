@@ -5,7 +5,7 @@ import HeaderBar from 'cex/components/bar/header-bar.jsx'
 import IconButton from 'cex/components/icon/icon-button.jsx'
 // import Avatar from 'cex/components/image/avatar.jsx'
 import BarTools from 'cex/components/bar/bar-tools.jsx'
-import BarToolsGroup from 'cex/components/bar/bar-tools-group.jsx'
+// import BarToolsGroup from 'cex/components/bar/bar-tools-group.jsx'
 import Swiper from 'cex/components/swiper/swiper.jsx'
 import SwiperItem from 'cex/components/swiper/swiper-item.jsx'
 

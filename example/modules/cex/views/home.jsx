@@ -25,7 +25,7 @@ const Home = React.createClass({
         return (
             <List>
                 <Flexbox className='flex-center'>
-                    <div  style={{width:'220',padding:'20px'}}>
+                    <div  style={{width:'220px',padding:'20px'}}>
                         <img src={require('../../../img/logo.png')} />
                     </div>
                 </Flexbox>
