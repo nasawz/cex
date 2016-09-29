@@ -70,6 +70,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "gulp-sftp": "^0.1.5",
+    "image-webpack-loader": "^2.0.0",
     "react-lazy-load": "^3.0.10",
     "run-sequence": "^1.2.2",
     "trim": "0.0.1",

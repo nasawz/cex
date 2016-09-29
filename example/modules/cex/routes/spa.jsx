@@ -17,6 +17,7 @@ import VImageGroup from '../views/vimagegroup.jsx'
 import VLabel from '../views/vlabel.jsx'
 import VTextArea from '../views/vtextarea.jsx'
 import VLazyImage from '../views/vlazyimage.jsx'
+import VBar from '../views/vbar.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -43,6 +44,7 @@ const Routes = React.createClass({
         '/emoticonspicker': 'emoticonspicker',
         '/textarea': 'textarea',
         '/lazyimage': 'lazyimage',
+        '/bar': 'bar',
     },
     render () {
         return (
@@ -92,6 +94,9 @@ const Routes = React.createClass({
     },
     lazyimage(params) {
         return <VLazyImage params={params} />
+    },
+    bar(params) {
+        return <VBar params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
