@@ -19,6 +19,7 @@ import VTextArea from '../views/vtextarea.jsx'
 import VLazyImage from '../views/vlazyimage.jsx'
 import VBar from '../views/vbar.jsx'
 import VPicker from '../views/vpicker.jsx'
+import VAvatar from '../views/vavatar.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -47,6 +48,7 @@ const Routes = React.createClass({
         '/lazyimage': 'lazyimage',
         '/bar': 'bar',
         '/picker': 'picker',
+        '/avatar': 'avatar',
     },
     render () {
         return (
@@ -102,6 +104,9 @@ const Routes = React.createClass({
     },
     picker(params) {
         return <VPicker params={params} />
+    },
+    avatar(params) {
+        return <VAvatar params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
