@@ -3,8 +3,10 @@
  */
 
 import React from 'react'
+import ReactDOM from 'react-dom'
 
 import classNames from 'classnames'
+import merge from 'lodash/merge'
 
 
 import './uploader.less'
@@ -12,40 +14,37 @@ import './uploader.less'
 
 const Uploader = React.createClass({
     handelSelectFile(e) {
-        console.log(e.target.files[0])
+        let file = e.target.files[0]
+        this.props.onSelectImg(file)
 
-        
-        // if (){ 
-
-        // }
-        // let self = this;
-        // let file = e.target.files[0];
-        // let imageType = /image.*/
-        // if (!file.type.match(imageType)) {
-        //     return 0;
-        // }
-        // window.lrz(file, {
-        //     width: 640,
-        //     height: 1136
-        // })
-        //     .then(function (rst) {
-        //         // 处理成功会执行
-        //         self.onSelectImg(rst);
-        //     })
-        //     .catch(function (err) { })
-        //     .always(function () { });
-
+    },
+    getInitialState() {
+        return {
+            height: 0
+        }
+    },
+    componentDidMount() {
+        let self = this
+        setTimeout(function () {
+            self.el = ReactDOM.findDOMNode(self)
+            self.setState({
+                height: self.el.getBoundingClientRect().width
+            })
+        }, 500)
     },
     render() {
         let {style} = this.props
         let classes = {
             'cex-uploader': true,
-            'cex-uploader__input-box': true
+            'cex-uploader-input-box': true
+        }
+        let _style = {
+            height: this.state.height
         }
         return (
-            
-            <div className={classNames(this.props.className, classes) } style={style}>
-                <input className="cex-uploader__input" type="file" accept="image/*" multiple onChange={ this.handelSelectFile } />
+
+            <div className={classNames(this.props.className, classes) } style={merge({},_style,style)}>
+                <input className="cex-uploader-input" type="file" accept="image/*" multiple onChange={ this.handelSelectFile } />
             </div>
         )
     }
