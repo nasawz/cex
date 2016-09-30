@@ -8,9 +8,15 @@ import classNames from 'classnames'
 
 import './emoticons-picker.less'
 
-import './emoticons-picker.less'
-
 const EmoticonsPicker = React.createClass({
+    getEmotionName(e){
+        e.stopPropagation();
+        e.preventDefault();
+        let el = e.currentTarget;
+        let name = el.getAttribute('data-target');
+        console.log('99999',name);
+        this.props.deliverEmotionName(name)
+    },
     renderImg(n){
         return (
             emotions.map((item,index) =>{
@@ -22,7 +28,7 @@ const EmoticonsPicker = React.createClass({
                             'cex-img-item' : true
                         }
                         return(
-                            <i className={classNames(icon,classes)} key={index} data-target={item[0]} />
+                            <i className={classNames(icon,classes)} onClick={this.getEmotionName} key={index} data-target={item[0]} />
                         )
                     }
 
