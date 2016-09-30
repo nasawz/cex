@@ -17,7 +17,7 @@ import ItemTitleRow from 'cex/components/list/item-title-row.jsx'
 import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 import IconButton from 'cex/components/icon/icon-button.jsx'
 import Gallery from 'cex/components/image/gallery.jsx'
-import IamgeItem from 'cex/components/image/image-item.jsx'
+import GalleryItem from 'cex/components/image/gallery-item.jsx'
 
 const VCard = React.createClass({
     render () {
@@ -106,12 +106,12 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <IamgeItem />
-                                        <IamgeItem />
-                                        <IamgeItem />
-                                        <IamgeItem />
-                                        <IamgeItem />
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem />
+                                        <GalleryItem />
+                                        <GalleryItem />
+                                        <GalleryItem />
+                                        <GalleryItem />
                                     </Gallery>
                                 </ItemContent>
                             </Item>
@@ -139,7 +139,7 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
                                     </Gallery>
                                 </ItemContent>
@@ -168,10 +168,10 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
                                     </Gallery>
                                 </ItemContent>

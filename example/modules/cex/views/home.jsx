@@ -84,9 +84,9 @@ const Home = React.createClass({
                         label
                     </ItemTitle>
                 </ItemCell>
-                <ItemCell link={{params:['example','imagegroup']}} onClickLink={this.onClickLink}>
+                <ItemCell link={{params:['example','gallery']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
-                        imagegroup
+                        gallery
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','emoticonspicker']}} onClickLink={this.onClickLink}>
@@ -97,6 +97,11 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','textarea']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         textarea
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','picker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        picker
                     </ItemTitle>
                 </ItemCell>
             </List>

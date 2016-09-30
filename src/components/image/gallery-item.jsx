@@ -4,9 +4,9 @@ import classNames from 'classnames'
 import LazyImage from './lazy-image'
 import merge from 'lodash/merge'
 
-import './image-item.less'
+import './gallery-item.less'
 
-const ImageItem = React.createClass({
+const GalleryItem = React.createClass({
     getInitialState(){
         return{
             height:0
@@ -37,4 +37,4 @@ const ImageItem = React.createClass({
     }
 })
 
-export default ImageItem
+export default GalleryItem
