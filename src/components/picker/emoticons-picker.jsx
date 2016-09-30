@@ -14,7 +14,6 @@ const EmoticonsPicker = React.createClass({
         e.preventDefault();
         let el = e.currentTarget;
         let name = el.getAttribute('data-target');
-        console.log('99999',name);
         this.props.deliverEmotionName(name)
     },
     renderImg(n){
@@ -28,8 +27,10 @@ const EmoticonsPicker = React.createClass({
                             'cex-img-item' : true
                         }
                         return(
-                            <i className={classNames(icon,classes)} onClick={this.getEmotionName} key={index} data-target={item[0]} />
-                        )
+                            <span className={classNames(classes)} key={index}>
+                                <i className={classNames(icon)} onClick={this.getEmotionName}  data-target={item[0]} />
+                            </span>
+                    )
                     }
 
                 }
@@ -42,7 +43,9 @@ const EmoticonsPicker = React.createClass({
         return (
             <SwiperItem className='cex-swiper-picker'>
                 {this.renderImg(n)}
-                <i className='cex-img-item btn-delete' />
+                <span className='cex-img-item'>
+                    <i className='btn-delete' onClick={this.props.deleEmotion } />
+                </span>
             </SwiperItem>
         )
     },
