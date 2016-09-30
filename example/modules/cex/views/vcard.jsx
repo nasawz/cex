@@ -16,7 +16,7 @@ import ItemText from 'cex/components/list/item-text.jsx'
 import ItemTitleRow from 'cex/components/list/item-title-row.jsx'
 import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 import IconButton from 'cex/components/icon/icon-button.jsx'
-import IamgeGroup from 'cex/components/image/image-group.jsx'
+import Gallery from 'cex/components/image/gallery.jsx'
 import IamgeItem from 'cex/components/image/image-item.jsx'
 
 const VCard = React.createClass({
@@ -105,14 +105,14 @@ const VCard = React.createClass({
                                     <ItemSubtitle>
                                         网通二区
                                     </ItemSubtitle>
-                                    <IamgeGroup>
+                                    <Gallery>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                                         <IamgeItem />
                                         <IamgeItem />
                                         <IamgeItem />
                                         <IamgeItem />
                                         <IamgeItem />
-                                    </IamgeGroup>
+                                    </Gallery>
                                 </ItemContent>
                             </Item>
                         </List>
@@ -138,10 +138,10 @@ const VCard = React.createClass({
                                     <ItemSubtitle>
                                         网通二区
                                     </ItemSubtitle>
-                                    <IamgeGroup>
+                                    <Gallery>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
-                                    </IamgeGroup>
+                                    </Gallery>
                                 </ItemContent>
                             </Item>
                         </List>
@@ -167,13 +167,13 @@ const VCard = React.createClass({
                                     <ItemSubtitle>
                                         网通二区
                                     </ItemSubtitle>
-                                    <IamgeGroup>
+                                    <Gallery>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                                         <IamgeItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
-                                    </IamgeGroup>
+                                    </Gallery>
                                 </ItemContent>
                             </Item>
                         </List>
