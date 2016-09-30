@@ -20,6 +20,7 @@ import VLazyImage from '../views/vlazyimage.jsx'
 import VBar from '../views/vbar.jsx'
 import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
+import VAvatar from '../views/vavatar.jsx'
 
 
 const Routes = React.createClass({
@@ -50,6 +51,7 @@ const Routes = React.createClass({
         '/bar': 'bar',
         '/uploader': 'uploader',
         '/picker': 'picker',
+        '/avatar': 'avatar',
     },
     render () {
         return (
@@ -108,6 +110,9 @@ const Routes = React.createClass({
     },
     picker(params) {
         return <VPicker params={params} />
+    },
+    avatar(params) {
+        return <VAvatar params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

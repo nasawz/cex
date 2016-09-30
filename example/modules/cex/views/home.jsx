@@ -34,6 +34,11 @@ const Home = React.createClass({
                         bar
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','avatar']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        avatar
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','scroll']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         scroll
