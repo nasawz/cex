@@ -18,6 +18,7 @@ import VLabel from '../views/vlabel.jsx'
 import VTextArea from '../views/vtextarea.jsx'
 import VLazyImage from '../views/vlazyimage.jsx'
 import VBar from '../views/vbar.jsx'
+import VUploader from '../views/vuploader.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -45,6 +46,7 @@ const Routes = React.createClass({
         '/textarea': 'textarea',
         '/lazyimage': 'lazyimage',
         '/bar': 'bar',
+        '/uploader': 'uploader',
     },
     render () {
         return (
@@ -97,6 +99,9 @@ const Routes = React.createClass({
     },
     bar(params) {
         return <VBar params={params} />
+    },
+    uploader(params) {
+        return <VUploader params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
