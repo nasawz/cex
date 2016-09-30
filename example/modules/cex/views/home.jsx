@@ -109,6 +109,11 @@ const Home = React.createClass({
                         picker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','uploader']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        uploader
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
