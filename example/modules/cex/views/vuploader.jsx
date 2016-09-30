@@ -2,7 +2,7 @@ import React from 'react'
 
 import Uploader from 'cex/components/uploader/uploader.jsx'
 import Gallery from 'cex/components/image/gallery.jsx'
-import ImageItem from 'cex/components/image/image-item.jsx'
+import GalleryItem from 'cex/components/image/gallery-item.jsx'
 
 
 const VUploader = React.createClass({
@@ -10,8 +10,8 @@ const VUploader = React.createClass({
         return (
             <div>
                 <Gallery>
-                    <ImageItem className='cex-uploader-image' src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                    <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                    <GalleryItem className='cex-uploader-image' src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                    <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                    <Uploader />
                 </Gallery>
                 
