@@ -105,6 +105,7 @@ const Routes = React.createClass({
     },
     uploader(params) {
         return <VUploader params={params} />
+    },
     picker(params) {
         return <VPicker params={params} />
     },
