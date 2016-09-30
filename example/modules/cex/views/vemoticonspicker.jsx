@@ -3,13 +3,16 @@ import React from 'react'
 import EmoticonsPicker from 'cex/components/picker/emoticons-picker.jsx'
 
 const VEmoticonsPicker = React.createClass({
-    getEmotionNames(name){
-        console.log('11',name);
+    getEmotionName(name){
+        console.log(name);
+    },
+    deteEmotion(){
+        console.log('dele');
     },
     render () {
         return (
             <div>
-                <EmoticonsPicker deliverEmotionName={this.getEmotionNames} />
+                <EmoticonsPicker deliverEmotionName={this.getEmotionName} deleEmotion={this.deteEmotion}/>
             </div>
         )
     }
