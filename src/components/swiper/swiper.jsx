@@ -137,8 +137,8 @@ const Swiper = React.createClass({
         }
         let translateX = - this.state.activeIndex * 100 + this.state.diff / this.state.width * 100+'%'
         let innerStyle = {
-          'transform': 'translate3d('+translateX+', 0, 0)',
-          'WebkitTransform': 'translate3d('+translateX+', 0, 0)'
+            'transform': 'translate3d('+translateX+', 0, 0)',
+            'WebkitTransform': 'translate3d('+translateX+', 0, 0)'
         }
         return (
             <Flexbox

@@ -1,9 +1,6 @@
 import React from 'react'
 import Grids from 'cex/components/grid/grids.jsx'
 import Grid from 'cex/components/grid/grid.jsx'
-import GridIcon from 'cex/components/grid/grid-icon.jsx'
-import GridLabel from 'cex/components/grid/grid-label.jsx'
-import Icon from 'cex/components/icon/icon.jsx'
 import Divider from 'cex/components/divider/divider.jsx'
 import Avatar from 'cex/components/image/avatar.jsx'
 

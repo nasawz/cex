@@ -10,10 +10,10 @@ import './emoticons-picker.less'
 
 const EmoticonsPicker = React.createClass({
     getEmotionName(e){
-        e.stopPropagation();
-        e.preventDefault();
-        let el = e.currentTarget;
-        let name = el.getAttribute('data-target');
+        e.stopPropagation()
+        e.preventDefault()
+        let el = e.currentTarget
+        let name = el.getAttribute('data-target')
         this.props.deliverEmotionName(name)
     },
     renderImg(n){
