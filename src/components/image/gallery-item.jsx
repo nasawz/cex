@@ -24,7 +24,7 @@ const GalleryItem = React.createClass({
     render () {
         let {style} = this.props
         let classes = {
-            'cex-image-item' : true
+            'cex-gallery-item' : true
         }
         let _style = {
             height: this.state.height

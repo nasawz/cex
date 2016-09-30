@@ -24,7 +24,7 @@ const EmoticonsPicker = React.createClass({
                     if(index>=n&&index<n+17){
                         let icon = item[1]
                         let classes = {
-                            'cex-img-item' : true
+                            'cex-emotion-item' : true
                         }
                         return(
                             <span className={classNames(classes)} key={index}>
@@ -43,7 +43,7 @@ const EmoticonsPicker = React.createClass({
         return (
             <SwiperItem className='cex-swiper-picker'>
                 {this.renderImg(n)}
-                <span className='cex-img-item'>
+                <span className='cex-emotion-item'>
                     <i className='btn-delete' onClick={this.props.deleEmotion } />
                 </span>
             </SwiperItem>

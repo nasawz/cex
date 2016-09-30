@@ -16,11 +16,11 @@ const Gallery = React.createClass({
             arr.push(children)
         }
         let classes = {
-            'cex-image-group' : true,
+            'cex-gallery' : true,
         }
         let classes_item = {
-            'cex-img-one' : arr.length == 1 ? true : false ,
-            'cex-img-four' : children.length == 4 ? true : false ,
+            'cex-gallery-one' : arr.length == 1 ? true : false ,
+            'cex-gallery-four' : children.length == 4 ? true : false ,
         }
         return (
             <div className={classNames(classes)} style={style}>
