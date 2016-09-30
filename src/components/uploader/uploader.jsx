@@ -35,7 +35,6 @@ const Uploader = React.createClass({
     render() {
         let {style} = this.props
         let classes = {
-            'cex-uploader': true,
             'cex-uploader-input-box': true
         }
         let _style = {
