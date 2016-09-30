@@ -1,5 +1,7 @@
 import React from 'react'
 
+import './emoticons-picker.less'
+
 const EmoticonsPicker = React.createClass({
     render () {
         return (
