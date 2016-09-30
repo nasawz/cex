@@ -13,11 +13,12 @@ import Button from '../views/vbutton.jsx'
 import Tab from '../views/vtab.jsx'
 import Grid from '../views/vgrid.jsx'
 import VEmoticonsPicker from '../views/vemoticonspicker.jsx'
-import VImageGroup from '../views/vimagegroup.jsx'
+import VGallery from '../views/vgallery.jsx'
 import VLabel from '../views/vlabel.jsx'
 import VTextArea from '../views/vtextarea.jsx'
 import VLazyImage from '../views/vlazyimage.jsx'
 import VBar from '../views/vbar.jsx'
+import VPicker from '../views/vpicker.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -40,11 +41,12 @@ const Routes = React.createClass({
         '/tab': 'tab',
         '/grid': 'grid',
         '/label': 'label',
-        '/imagegroup': 'imagegroup',
+        '/gallery': 'gallery',
         '/emoticonspicker': 'emoticonspicker',
         '/textarea': 'textarea',
         '/lazyimage': 'lazyimage',
         '/bar': 'bar',
+        '/picker': 'picker',
     },
     render () {
         return (
@@ -83,8 +85,8 @@ const Routes = React.createClass({
     label(params) {
         return <VLabel params={params} />
     },
-    imagegroup(params) {
-        return <VImageGroup params={params} />
+    gallery(params) {
+        return <VGallery params={params} />
     },
     emoticonspicker(params) {
         return <VEmoticonsPicker params={params} />
@@ -97,6 +99,9 @@ const Routes = React.createClass({
     },
     bar(params) {
         return <VBar params={params} />
+    },
+    picker(params) {
+        return <VPicker params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
