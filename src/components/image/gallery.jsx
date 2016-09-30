@@ -1,8 +1,8 @@
 import React from 'react'
 import classNames from 'classnames'
-import './image-group.less'
+import './gallery.less'
 
-const ImageGroup = React.createClass({
+const Gallery = React.createClass({
     isType(type, obj) {
         return Object.prototype.toString.call(obj) === '[object ' + type + ']'
     },
@@ -34,4 +34,4 @@ const ImageGroup = React.createClass({
     }
 })
 
-export default ImageGroup
+export default Gallery

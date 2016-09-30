@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ImageGroup from 'cex/components/image/image-group.jsx'
+import Gallery from 'cex/components/image/gallery.jsx'
 import ImageItem from 'cex/components/image/image-item.jsx'
 import Divider from 'cex/components/divider/divider.jsx'
 
@@ -9,19 +9,19 @@ const VImageGroup = React.createClass({
         return (
             <div>
                 <Divider>1张图</Divider>
-                <ImageGroup>
-                    <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                </ImageGroup>
+                <Gallery>
+                    <ImageItem />
+                </Gallery>
                 <Divider>4张图</Divider>
-                <ImageGroup>
+                <Gallery>
                     <ImageItem />
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
-                </ImageGroup>
+                </Gallery>
                 <Divider>多张图</Divider>
-                <ImageGroup>
+                <Gallery>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
@@ -32,7 +32,7 @@ const VImageGroup = React.createClass({
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
                     <ImageItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
 
-                </ImageGroup>
+                </Gallery>
         </div>
         )
     }
