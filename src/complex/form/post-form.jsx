@@ -16,6 +16,8 @@ import Gallery from '../../components/image/gallery.jsx'
 
 import AddressLabel from '../../components/label/address-label.jsx'
 
+import './post-form.less'
+
 const PostForm = React.createClass({
     changeSel2Photo(){
         this.setState({
@@ -51,28 +53,30 @@ const PostForm = React.createClass({
             <EmoticonsPicker />
         ): ''
         return (
-            <List style={{backgroundColor:'#e8e8e8'}}>
-                <XTextArea placeholder='说点什么吧' max={20}  height={120} >
-                    <AddressLabel />
-                </XTextArea>
-                <ToolBar style={{paddingLeft:'0px'}}>
-                    <BarToolsGroup>
-                        <BarTools>
-                            <IconButton onClick={ this.changeSel2Photo } color={_col_photo} icon='icon-photo' />
-                        </BarTools>
-                        <BarTools>
-                            <IconButton onClick={ this.changeSel2Face } color={_col_face} icon='icon-tag_faces' />
-                        </BarTools>
-                    </BarToolsGroup>
-                    <XButton mini type='primary'>发表</XButton>
-                </ToolBar>
-                <div style={_styleUpload}>
-                    <Gallery style={{minHeight:'100px'}}>
-                        <Uploader onSelectImg={this.onSelectImg}/>
-                    </Gallery>
-                </div>
-                { _emoticonsPicker }
-            </List>
+            <div className='cex-post-form'>
+                <List style={{backgroundColor:'#e8e8e8'}}>
+                    <XTextArea placeholder='说点什么吧' max={20}  height={120} >
+                        <AddressLabel />
+                    </XTextArea>
+                    <ToolBar style={{paddingLeft:'0px'}}>
+                        <BarToolsGroup>
+                            <BarTools>
+                                <IconButton onClick={ this.changeSel2Photo } color={_col_photo} icon='icon-photo' />
+                            </BarTools>
+                            <BarTools>
+                                <IconButton onClick={ this.changeSel2Face } color={_col_face} icon='icon-tag_faces' />
+                            </BarTools>
+                        </BarToolsGroup>
+                        <XButton mini type='primary'>发表</XButton>
+                    </ToolBar>
+                    <div style={_styleUpload}>
+                        <Gallery style={{minHeight:'100px'}}>
+                            <Uploader onSelectImg={this.onSelectImg}/>
+                        </Gallery>
+                    </div>
+                    { _emoticonsPicker }
+                </List>
+            </div>
         )
     }
 })
