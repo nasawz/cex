@@ -1,3 +1,6 @@
 dist
 example/style/sprites
+node_modules/
 src/components/icon/icomoon/fonts
+npm-debug.log.*
+
