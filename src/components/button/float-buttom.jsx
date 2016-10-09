@@ -19,14 +19,14 @@ const FloatButton = React.createClass({
         }
     },
     render () {
-        let {style,size,icon,color,fixed} = this.props
+        let {style,size,icon,color,fixed,onClick} = this.props
         let colorstr = 'cex-float-button-'+color
         let classes = {
             'cex-float-button' : true,
             'cex-float-button-fixed' : fixed,
         }
         return (
-            <a className={classNames(this.props.className,classes,colorstr)} style={style}>
+            <a onClick={onClick} className={classNames(this.props.className,classes,colorstr)} style={style}>
                 <Icon icon={icon} color='#FFF' size={size}></Icon>
             </a>
         )
