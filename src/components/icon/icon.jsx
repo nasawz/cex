@@ -11,8 +11,9 @@ import './icon.less'
 
 const Icon = React.createClass({
     clickHandle(e){
-        if (this.props.onClick) {
-            this.props.onClick(e)
+        let {onClick} = this.props
+        if (onClick) {
+            onClick(e)
         }
     },
     getDefaultProps: function() {

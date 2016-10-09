@@ -50,11 +50,12 @@ const EmoticonsPicker = React.createClass({
         )
     },
     render () {
+        let {style} = this.props
         let classes = {
             'cex-emoticons-picker' : true
         }
         return (
-            <div className={classNames(this.props.className,classes)} >
+            <div className={classNames(this.props.className,classes)} style={style}>
                 <Swiper>
                     {this.renderItems(0)}
                     {this.renderItems(17)}
