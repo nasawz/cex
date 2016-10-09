@@ -12,6 +12,7 @@ import ItemCell from 'cex/components/list/item-cell.jsx'
 // import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 // import Badge from 'cex/components/badge/badge.jsx'
 // import Icon from 'cex/components/icon/icon.jsx'
+import ItemDivider from 'cex/components/list/item-divider.jsx'
 import Flexbox from 'cex/components/flexbox/flexbox.jsx'
 
 import NavigateMixin from '../../common/navigate-mixin.js'
@@ -29,6 +30,13 @@ const Home = React.createClass({
                         <img src={require('../../../img/logo.png')} />
                     </div>
                 </Flexbox>
+                <ItemDivider>复合控件</ItemDivider>
+                <ItemCell link={{params:['example','postform']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        postform
+                    </ItemTitle>
+                </ItemCell>
+                <ItemDivider>基础控件</ItemDivider>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         bar

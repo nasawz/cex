@@ -21,6 +21,7 @@ import VBar from '../views/vbar.jsx'
 import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
+import VPostForm from '../views/vpostform.jsx'
 
 
 const Routes = React.createClass({
@@ -52,6 +53,7 @@ const Routes = React.createClass({
         '/uploader': 'uploader',
         '/picker': 'picker',
         '/avatar': 'avatar',
+        '/postform': 'postform',
     },
     render () {
         return (
@@ -113,6 +115,9 @@ const Routes = React.createClass({
     },
     avatar(params) {
         return <VAvatar params={params} />
+    },
+    postform(params) {
+        return <VPostForm params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
