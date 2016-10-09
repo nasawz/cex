@@ -12,6 +12,7 @@ import ItemCell from 'cex/components/list/item-cell.jsx'
 // import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 // import Badge from 'cex/components/badge/badge.jsx'
 // import Icon from 'cex/components/icon/icon.jsx'
+import ItemDivider from 'cex/components/list/item-divider.jsx'
 import Flexbox from 'cex/components/flexbox/flexbox.jsx'
 
 import NavigateMixin from '../../common/navigate-mixin.js'
@@ -29,9 +30,26 @@ const Home = React.createClass({
                         <img src={require('../../../img/logo.png')} />
                     </div>
                 </Flexbox>
+                <ItemDivider>复合控件</ItemDivider>
+                <ItemCell link={{params:['example','postform']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        postform
+                    </ItemTitle>
+                </ItemCell>
+                <ItemDivider>基础控件</ItemDivider>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         bar
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','avatar']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        avatar
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','uploader']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        uploader
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','scroll']}} onClickLink={this.onClickLink}>
@@ -84,9 +102,9 @@ const Home = React.createClass({
                         label
                     </ItemTitle>
                 </ItemCell>
-                <ItemCell link={{params:['example','imagegroup']}} onClickLink={this.onClickLink}>
+                <ItemCell link={{params:['example','gallery']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
-                        imagegroup
+                        gallery
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','emoticonspicker']}} onClickLink={this.onClickLink}>
@@ -102,6 +120,9 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','actionsheet']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         actionsheet
+                <ItemCell link={{params:['example','picker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        picker
                     </ItemTitle>
                 </ItemCell>
             </List>
