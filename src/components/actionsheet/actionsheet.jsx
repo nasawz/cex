@@ -1,12 +1,10 @@
 /**
- * create by nasa.wang
+ * create by manyu.wang
  */
 
 import React from 'react'
 import classNames from 'classnames'
-
 import forEach from "lodash/forEach"
-
 import './actionsheet.less'
 
 
@@ -25,7 +23,7 @@ const ActionSheet = React.createClass({
         let {menus} = this.props
 
         let cell=[]
-        forEach(this.props.menus,function(value,key){
+        forEach(menus,function(value,key){
             if(key.indexOf('menu')!=-1){
                 cell.push(<div key={key} className="cex-actionsheet-cell" onClick={self.clickComp}>{value}</div>)
             }
@@ -36,21 +34,26 @@ const ActionSheet = React.createClass({
                 cell.push(<div key={key} className="cex-actionsheet-cell" dangerouslySetInnerHTML={{__html:value}} onClick={self.clickComp}></div>)
             }
         })        
-        return(cell);
+        return(cell)
 
     },
     render () {
-        let {style,children} = this.props
-
-        let show=this.props.show;
-        let masktransition=show ? 'cex-mask-transition cex-fade-toggle' : 'cex-mask-transition'
-        let cexactionsheet=show ? 'cex-actionsheet cex-actionsheet-toggle': 'cex-actionsheet'
+        let {show} = this.props
+        let mashClass={
+            'cex-mask-transition':true,
+            'cex-fade-toggle':show,
+        }
+        let sheetClass={
+            'cex-actionsheet':true,
+            'cex-actionsheet-toggle':show,
+        }
+    
         return (
-            <div className="cex-actionsheet" style={style}>
-                <div className="cex-actionSPort" >
-                    <div className={masktransition}  style={{display: show ? 'block' : 'none'}} onClick={this.cancelComp}>
+            <div className="cex-actionsheet">
+                <div className="cex-actionSPort">
+                    <div className={classNames(this.props.className,mashClass)} style={{display: show ? 'block' : 'none'}} onClick={this.cancelComp}>
                     </div> 
-                    <div className={cexactionsheet}> 
+                    <div className={classNames(this.props.className,sheetClass)}> 
                         <div className="cex-actionsheet-menu"> 
                             { this.rendercell() }
                             <div className="cex-actionsheet-gap">

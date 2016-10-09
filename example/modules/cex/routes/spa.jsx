@@ -50,7 +50,7 @@ const Routes = React.createClass({
         '/textarea': 'textarea',
         '/lazyimage': 'lazyimage',
         '/bar': 'bar',
-        '/actionsheet':'actionsheet'
+        '/actionsheet':'actionsheet',
         '/uploader': 'uploader',
         '/picker': 'picker',
         '/avatar': 'avatar',
@@ -108,10 +108,9 @@ const Routes = React.createClass({
     bar(params) {
         return <VBar params={params} />
     },
-<<<<<<< HEAD
     actionsheet(params){
         return <VActionSheet params={params} />
-=======
+    },
     uploader(params) {
         return <VUploader params={params} />
     },
@@ -123,7 +122,6 @@ const Routes = React.createClass({
     },
     postform(params) {
         return <VPostForm params={params} />
->>>>>>> 39b9ddab29059cfed3e3e0aef50cbc02030bf4ee
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

@@ -120,12 +120,14 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','actionsheet']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         actionsheet
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','picker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         picker
                     </ItemTitle>
                 </ItemCell>
-            </List>
+            </List >
         )
     }
 })
