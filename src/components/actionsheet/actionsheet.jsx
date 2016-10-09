@@ -40,8 +40,12 @@ const ActionSheet = React.createClass({
     renderCancel(){
         if(this.props.showCancel){
             return (
-                <div className="cex-actionsheet-cell cex-actionsheet-cancel" onClick={this.cancelComp}>
-                    取消
+                <div>
+                    <div className="cex-actionsheet-gap">
+                    </div>
+                    <div className="cex-actionsheet-cell cex-actionsheet-cancel" onClick={this.cancelComp}>
+                        <div>取消</div>
+                    </div>
                 </div>
             )
         }
@@ -65,8 +69,6 @@ const ActionSheet = React.createClass({
                     <div className={classNames(this.props.className,sheetClass)}>
                         <div className="cex-actionsheet-menu">
                             { this.rendercell() }
-                            <div className="cex-actionsheet-gap">
-                            </div>
                             { this.renderCancel() }
                         </div>
                     </div>
