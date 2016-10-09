@@ -4,11 +4,17 @@
 
 import React from 'react'
 import classNames from 'classnames'
+import merge from 'lodash/merge'
 
 import './icon.less'
 
 
 const Icon = React.createClass({
+    clickHandle(e){
+        if (this.props.onClick) {
+            this.props.onClick(e)
+        }
+    },
     getDefaultProps: function() {
         return {
             size: 22,
@@ -16,9 +22,10 @@ const Icon = React.createClass({
         }
     },
     render () {
-        let {children,icon,size,color} = this.props
+        let {children,icon,size,color,style} = this.props
+        let _style = {'fontSize': size + 'px','color': color}
         return (
-            <i className={classNames(this.props.className,icon,'cex-icon')} style={{'fontSize': size + 'px','color': color}}>{children}</i>
+            <i onClick={ this.clickHandle } className={classNames(this.props.className,icon,'cex-icon')} style={merge({},_style,style)}>{children}</i>
         )
     }
 })
