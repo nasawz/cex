@@ -1,2 +1,5 @@
 dist
 example/style/sprites
+node_modules/
+npm-debug.log.*
+
