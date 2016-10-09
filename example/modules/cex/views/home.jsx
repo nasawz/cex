@@ -117,12 +117,17 @@ const Home = React.createClass({
                         textarea
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','actionsheet']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        actionsheet
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','picker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         picker
                     </ItemTitle>
                 </ItemCell>
-            </List>
+            </List >
         )
     }
 })
