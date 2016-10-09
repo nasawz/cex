@@ -34,8 +34,8 @@ const PostForm = React.createClass({
                     </BarToolsGroup>
                     <XButton mini type='primary'>发表</XButton>
                 </ToolBar>
-                <div style={{padding: '15px',backgroundColor:'#e8e8e8'}}>
-                    <Gallery>
+                <div style={{padding: '15px',backgroundColor:'#e8e8e8',minHeight:'200px'}}>
+                    <Gallery style={{minHeight:'100px'}}>
                         <Uploader onSelectImg={this.onSelectImg}/>
                     </Gallery>
                 </div>
