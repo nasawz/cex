@@ -99,6 +99,11 @@ const Home = React.createClass({
                         textarea
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','actionsheet']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        actionsheet
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
