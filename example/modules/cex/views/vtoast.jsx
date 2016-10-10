@@ -5,33 +5,31 @@ import ItemCell from 'cex/components/list/item-cell.jsx'
 import Toast from 'cex/components/toast/toast.jsx'
 
 const VToast = React.createClass({
-    runLoading1(){
-        this.setState({
-            show1: true,
-        })
+    runToast(show,close){
+        this.setState(show)
         clearTimeout(this.timeout)
         this.timeout = setTimeout(() => {
-            this.setState({
-                show1: false,
-            })
-        }, 1000)
+            this.setState(close)
+        }, 2000)
     },
-    runLoading2(){
-        this.setState({
-            show2: true,
-        })
-        clearTimeout(this.timeout)
-        this.timeout = setTimeout(() => {
-            this.setState({
-                show2: false,
-            })
-        }, 1000)
-    },
+
     getInitialState() {
         return {
             show1: false,
+            showToast1:{show1: true},
+            closeToast1:{show1: false},
             show2: false,
-            text2:'加载中...'
+            showToast2:{show2: true},
+            closeToast2:{show2: false},
+            show3: false,
+            showToast3:{show3: true},
+            closeToast3:{show3: false},
+            show4: false,
+            showToast4:{show4: true},
+            closeToast4:{show4: false},
+            show5: false,
+            showToast5:{show5: true},
+            closeToast5:{show5: false},
         }
     },
     componentWillUnmount() {
@@ -42,16 +40,30 @@ const VToast = React.createClass({
             <List>
                 <ItemCell>
                     <ItemTitle>
-                        <div onClick={this.runLoading1}>toast</div>
+                        <div onClick={this.runToast.bind(this,this.state.showToast1,this.state.closeToast1)}>默认</div>
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell>
                     <ItemTitle>
-                        <div onClick={this.runLoading2}>带text参数</div>
+                        <div onClick={this.runToast.bind(this,this.state.showToast2,this.state.closeToast2)}>文字 long</div>
                     </ItemTitle>
                 </ItemCell>
-                <toast show={this.state.show1} />
-
+                <ItemCell>
+                    <ItemTitle>
+                        <div onClick={this.runToast.bind(this,this.state.showToast3,this.state.closeToast3)}>警告</div>
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell>
+                    <ItemTitle>
+                        <div onClick={this.runToast.bind(this,this.state.showToast4,this.state.closeToast4)}>成功</div>
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell>
+                    <ItemTitle>
+                        <div onClick={this.runToast.bind(this,this.state.showToast5,this.state.closeToast5)}>失败</div>
+                    </ItemTitle>
+                </ItemCell>
+                <Toast show={this.state.show1} type='text'> Hello World</Toast>
             </List>
         )
     }
