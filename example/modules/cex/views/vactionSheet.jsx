@@ -1,4 +1,5 @@
 import React from 'react'
+import List from 'cex/components/list/list.jsx'
 import ItemTitle from 'cex/components/list/item-title.jsx'
 import ItemCell from 'cex/components/list/item-cell.jsx'
 import ActionSheet from 'cex/components/actionsheet/actionsheet.jsx'
@@ -10,7 +11,7 @@ const VActionSheet = React.createClass({
     clickSheet2(){
         console.log('222');
     },
-    controlSheet(json){ 
+    controlSheet(json){
         this.setState(json)
     },
     getInitialState() {
@@ -34,20 +35,20 @@ const VActionSheet = React.createClass({
     },
     render () {
         return (
-            <div>
+            <List>
                 <ItemCell>
                     <ItemTitle>
-                        <div onClick={this.controlSheet.bind(this,this.state.showSheet1)}>action1</div>
+                        <div onClick={this.controlSheet.bind(this,this.state.showSheet1)}>普通</div>
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell>
                     <ItemTitle>
-                        <div onClick={this.controlSheet.bind(this,this.state.showSheet2)}>action2</div>
+                        <div onClick={this.controlSheet.bind(this,this.state.showSheet2)}>无取消按钮</div>
                     </ItemTitle>
                 </ItemCell>
-                <ActionSheet closeSheet={this.state.closeSheet1} show={this.state.show1} menus={this.state.menus1} clickSheet={this.clickSheet1} controlSheet={this.controlSheet}/>
-                <ActionSheet closeSheet={this.state.closeSheet2} show={this.state.show2} menus={this.state.menus2} clickSheet={this.clickSheet2} controlSheet={this.controlSheet}/>
-            </div>
+                <ActionSheet closeSheet={this.state.closeSheet1} show={this.state.show1} menus={this.state.menus1} clickSheet={this.clickSheet1} controlSheet={this.controlSheet} showCancel />
+                <ActionSheet closeSheet={this.state.closeSheet2} show={this.state.show2} menus={this.state.menus2} clickSheet={this.clickSheet2} controlSheet={this.controlSheet} />
+            </List>
         )
     }
 })

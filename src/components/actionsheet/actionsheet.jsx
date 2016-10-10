@@ -4,7 +4,7 @@
 
 import React from 'react'
 import classNames from 'classnames'
-import forEach from "lodash/forEach"
+import forEach from 'lodash/forEach'
 import './actionsheet.less'
 
 
@@ -33,9 +33,22 @@ const ActionSheet = React.createClass({
             if(key.indexOf('delete')!=-1){
                 cell.push(<div key={key} className="cex-actionsheet-cell" dangerouslySetInnerHTML={{__html:value}} onClick={self.clickComp}></div>)
             }
-        })        
+        })
         return(cell)
 
+    },
+    renderCancel(){
+        if(this.props.showCancel){
+            return (
+                <div>
+                    <div className="cex-actionsheet-gap">
+                    </div>
+                    <div className="cex-actionsheet-cell cex-actionsheet-cancel" onClick={this.cancelComp}>
+                        <div>取消</div>
+                    </div>
+                </div>
+            )
+        }
     },
     render () {
         let {show} = this.props
@@ -47,21 +60,17 @@ const ActionSheet = React.createClass({
             'cex-actionsheet':true,
             'cex-actionsheet-toggle':show,
         }
-    
+
         return (
             <div className="cex-actionsheet">
                 <div className="cex-actionSPort">
                     <div className={classNames(this.props.className,mashClass)} style={{display: show ? 'block' : 'none'}} onClick={this.cancelComp}>
-                    </div> 
-                    <div className={classNames(this.props.className,sheetClass)}> 
-                        <div className="cex-actionsheet-menu"> 
+                    </div>
+                    <div className={classNames(this.props.className,sheetClass)}>
+                        <div className="cex-actionsheet-menu">
                             { this.rendercell() }
-                            <div className="cex-actionsheet-gap">
-                            </div> 
-                            <div className="cex-actionsheet-cell cex-actionsheet-cancel" onClick={this.cancelComp}>
-                                取消
-                            </div> 
-                        </div> 
+                            { this.renderCancel() }
+                        </div>
                     </div>
                 </div>
             </div>
