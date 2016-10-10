@@ -36,6 +36,11 @@ const Home = React.createClass({
                         postform
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','blogcard']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        blogcard
+                    </ItemTitle>
+                </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
