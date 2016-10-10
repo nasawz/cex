@@ -2,9 +2,9 @@ import React from 'react'
 import List from 'cex/components/list/list.jsx'
 import ItemTitle from 'cex/components/list/item-title.jsx'
 import ItemCell from 'cex/components/list/item-cell.jsx'
-import Loading from 'cex/components/loading/loading.jsx'
+import Toast from 'cex/components/toast/toast.jsx'
 
-const VLoading = React.createClass({
+const VToast = React.createClass({
     runLoading1(){
         this.setState({
             show1: true,
@@ -42,7 +42,7 @@ const VLoading = React.createClass({
             <List>
                 <ItemCell>
                     <ItemTitle>
-                        <div onClick={this.runLoading1}>默认</div>
+                        <div onClick={this.runLoading1}>toast</div>
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell>
@@ -50,11 +50,11 @@ const VLoading = React.createClass({
                         <div onClick={this.runLoading2}>带text参数</div>
                     </ItemTitle>
                 </ItemCell>
-                <Loading show={this.state.show1} />
-                <Loading show={this.state.show2} text={this.state.text2} />
+                <toast show={this.state.show1} />
+
             </List>
         )
     }
 })
 
-export default VLoading
+export default VToast

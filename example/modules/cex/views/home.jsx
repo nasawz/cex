@@ -132,6 +132,11 @@ const Home = React.createClass({
                         loading
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','toast']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        toast
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
