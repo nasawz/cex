@@ -23,6 +23,7 @@ import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
+import VLoading from '../views/vloading.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -55,6 +56,8 @@ const Routes = React.createClass({
         '/picker': 'picker',
         '/avatar': 'avatar',
         '/postform': 'postform',
+        '/loading':'loading'
+
     },
     render () {
         return (
@@ -122,6 +125,9 @@ const Routes = React.createClass({
     },
     postform(params) {
         return <VPostForm params={params} />
+    },
+    loading(params){
+        return <VLoading params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
