@@ -74,7 +74,8 @@ const XTextArea = React.createClass({
             'cex-x-textarea' : true
         }
         let _style = {
-            flexDirection: 'column'
+            flexDirection: 'column',
+            backgroundColor: '#fff'
         }
         let _taStyle = {}
         if (this.props.height) {
