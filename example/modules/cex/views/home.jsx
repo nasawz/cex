@@ -27,7 +27,7 @@ const Home = React.createClass({
             <List>
                 <Flexbox className='flex-center'>
                     <div  style={{width:'220px',padding:'20px'}}>
-                        <img src={require('../../../img/logo.png')} />
+                        <img src={require('../../../img/logo.png')} style={{width:'100%'}} />
                     </div>
                 </Flexbox>
                 <ItemDivider>复合控件</ItemDivider>
