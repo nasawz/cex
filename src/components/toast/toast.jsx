@@ -5,20 +5,60 @@ import React from 'react'
 import classNames from 'classnames'
 import merge from 'lodash/merge'
 
+import Icon from '../icon/icon.jsx'
+
 import './toast.less'
 
 const Toast = React.createClass({
+    runToast(){
+        clearTimeout(this.timeout)
+        this.timeout = setTimeout(() => {
+            this.props.closeToast()
+        }, 2000)
+    },
+    componentWillUnmount() {
+        clearInterval(this.timeout)
+    },
+    renderIcon(){
+        let toastType=this.props.type
+        if(toastType.indexOf('text')==-1){
+            let iconClass={
+                'icon-warning':toastType.indexOf('warn')!=-1,
+                'icon-done':toastType.indexOf('success')!=-1,
+                'icon-cancel':toastType.indexOf('fail')!=-1,
+            }
+            let iconColor=toastType.indexOf('success')!=-1?'#fff':'#F76260'
+            return <Icon icon={classNames(this.props.className,iconClass)} size={60} color={iconColor} />
+        }
+
+    },
     render () {
-        let {style,children} = this.props
+        let {show,style,children} = this.props
+        if(show){
+            this.runToast()
+        }
         let classes = {
             'cex-toast' : true
         }
-        let _style = {
-
+        let toastStyle = {
+            display:show?'':'none',
+        }
+        let fadeClass={
+            'cex-toast':true,
+            'cex-fade-transition':true,
+            'flex-middle':true,
+            'flex-center':true,
+            'cex-toast-toggle':true
         }
         return (
-            <div className={classNames(this.props.className,classes)}  style={merge({},_style,style)}>
-                {children}
+            <div className={classNames(this.props.className,classes)}>
+                <div className="cex-mask-transparent" style={merge({},toastStyle)}></div>
+                <div className={classNames(this.props.className,fadeClass)} style={merge({},toastStyle,style)}>
+                    <div>
+                        { this.renderIcon() }
+                        <p className="cex-toast-content">{children}</p>
+                    </div>
+                </div>
             </div>
         )
     }

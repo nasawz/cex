@@ -7,6 +7,7 @@
     "start": "npm run dev",
     "dev": "node ./tools/gulpfile.js && node ./tools/webpack.config.js",
     "pub": "node ./tools/gulpfile.js && export NODE_ENV=__PROD__ && node ./tools/webpack.config.js",
+    "deploy": "npm run pub && node ./tools/deploy.js",
     "lint": "eslint 'src/**/*.@(js|jsx)'",
     "pretest": "npm run lint",
     "test": "mocha --compilers js:babel-core/register --recursive",

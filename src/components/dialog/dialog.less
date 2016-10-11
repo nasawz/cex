@@ -1,3 +1,62 @@
 .cex-dialog {
-
+    .cex-mask-transition{
+		//display:none;
+		position:fixed;
+		z-index:1000;
+		width:100%;
+		height:100%;
+		top:0;
+		left:0;
+		background:transparent;
+		-webkit-transition:background .6s;
+		transition:background .6s;
+	}
+	.cex-fade-toggle{
+        background:rgba(0,0,0,.6);
+    }
+    .cex-dialog-alert {
+        position: fixed;
+        z-index: 5000;
+        width: 85%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fafafc;
+        text-align: center;
+        border-radius: 3px;
+        overflow: hidden;
+        opacity: 0;
+        .cex-dialog-title {
+            margin: 0;
+            padding: 0 20px;
+            font-size: 15px;
+            color: #666;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+        .cex-dialog-img {
+            height: 350px;
+            overflow: hidden;
+            img {
+                max-width: 100%;
+            }
+        }
+        .cex-dialog-close {
+            padding: 4px 0;
+        }
+    }
+    .cex-dialog-scalein {
+        animation: scaleIn .3s linear;
+        animation-fill-mode: forwards;
+    }
+    @keyframes scaleIn {
+        0% {
+            transform: translate(-50%, -50%) scale(1.185);
+            opacity: 0;
+        }
+        100% {
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+    }
 }

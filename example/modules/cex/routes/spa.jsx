@@ -23,6 +23,9 @@ import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
+import VLoading from '../views/vloading.jsx'
+import VToast from '../views/vtoast.jsx'
+import VDialog from '../views/vdialog.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 
 const Routes = React.createClass({
@@ -56,6 +59,9 @@ const Routes = React.createClass({
         '/picker': 'picker',
         '/avatar': 'avatar',
         '/postform': 'postform',
+        '/loading':'loading',
+        '/toast':'toast',
+        '/dialog': 'dialog',
         '/blogcard': 'blogcard',
     },
     render () {
@@ -124,6 +130,15 @@ const Routes = React.createClass({
     },
     postform(params) {
         return <VPostForm params={params} />
+    },
+    loading(params){
+        return <VLoading params={params} />
+    },
+    toast(params){
+        return <VToast params={params} />
+    },
+    dialog(params) {
+        return <VDialog params={params} />
     },
     blogcard(params) {
         return <VBlogCard params={params} />
