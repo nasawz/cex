@@ -131,19 +131,17 @@ const Routes = React.createClass({
     postform(params) {
         return <VPostForm params={params} />
     },
-<<<<<<< HEAD
     loading(params){
         return <VLoading params={params} />
     },
     toast(params){
         return <VToast params={params} />
-=======
+    },
     dialog(params) {
         return <VDialog params={params} />
     },
     blogcard(params) {
         return <VBlogCard params={params} />
->>>>>>> 8c8fa10b7bd5ad145fa2228a93cc3155a4e145b2
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
