@@ -19,7 +19,7 @@ const Gallery = React.createClass({
             'cex-gallery' : true,
         }
         let classes_item = {
-            'cex-gallery-one' : arr.length == 1 ? true : false ,
+            'cex-gallery-one' : children.length == 1 ? true : false ,
             'cex-gallery-four' : children.length == 4 ? true : false ,
         }
         return (

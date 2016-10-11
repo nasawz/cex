@@ -5,6 +5,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import LazyImage from './lazy-image'
+import merge from 'lodash/merge'
 
 import './avatar.less'
 
@@ -30,20 +31,20 @@ const Avatar = React.createClass({
         }
     },
     render () {
-        let {src} = this.props
+        let {src,style} = this.props
         let classes = {
             'cex-avatar' : true,
             'flex-center': true,
             'flex-middle': true
         }
-        let style = {
+        let _style = {
             height: this.props.size+'px',
             width: this.props.size+'px',
             fontSize: this.props.size+'px',
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={style}>
-                <LazyImage width={this.props.size} height={this.props.size} className='cex-avatar-img' style={style} src={src} />
+            <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
+                <LazyImage width={this.props.size} height={this.props.size} className='cex-avatar-img' style={_style} src={src} />
                 { this.renderPlus() }
                 { this.renderIcon() }
             </div>

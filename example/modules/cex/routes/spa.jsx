@@ -23,8 +23,7 @@ import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
-import VLoading from '../views/vloading.jsx'
-import VToast from '../views/vtoast.jsx'
+import VBlogCard from '../views/vblogcard.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -57,8 +56,7 @@ const Routes = React.createClass({
         '/picker': 'picker',
         '/avatar': 'avatar',
         '/postform': 'postform',
-        '/loading':'loading',
-        '/toast':'toast',
+        '/blogcard': 'blogcard',
     },
     render () {
         return (
@@ -127,11 +125,8 @@ const Routes = React.createClass({
     postform(params) {
         return <VPostForm params={params} />
     },
-    loading(params){
-        return <VLoading params={params} />
-    },
-    toast(params){
-        return <VToast params={params} />
+    blogcard(params) {
+        return <VBlogCard params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
