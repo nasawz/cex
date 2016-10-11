@@ -6,6 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
+import Divider from '../divider/divider.jsx'
+
 import './scroll.less'
 
 const Scroll = React.createClass({
@@ -119,7 +121,7 @@ const Scroll = React.createClass({
         }
     },
     renderRefreshLayer(){
-        if (!this.props.onRefresh && !this.state.hasMore) return
+        if (!this.props.onRefresh) return
         return (
             <div className='pull-to-refresh-layer'>
                 <div className='preloader'></div>
@@ -132,12 +134,20 @@ const Scroll = React.createClass({
     },
     renderInfiniteLayer(){
         if (!this.props.onInfinite) return
-        return (
-            <div className="infinite-layer">
-                <div className="infinite-preloader"></div>
-                <div>加载中...</div>
-            </div>
-        )
+        if (this.state.hasMore) {
+            return (
+                <div className="infinite-layer">
+                    <div className="infinite-preloader"></div>
+                    <div>加载中...</div>
+                </div>
+            )
+        }else{
+            return (
+                <div className="infinite-layer">
+                    <Divider>没有了</Divider>
+                </div>
+            )
+        }
     },
     render () {
         let {style,children,onInfinite,onRefresh} = this.props
