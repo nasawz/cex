@@ -37,7 +37,7 @@ const Loading = React.createClass({
         return (
             <div className={classNames(this.props.className,classes)}  style={merge({},_style,style)}>
                 <div className="cex-mask-transparent"></div>
-                <div className="cex-toast">
+                <div className="cex-loadPanel">
                   { this.renderLoading() }
                   <p className="cex-toast-content">{loadingText}</p>
                 </div>
