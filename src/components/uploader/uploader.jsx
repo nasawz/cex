@@ -35,7 +35,7 @@ const Uploader = React.createClass({
     render() {
         let {style} = this.props
         let classes = {
-            'cex_uploader_input_wrp': true
+            'cex-uploader-input-wrp': true
         }
         let _style = {
             height: this.state.height
@@ -43,10 +43,10 @@ const Uploader = React.createClass({
         return (
 
             <div className={classNames(this.props.className, classes) } style={merge({}, _style, style) }>
-                <input className="cex_uploader_input"  type="file" name="file" accept="image/jpeg"  onChange={ this.handelSelectFile } />
+                <input className="cex-uploader-input"  type="file" name="file" accept="image/jpeg"  onChange={ this.handelSelectFile } />
             </div>
 
-         
+
         )
     }
 })
