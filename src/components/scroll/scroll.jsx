@@ -72,14 +72,17 @@ const Scroll = React.createClass({
         })
     },
     infinite(){
-        this.setState({
-            infiniteLoading: true
-        })
-        this.props.onInfinite(this.infiniteDone)
+        if (this.state.hasMore) {
+            this.setState({
+                infiniteLoading: true
+            })
+            this.props.onInfinite(this.infiniteDone)
+        }
     },
-    infiniteDone(){
+    infiniteDone(hasMore){
         this.setState({
-            infiniteLoading: false
+            infiniteLoading: false,
+            hasMore:hasMore
         })
     },
     onScroll(){
@@ -111,11 +114,12 @@ const Scroll = React.createClass({
             top: 0,
             state: 0, // 0:down, 1: up, 2: refreshing
             touching: false,
-            infiniteLoading: false
+            infiniteLoading: false,
+            hasMore: true
         }
     },
     renderRefreshLayer(){
-        if (!this.props.onRefresh) return
+        if (!this.props.onRefresh && !this.state.hasMore) return
         return (
             <div className='pull-to-refresh-layer'>
                 <div className='preloader'></div>
