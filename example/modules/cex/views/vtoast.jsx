@@ -64,7 +64,7 @@ const VToast = React.createClass({
                     </ItemTitle>
                 </ItemCell>
                 <Toast show={showT1} type='text' closeToast={this.closeToast}> Hello World</Toast>
-                <Toast show={showT2} type='text' closeToast={this.closeToast} style={{width:'20em',marginLeft:'-10rem'}}> Hello World，Hello World，Hello World</Toast>
+                <Toast show={showT2} type='text' closeToast={this.closeToast} style={{width:'20em'}}> Hello World，Hello World，Hello World</Toast>
                 <Toast show={showT3} type='warn' closeToast={this.closeToast}>警告</Toast>
                 <Toast show={showT4} type='success' closeToast={this.closeToast}>成功</Toast>
                 <Toast show={showT5} type='fail' closeToast={this.closeToast}>失败</Toast>
