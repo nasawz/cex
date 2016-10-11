@@ -27,6 +27,7 @@ import VDialog from '../views/vdialog.jsx'
 import VAlert from '../views/valert.jsx'
 import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
+import VCommentCard from '../views/vcommentcard.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -63,6 +64,7 @@ const Routes = React.createClass({
         '/alert': 'alert',
         '/confirm': 'confirm',
         '/blogcard': 'blogcard',
+        '/commentcard': 'commentcard',
     },
     render () {
         return (
@@ -142,6 +144,9 @@ const Routes = React.createClass({
     },
     blogcard(params) {
         return <VBlogCard params={params} />
+    },
+    commentcard(params) {
+        return <VCommentCard params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

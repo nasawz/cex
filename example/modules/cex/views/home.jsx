@@ -41,6 +41,11 @@ const Home = React.createClass({
                         blogcard
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','commentcard']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        commentcard
+                    </ItemTitle>
+                </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
                 <ItemCell link={{params:['example','dialog']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
@@ -145,6 +150,16 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','picker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         picker
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','loading']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        loading
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','toast']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        toast
                     </ItemTitle>
                 </ItemCell>
             </List >
