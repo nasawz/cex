@@ -102,7 +102,7 @@ const BlogCard = React.createClass({
     },
     renderAddress(){
         let {address} = this.props
-        if (address) {
+        if (address && address!='') {
             return (
                 <div>
                     <AddressLabel mode='view' txt={address} />
@@ -111,7 +111,7 @@ const BlogCard = React.createClass({
         }
     },
     render () {
-        let {txt,user} = this.props
+        let {txt,user,time} = this.props
         let txtObj = contentParse(txt)
         let contHTML=txtObj.txt
         let txtHTML = {
@@ -137,7 +137,7 @@ const BlogCard = React.createClass({
                                     </ItemTitleAfter>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time='2016-010-10T11:58:15.524502Z' />
+                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
                                 </ItemSubtitle>
                                 <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
                                 { this.renderMoreBtn(txtObj.hasMore) }
