@@ -41,6 +41,11 @@ const Home = React.createClass({
                         blogcard
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','commentcard']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        commentcard
+                    </ItemTitle>
+                </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>

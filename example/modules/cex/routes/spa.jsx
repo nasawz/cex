@@ -24,6 +24,7 @@ import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
+import VCommentCard from '../views/vcommentcard.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -57,6 +58,7 @@ const Routes = React.createClass({
         '/avatar': 'avatar',
         '/postform': 'postform',
         '/blogcard': 'blogcard',
+        '/commentcard': 'commentcard',
     },
     render () {
         return (
@@ -127,6 +129,9 @@ const Routes = React.createClass({
     },
     blogcard(params) {
         return <VBlogCard params={params} />
+    },
+    commentcard(params) {
+        return <VCommentCard params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
