@@ -10,6 +10,16 @@ import Icon from '../icon/icon.jsx'
 import './toast.less'
 
 const Toast = React.createClass({
+    runToast(show,close){
+        this.setState(show)
+        clearTimeout(this.timeout)
+        this.timeout = setTimeout(() => {
+            this.setState(close)
+        }, 2000)
+    },
+    componentWillUnmount() {
+        clearInterval(this.timeout)
+    },
     renderIcon(){
         let toastType=this.props.type
         if(toastType.indexOf('text')==-1){
@@ -29,14 +39,14 @@ const Toast = React.createClass({
             'cex-toast' : true
         }
         let toastStyle = {
-            display:this.props.show?'block':'none',
+            display:this.props.show?'':'none',
         }
         let fadeClass={
             'cex-toast':true,
             'cex-fade-transition':true,
             'flex-middle':true,
             'flex-center':true,
-            'cex-toast-toggle':this.props.show
+            'cex-toast-toggle':true
         }
         return (
             <div className={classNames(this.props.className,classes)}>

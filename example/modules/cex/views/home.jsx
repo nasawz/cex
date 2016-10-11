@@ -27,7 +27,7 @@ const Home = React.createClass({
             <List>
                 <Flexbox className='flex-center'>
                     <div  style={{width:'220px',padding:'20px'}}>
-                        <img src={require('../../../img/logo.png')} />
+                        <img src={require('../../../img/logo.png')} style={{width:'100%'}} />
                     </div>
                 </Flexbox>
                 <ItemDivider>复合控件</ItemDivider>
@@ -36,7 +36,17 @@ const Home = React.createClass({
                         postform
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','blogcard']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        blogcard
+                    </ItemTitle>
+                </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
+                <ItemCell link={{params:['example','dialog']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        dialog
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         bar

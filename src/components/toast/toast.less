@@ -20,13 +20,26 @@
         text-align: center;
         border-radius: 5px;
         color: #FFFFFF;
-
-        opacity: 0;
-        -webkit-transition: opacity 5s;
-        transition: opacity 5s;
+        -webkit-transition: opacity .5s 1s;
+        transition: opacity .5s 1s;
     }
     .cex-toast-toggle {
-        opacity: 1;
+        animation: scaleIn 2s linear;
+        animation-fill-mode: forwards;
+    }
+    @keyframes scaleIn {
+        0% {
+            opacity: 0;
+        }
+        10% {
+            opacity: 1;
+        }
+        90% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
     }
     .cex-toast-content {
         margin: 0 0 12px;

@@ -64,6 +64,10 @@ const VToast = React.createClass({
                     </ItemTitle>
                 </ItemCell>
                 <Toast show={this.state.show1} type='text'> Hello World</Toast>
+                <Toast show={this.state.show2} type='text' style={{width:'20em',marginLeft:'-10rem'}}> Hello World，Hello World，Hello World</Toast>
+                <Toast show={this.state.show3} type='warn'>警告</Toast>
+                <Toast show={this.state.show4} type='success'>成功</Toast>
+                <Toast show={this.state.show5} type='fail'>失败</Toast>
             </List>
         )
     }

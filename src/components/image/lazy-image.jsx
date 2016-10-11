@@ -16,20 +16,23 @@ const LazyImage = React.createClass({
         }
     },
     render () {
-        let {style} = this.props
+        let {style,_style} = this.props
         let classes = {
             'cex-lazy-image' : true
         }
         return (
-            <LazyLoad
-                offsetVertical={this.props.offsetVertical}
-                height={this.props.height}
-                >
-                <img
-                    className={classNames(this.props.className,classes)}
-                    style={style}
-                    src={this.props.src} />
-            </LazyLoad>
+            <div className={classNames(classes)} style={_style}>
+                <LazyLoad
+                    offsetVertical={this.props.offsetVertical}
+                    height={this.props.height}
+                    style={_style}
+                    >
+                    <img
+                        className={classNames(this.props.className)}
+                        style={style}
+                        src={this.props.src} />
+                </LazyLoad>
+            </div>
         )
     }
 })

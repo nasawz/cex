@@ -25,6 +25,8 @@ import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
 import VLoading from '../views/vloading.jsx'
 import VToast from '../views/vtoast.jsx'
+import VDialog from '../views/vdialog.jsx'
+import VBlogCard from '../views/vblogcard.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -59,6 +61,8 @@ const Routes = React.createClass({
         '/postform': 'postform',
         '/loading':'loading',
         '/toast':'toast',
+        '/dialog': 'dialog',
+        '/blogcard': 'blogcard',
     },
     render () {
         return (
@@ -127,11 +131,19 @@ const Routes = React.createClass({
     postform(params) {
         return <VPostForm params={params} />
     },
+<<<<<<< HEAD
     loading(params){
         return <VLoading params={params} />
     },
     toast(params){
         return <VToast params={params} />
+=======
+    dialog(params) {
+        return <VDialog params={params} />
+    },
+    blogcard(params) {
+        return <VBlogCard params={params} />
+>>>>>>> 8c8fa10b7bd5ad145fa2228a93cc3155a4e145b2
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
