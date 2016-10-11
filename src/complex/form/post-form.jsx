@@ -12,7 +12,7 @@ import EmoticonsPicker from '../../components/picker/emoticons-picker.jsx'
 
 import Uploader from '../../components/uploader/uploader.jsx'
 import Gallery from '../../components/image/gallery.jsx'
-// import GalleryItem from '../../components/image/gallery-item.jsx'
+import GalleryItem from '../../components/image/gallery-item.jsx'
 
 import AddressLabel from '../../components/label/address-label.jsx'
 
@@ -47,6 +47,14 @@ const PostForm = React.createClass({
         data.txt_content = this.refs.txt_content.value().trim()
         this.props.onSubmit(data)
     },
+    rendImageFiles() {
+        return this.props.ImageFiles.map((item, i) => {
+            return (
+                <GalleryItem  key={i} src={item+'!small'}/>
+            )
+        })
+
+    },
     render() {
         let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
         let _col_face = this.state.sel == 'face' ? this.props.color : '#777'
@@ -78,6 +86,7 @@ const PostForm = React.createClass({
                     </ToolBar>
                     <div style={_styleUpload}>
                         <Gallery style={{ minHeight: '100px' }}>
+                            {this.rendImageFiles()}
                             <Uploader onSelectImg={this.props.onSelectImage}/>
                         </Gallery>
                     </div>
