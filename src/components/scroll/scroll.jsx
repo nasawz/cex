@@ -67,10 +67,11 @@ const Scroll = React.createClass({
         })
         this.props.onRefresh(this.refreshDone)
     },
-    refreshDone(){
+    refreshDone(hasMore){
         this.setState({
             state: 0,
-            top: 0
+            top: 0,
+            hasMore:hasMore
         })
     },
     infinite(){
