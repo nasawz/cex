@@ -60,6 +60,11 @@ const Scroll = React.createClass({
             })
         }
     },
+    reset(){
+        this.setState({
+            hasMore:true
+        })
+    },
     refresh(){
         this.setState({
             state: 2,
