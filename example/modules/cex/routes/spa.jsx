@@ -23,6 +23,7 @@ import VUploader from '../views/vuploader.jsx'
 import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
+import VDialog from '../views/vdialog.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -55,6 +56,7 @@ const Routes = React.createClass({
         '/picker': 'picker',
         '/avatar': 'avatar',
         '/postform': 'postform',
+        '/dialog': 'dialog',
     },
     render () {
         return (
@@ -122,6 +124,9 @@ const Routes = React.createClass({
     },
     postform(params) {
         return <VPostForm params={params} />
+    },
+    dialog(params) {
+        return <VDialog params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
