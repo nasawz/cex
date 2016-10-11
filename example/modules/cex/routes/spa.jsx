@@ -24,6 +24,8 @@ import VPicker from '../views/vpicker.jsx'
 import VAvatar from '../views/vavatar.jsx'
 import VPostForm from '../views/vpostform.jsx'
 import VDialog from '../views/vdialog.jsx'
+import VAlert from '../views/valert.jsx'
+import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 
 const Routes = React.createClass({
@@ -58,6 +60,8 @@ const Routes = React.createClass({
         '/avatar': 'avatar',
         '/postform': 'postform',
         '/dialog': 'dialog',
+        '/alert': 'alert',
+        '/confirm': 'confirm',
         '/blogcard': 'blogcard',
     },
     render () {
@@ -129,6 +133,12 @@ const Routes = React.createClass({
     },
     dialog(params) {
         return <VDialog params={params} />
+    },
+    alert(params) {
+        return <VAlert params={params} />
+    },
+    confirm(params) {
+        return <VConfirm params={params} />
     },
     blogcard(params) {
         return <VBlogCard params={params} />

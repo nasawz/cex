@@ -47,6 +47,16 @@ const Home = React.createClass({
                         dialog
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','alert']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        alert
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','confirm']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        confirm
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','bar']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         bar
