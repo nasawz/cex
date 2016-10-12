@@ -16,7 +16,7 @@ const XButton = React.createClass({
         }
     },
     render () {
-        let {style,children} = this.props
+        let {style,children,onClick} = this.props
         let classes = {
             'cex-button' : true,
             'cex-button-disabled': this.props.disabled,
@@ -28,7 +28,7 @@ const XButton = React.createClass({
             'cex-button-plain-primary': (this.props.type=='primary' && this.props.plain)
         }
         return (
-            <button className={classNames(this.props.className,classes)} style={style}>
+            <button onClick={onClick} className={classNames(this.props.className,classes)} style={style}>
                 { children }
             </button>
         )

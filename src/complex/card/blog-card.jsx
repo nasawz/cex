@@ -32,11 +32,15 @@ const BlogCard = React.createClass({
     },
     getDefaultProps() {
         return {
-            avatar: {
-                img:'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
-                icon:null,
-                plus:null
+            user: {
+                name:'朱朱',
+                avatar: {
+                    img:'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
+                    icon:null,
+                    plus:null
+                },
             },
+            address:'北京，朝阳区，远洋国际中心',
             txt:'女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
             showAllTxt: false,
             isFavorite: true,
@@ -55,7 +59,7 @@ const BlogCard = React.createClass({
         }
     },
     renderAvatar(){
-        let {avatar} = this.props
+        let {avatar} = this.props.user
         return (
             <Avatar src={avatar.img}
             plus={avatar.plus}
@@ -96,10 +100,19 @@ const BlogCard = React.createClass({
             </Gallery>
         )
     },
+    renderAddress(){
+        let {address} = this.props
+        if (address && address!='') {
+            return (
+                <div>
+                    <AddressLabel mode='view' txt={address} />
+                </div>
+            )
+        }
+    },
     render () {
-        let {txt} = this.props
+        let {txt,user,time} = this.props
         let txtObj = contentParse(txt)
-        // let contHTML=txtObj.hasMore?(this.state.showAllTxt?txt:txtObj.cate_txt):txtObj.txt
         let contHTML=txtObj.txt
         let txtHTML = {
             __html:contHTML
@@ -118,20 +131,18 @@ const BlogCard = React.createClass({
                             </ItemMedia>
                             <ItemContent>
                                 <ItemTitleRow>
-                                    <ItemTitle>朱文英</ItemTitle>
+                                    <ItemTitle>{user.name}</ItemTitle>
                                     <ItemTitleAfter>
                                         <IconButton icon='icon-keyboard_arrow_down'></IconButton>
                                     </ItemTitleAfter>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time='2016-010-10T11:58:15.524502Z' />
+                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
                                 </ItemSubtitle>
                                 <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
                                 { this.renderMoreBtn(txtObj.hasMore) }
                                 { this.renderGallery() }
-                                <div>
-                                    <AddressLabel mode='view' txt='北京，朝阳区，远洋国际中心' />
-                                </div>
+                                { this.renderAddress() }
                             </ItemContent>
                         </Item>
                     </List>

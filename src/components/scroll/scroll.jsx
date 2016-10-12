@@ -6,6 +6,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
+import Divider from '../divider/divider.jsx'
+
 import './scroll.less'
 
 const Scroll = React.createClass({
@@ -58,6 +60,11 @@ const Scroll = React.createClass({
             })
         }
     },
+    reset(){
+        this.setState({
+            hasMore:true
+        })
+    },
     refresh(){
         this.setState({
             state: 2,
@@ -65,21 +72,25 @@ const Scroll = React.createClass({
         })
         this.props.onRefresh(this.refreshDone)
     },
-    refreshDone(){
+    refreshDone(hasMore){
         this.setState({
             state: 0,
-            top: 0
+            top: 0,
+            hasMore:hasMore
         })
     },
     infinite(){
-        this.setState({
-            infiniteLoading: true
-        })
-        this.props.onInfinite(this.infiniteDone)
+        if (this.state.hasMore) {
+            this.setState({
+                infiniteLoading: true
+            })
+            this.props.onInfinite(this.infiniteDone)
+        }
     },
-    infiniteDone(){
+    infiniteDone(hasMore){
         this.setState({
-            infiniteLoading: false
+            infiniteLoading: false,
+            hasMore:hasMore
         })
     },
     onScroll(){
@@ -111,7 +122,8 @@ const Scroll = React.createClass({
             top: 0,
             state: 0, // 0:down, 1: up, 2: refreshing
             touching: false,
-            infiniteLoading: false
+            infiniteLoading: false,
+            hasMore: true
         }
     },
     renderRefreshLayer(){
@@ -128,12 +140,20 @@ const Scroll = React.createClass({
     },
     renderInfiniteLayer(){
         if (!this.props.onInfinite) return
-        return (
-            <div className="infinite-layer">
-                <div className="infinite-preloader"></div>
-                <div>加载中...</div>
-            </div>
-        )
+        if (this.state.hasMore) {
+            return (
+                <div className="infinite-layer">
+                    <div className="infinite-preloader"></div>
+                    <div>加载中...</div>
+                </div>
+            )
+        }else{
+            return (
+                <div className="infinite-layer">
+                    <Divider>没有了</Divider>
+                </div>
+            )
+        }
     },
     render () {
         let {style,children,onInfinite,onRefresh} = this.props
