@@ -48,6 +48,15 @@ const PostForm = React.createClass({
         data.txt_content = this.refs.txt_content.value().trim()
         this.props.onSubmit(data)
     },
+    onDeliverEmotionName(name) {
+        let val = this.refs.txt_content.value()
+        this.refs.txt_content.setValue(val + '[' + name + ']')
+    },
+    onDeleEmotion() {
+        let val = this.refs.txt_content.value()
+        val = val.replace(/(\[.{1,3}\])$|(.{1})$/, '')
+        this.refs.txt_content.setValue(val)
+    },
     rendImageFiles() {
         return this.props.ImageFiles.map((item, i) => {
             return (
@@ -55,10 +64,6 @@ const PostForm = React.createClass({
             )
         })
 
-    },
-    onDeliverEmotionName(name) {
-        let val = this.refs.txt_content.value()
-        this.refs.txt_content.setValue(val + '[' + name + ']')
     },
     render() {
         let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
@@ -70,7 +75,7 @@ const PostForm = React.createClass({
             display: this.state.sel == 'photo' ? 'block' : 'none'
         }
         let _emoticonsPicker = this.state.sel == 'face' ? (
-            <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName}/>
+            <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName} deleEmotion={this.onDeleEmotion}/>
         ) : ''
         return (
             <div className='cex-post-form'>
