@@ -30,6 +30,8 @@ import VAlert from '../views/valert.jsx'
 import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 import VCommentCard from '../views/vcommentcard.jsx'
+import VBlur from '../views/vblur.jsx'
+import VSwitch from '../views/vswitch.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -69,6 +71,8 @@ const Routes = React.createClass({
         '/confirm': 'confirm',
         '/blogcard': 'blogcard',
         '/commentcard': 'commentcard',
+        '/blur': 'blur',
+        '/switch': 'switch',
     },
     render () {
         return (
@@ -157,6 +161,12 @@ const Routes = React.createClass({
     },
     commentcard(params) {
         return <VCommentCard params={params} />
+    },
+    blur(params) {
+        return <VBlur params={params} />
+    },
+    switch(params) {
+        return <VSwitch params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
