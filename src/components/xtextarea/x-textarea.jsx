@@ -25,6 +25,10 @@ const XTextArea = React.createClass({
         let el = ReactDOM.findDOMNode(this.refs['textarea'])
         return el.value
     },
+    setValue(value) { 
+        ReactDOM.findDOMNode(this.refs['textarea']).value=value
+    },
+
     getDefaultProps() {
         return {
             placeholder:'',
