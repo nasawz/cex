@@ -16,7 +16,7 @@ const ActionSheet = React.createClass({
         this.cancelComp()
     },
     cancelComp(){
-        this.props.controlSheet(this.props.closeSheet)
+        this.props.closeSheet()
     },
     rendercell(){
         let self=this
