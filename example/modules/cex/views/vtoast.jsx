@@ -5,13 +5,7 @@ import ItemCell from 'cex/components/list/item-cell.jsx'
 import Toast from 'cex/components/toast/toast.jsx'
 
 const VToast = React.createClass({
-    runToast(show,close){
-        this.setState(show)
-        clearTimeout(this.timeout)
-        this.timeout = setTimeout(() => {
-            this.setState(close)
-        }, 2000)
-    },
+
     showToast(e) {
         let id = e.currentTarget.getAttribute('data-id')
         this.setState({
