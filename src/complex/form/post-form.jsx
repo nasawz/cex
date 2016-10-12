@@ -1,4 +1,6 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
+
 import List from '../../components/list/list.jsx'
 import XTextArea from '../../components/xtextarea/x-textarea.jsx'
 import ToolBar from '../../components/bar/tool-bar.jsx'
@@ -37,7 +39,7 @@ const PostForm = React.createClass({
     },
     getInitialState() {
         return {
-            sel: this.props.sel
+            sel: this.props.sel,
         }
     },
     doPublish() {
@@ -50,10 +52,14 @@ const PostForm = React.createClass({
     rendImageFiles() {
         return this.props.ImageFiles.map((item, i) => {
             return (
-                <GalleryItem  key={i} src={item+'!small'}/>
+                <GalleryItem  key={i} src={item + '!small'}/>
             )
         })
 
+    },
+    onDeliverEmotionName(name) {
+        let val = this.refs.txt_content.value()
+        this.refs.txt_content.setValue(val + '[' + name + ']')
     },
     render() {
         let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
@@ -65,13 +71,13 @@ const PostForm = React.createClass({
             display: this.state.sel == 'photo' ? 'block' : 'none'
         }
         let _emoticonsPicker = this.state.sel == 'face' ? (
-            <EmoticonsPicker />
+            <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName}/>
         ) : ''
         return (
             <div className='cex-post-form'>
                 <List style={{ backgroundColor: '#e8e8e8' }}>
                     <XTextArea ref='txt_content' placeholder='说点什么吧' max={20}  height={120} >
-                        <AddressLabel />
+                        <AddressLabel txt={this.props.address}/>
                     </XTextArea>
                     <ToolBar style={{ paddingLeft: '0px' }}>
                         <BarToolsGroup>
@@ -86,7 +92,7 @@ const PostForm = React.createClass({
                     </ToolBar>
                     <div style={_styleUpload}>
                         <Gallery style={{ minHeight: '100px' }}>
-                            {this.rendImageFiles()}
+                            {this.rendImageFiles() }
                             <Uploader onSelectImg={this.props.onSelectImage}/>
                         </Gallery>
                     </div>
