@@ -8,8 +8,21 @@ import Badge from 'cex/components/badge/badge.jsx'
 import Switch from 'cex/components/switch/switch.jsx'
 
 const VSwitch = React.createClass({
-    changeHandler() {
-        console.log('switch')
+    changeHandler1(state) {
+        this.setState({
+            ons1: state
+        })
+    },
+    changeHandler2(state) {
+        this.setState({
+            ons2: state
+        })
+    },
+    getInitialState() {
+        return {
+            ons1: false,
+            ons2: true
+        }
     },
     render () {
         return (
@@ -20,7 +33,7 @@ const VSwitch = React.createClass({
                         default setting
                     </ItemTitle>
                     <ItemTitleAfter className='f0'>
-                        <Switch onChange={this.changeHandler} />
+                        <Switch checked={this.state.ons1} onChange={this.changeHandler1} />
                     </ItemTitleAfter>
                 </ItemCell>
                 <ItemCell>
@@ -28,7 +41,7 @@ const VSwitch = React.createClass({
                         default true
                     </ItemTitle>
                     <ItemTitleAfter className='f0'>
-                        <Switch checked onChange={this.changeHandler} />
+                        <Switch checked={this.state.ons2} onChange={this.changeHandler2} />
                     </ItemTitleAfter>
                 </ItemCell>
                 <ItemDivider>disabled</ItemDivider>

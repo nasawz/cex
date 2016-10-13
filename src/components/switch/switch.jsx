@@ -9,8 +9,8 @@ import merge from 'lodash/merge'
 import './switch.less'
 
 const Switch = React.createClass({
-    changeHandler() {
-        this.props.onChange && this.props.onChange()
+    changeHandler(e) {
+        this.props.onChange && this.props.onChange(e.currentTarget.checked)
     },
     render () {
         let {checked,disabled,style} = this.props
