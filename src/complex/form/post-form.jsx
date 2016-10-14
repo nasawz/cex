@@ -44,6 +44,12 @@ const PostForm = React.createClass({
     doPublish() {
         // let address
         // let file
+        let selectImgsObj = this.props.ImageFiles
+        let imgs = []
+        for (var s in selectImgsObj) {
+            imgs.push(selectImgsObj[s])
+        }
+
         let data = {}
         data.txt_content = this.refs.txt_content.value().trim()
         data.address = this.props.address
@@ -60,15 +66,19 @@ const PostForm = React.createClass({
     },
     rendImageFiles() {
         let selectImgsObj = this.props.ImageFiles
-        let imgs = []
-        for (var s in selectImgsObj) { 
-            imgs.push(selectImgsObj[s])
+        if (selectImgsObj) {
+            let imgs = []
+            for (var s in selectImgsObj) {
+                imgs.push(selectImgsObj[s])
+            }
+            return imgs.map((item, i) => {
+                return (
+                    <GalleryItem  key={i} src={item.base64}/>
+                )
+            })
+
         }
-        return imgs.map((item, i) => {
-            return (
-                <GalleryItem  key={i} src={item}/>
-            )
-        })
+
     },
     render() {
         let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
