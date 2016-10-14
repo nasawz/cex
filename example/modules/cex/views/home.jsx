@@ -47,6 +47,11 @@ const Home = React.createClass({
                     </ItemTitle>
                 </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
+                <ItemCell link={{params:['example','selector']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        selector
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','blur']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         blur
