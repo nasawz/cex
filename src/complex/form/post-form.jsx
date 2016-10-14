@@ -59,13 +59,16 @@ const PostForm = React.createClass({
         this.refs.txt_content.setValue(val)
     },
     rendImageFiles() {
-        return this.props.ImageFiles.map((item, i) => {
-
+        let selectImgsObj = this.props.ImageFiles
+        let imgs = []
+        for (var s in selectImgsObj) { 
+            imgs.push(selectImgsObj[s])
+        }
+        return imgs.map((item, i) => {
             return (
                 <GalleryItem  key={i} src={item}/>
             )
         })
-
     },
     render() {
         let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
