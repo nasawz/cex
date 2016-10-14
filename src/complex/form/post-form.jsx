@@ -44,11 +44,11 @@ const PostForm = React.createClass({
     doPublish() {
         // let address
         // let file
-        let selectImgsObj = this.props.ImageFiles
-        let imgs = []
-        for (var s in selectImgsObj) {
-            imgs.push(selectImgsObj[s])
-        }
+        // let selectImgsObj = this.props.ImageFiles
+        // let imgs = []
+        // for (var s in selectImgsObj) {
+        //     imgs.push(selectImgsObj[s])
+        // }
 
         let data = {}
         data.txt_content = this.refs.txt_content.value().trim()
