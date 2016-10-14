@@ -33,6 +33,7 @@ import VCommentCard from '../views/vcommentcard.jsx'
 import VClocker from '../views/vclocker.jsx'
 import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
+import VPopup from '../views/vpopup.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -75,6 +76,7 @@ const Routes = React.createClass({
         '/clocker': 'clocker',
         '/blur': 'blur',
         '/switch': 'switch',
+        '/popup': 'popup',
     },
     render () {
         return (
@@ -172,6 +174,9 @@ const Routes = React.createClass({
     },
     switch(params) {
         return <VSwitch params={params} />
+    },
+    popup(params) {
+        return <VPopup params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

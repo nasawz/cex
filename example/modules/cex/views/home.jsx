@@ -177,6 +177,11 @@ const Home = React.createClass({
                         clocker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','popup']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        popup
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
