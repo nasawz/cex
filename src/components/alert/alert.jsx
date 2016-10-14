@@ -8,17 +8,23 @@ import merge from 'lodash/merge'
 import './alert.less'
 
 const Alert = React.createClass({
+    closeAlert() {
+        this.props.onClose && this.props.onClose()
+    },
     render () {
-        let {style,children} = this.props
+        let {title, content, btnText} = this.props
         let classes = {
             'cex-alert' : true
         }
-        let _style = {
-
-        }
         return (
-            <div className={classNames(this.props.className,classes)}  style={merge({},_style,style)}>
-                {children}
+            <div className={classNames(this.props.className,classes)}>
+                <div className="cex-dialog-hd">
+                    <p className="cex-dialog-title">{title}</p>
+                </div>
+                <div className="cex-dialog-bd">{content}</div>
+                <div className="cex-dialog-ft">
+                    <a href="javascript:;" className="default" onClick={this.closeAlert}>{btnText}</a>
+                </div>
             </div>
         )
     }

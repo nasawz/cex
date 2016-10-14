@@ -26,7 +26,15 @@ import VPostForm from '../views/vpostform.jsx'
 import VLoading from '../views/vloading.jsx'
 import VToast from '../views/vtoast.jsx'
 import VDialog from '../views/vdialog.jsx'
+import VAlert from '../views/valert.jsx'
+import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
+import VCommentCard from '../views/vcommentcard.jsx'
+import VClocker from '../views/vclocker.jsx'
+import VBlur from '../views/vblur.jsx'
+import VSwitch from '../views/vswitch.jsx'
+import VPopup from '../views/vpopup.jsx'
+import VSelector from '../views/vselector.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -62,7 +70,15 @@ const Routes = React.createClass({
         '/loading':'loading',
         '/toast':'toast',
         '/dialog': 'dialog',
+        '/alert': 'alert',
+        '/confirm': 'confirm',
         '/blogcard': 'blogcard',
+        '/commentcard': 'commentcard',
+        '/clocker': 'clocker',
+        '/blur': 'blur',
+        '/switch': 'switch',
+        '/popup': 'popup',
+        '/selector': 'selector',
     },
     render () {
         return (
@@ -140,8 +156,32 @@ const Routes = React.createClass({
     dialog(params) {
         return <VDialog params={params} />
     },
+    alert(params) {
+        return <VAlert params={params} />
+    },
+    confirm(params) {
+        return <VConfirm params={params} />
+    },
     blogcard(params) {
         return <VBlogCard params={params} />
+    },
+    commentcard(params) {
+        return <VCommentCard params={params} />
+    },
+    clocker(params) {
+        return <VClocker params={params} />
+    },
+    blur(params) {
+        return <VBlur params={params} />
+    },
+    switch(params) {
+        return <VSwitch params={params} />
+    },
+    popup(params) {
+        return <VPopup params={params} />
+    },
+    selector(params) {
+        return <VSelector params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
