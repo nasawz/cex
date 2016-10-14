@@ -46,6 +46,7 @@ const PostForm = React.createClass({
         // let file
         let data = {}
         data.txt_content = this.refs.txt_content.value().trim()
+        data.address = this.props.address
         this.props.onSubmit(data)
     },
     onDeliverEmotionName(name) {
@@ -59,8 +60,9 @@ const PostForm = React.createClass({
     },
     rendImageFiles() {
         return this.props.ImageFiles.map((item, i) => {
+
             return (
-                <GalleryItem  key={i} src={item + '!small'}/>
+                <GalleryItem  key={i} src={item}/>
             )
         })
 
