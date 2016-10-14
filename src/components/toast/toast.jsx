@@ -50,6 +50,9 @@ const Toast = React.createClass({
             'flex-center':true,
             'cex-toast-toggle':true
         }
+        if(style && style.width){
+            style.marginLeft='-'+(style.width.split('em'))[0]/2+'em'
+        }
         return (
             <div className={classNames(this.props.className,classes)}>
                 <div className="cex-mask-transparent" style={merge({},toastStyle)}></div>
