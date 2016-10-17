@@ -76,8 +76,6 @@ const PostForm = React.createClass({
 
     },
     rendPhotoBtn() {
-        console.log('this.props.isPhoto')
-        console.log(this.props.isPhoto)
         if (this.props.isPhoto) {
             let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
             return (
