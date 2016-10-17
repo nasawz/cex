@@ -124,7 +124,7 @@ const VPopup = React.createClass({
                         </List>
                     </div>
                 </Popup>
-                <Popup show={showT4_1} type='text' closePopup={this.closePopupChild} showCancel>
+                <Popup show={showT4_1} type='text' closePopup={this.closePopupChild} showCancel isChild>
                     <div>
                         <Divider>默认</Divider>
                         <List>

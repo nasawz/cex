@@ -28,10 +28,10 @@ const ActionSheet = React.createClass({
         }
     },
     render () {
-        let {show,children,showCancel,fullScreen} = this.props
+        let {show,children,showCancel,fullScreen,isChild} = this.props
         let mashClass={
             'cex-mask-transition':true,
-            'cex-fade-toggle':show,
+            'cex-fade-toggle':show && !isChild,
         }
         let sheetClass={
             'cex-actionsheet':true,
