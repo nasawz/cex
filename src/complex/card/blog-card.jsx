@@ -80,7 +80,9 @@ const BlogCard = React.createClass({
             this.props.onFavorite(this.props.blogId,this.props.isFavorite)
         }
     },
-
+    onComment() {
+        this.props.onComment(this.props.blogId)
+    },
     renderFavoriteBtn() {
         let {favoriteNum} = this.props
         let color = this.props.isFavorite ? '#FFAE46' : null
@@ -90,7 +92,7 @@ const BlogCard = React.createClass({
     renderCommentBtn() {
         let {commentNum} = this.props
         let str = commentNum == 0 ? '评论' : commentNum
-        return <IconButton size={16} icon='icon-chat'>{str}</IconButton>
+        return <IconButton onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
     },
     renderGallery() {
         let {gallery} = this.props
