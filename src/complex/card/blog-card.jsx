@@ -75,13 +75,22 @@ const BlogCard = React.createClass({
             return <a onClick={this.toggleShowAll}>{str}</a>
         }
     },
-    onFavorite() {
+    onFavorite(e) {
+        e.stopPropagation()
+        e.preventDefault()
         if (this.props.onFavorite) {
             this.props.onFavorite(this.props.blogId,this.props.isFavorite)
         }
     },
-    onComment() {
+    onComment(e) {
+        e.stopPropagation()
+        e.preventDefault()
         this.props.onComment(this.props.blogId)
+    },
+    goInfo(e){
+        e.stopPropagation()
+        e.preventDefault()
+        this.props.goInfo(this.props.blogId)
     },
     renderFavoriteBtn() {
         let {favoriteNum} = this.props
@@ -130,7 +139,7 @@ const BlogCard = React.createClass({
             'flod': !this.state.showAllTxt
         }
         return (
-            <Card>
+            <Card onClick={this.goInfo}>
                 <CardContent>
                     <List>
                         <Item>

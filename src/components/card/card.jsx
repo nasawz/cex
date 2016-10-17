@@ -9,13 +9,21 @@ import './card.less'
 
 
 const Card = React.createClass({
+    clickHandle(e){
+        e.stopPropagation()
+        e.preventDefault()
+        let {onClick} = this.props
+        if (onClick) {
+            onClick(e)
+        }
+    },
     render () {
         let {style,children} = this.props
         let classes = {
             'cex-card' : true
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={style}>
+            <div onClick={this.clickHandle}  className={classNames(this.props.className,classes)} style={style}>
                 {children}
             </div>
         )
