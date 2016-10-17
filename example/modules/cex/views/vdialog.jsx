@@ -3,6 +3,7 @@ import List from 'cex/components/list/list.jsx'
 import ItemTitle from 'cex/components/list/item-title.jsx'
 import ItemCell from 'cex/components/list/item-cell.jsx'
 import Dialog from 'cex/components/dialog/dialog.jsx'
+import Icon from 'cex/components/icon/icon.jsx'
 
 const VDialog = React.createClass({
     showDialog(e) {
@@ -40,16 +41,25 @@ const VDialog = React.createClass({
                             <div data-id="d2" onClick={this.showDialog}>背景不可滚动</div>
                         </ItemTitle>
                     </ItemCell>
-                    <Dialog
-                        show={showd1}
-                        onClose={this.closeDialog}
-                        title="I'm a bg scroll Dialog." src="https://o3e85j0cv.qnssl.com/static/01.jpg?06186f7" />
-                    <Dialog
-                        show={showd2}
-                        onClose={this.closeDialog}
-                        title="I'm a no scroll Dialog." src="https://o3e85j0cv.qnssl.com/static/01.jpg?06186f7"
-                        scroll={false} />
                 </List>
+                <Dialog show={showd1}>
+                    <p className="cex-dialog-title">I'm a bg scroll Dialog.</p>
+                    <div className="cex-dialog-img">
+                        <img src="https://o3e85j0cv.qnssl.com/static/01.jpg?06186f7" />
+                    </div>
+                    <div className="cex-dialog-close" onClick={this.closeDialog}>
+                        <Icon icon="icon-close" size={30} color='#999' />
+                    </div>
+                </Dialog>
+                <Dialog show={showd2} noscroll>
+                    <p className="cex-dialog-title">I'm a no scroll Dialog.</p>
+                    <div className="cex-dialog-img">
+                        <img src="https://o3e85j0cv.qnssl.com/static/01.jpg?06186f7" />
+                    </div>
+                    <div className="cex-dialog-close" onClick={this.closeDialog}>
+                        <Icon icon="icon-close" size={30} color='#999' />
+                    </div>
+                </Dialog>
             </div>
         )
     }

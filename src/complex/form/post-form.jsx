@@ -1,4 +1,5 @@
 import React from 'react'
+
 import List from '../../components/list/list.jsx'
 import XTextArea from '../../components/xtextarea/x-textarea.jsx'
 import ToolBar from '../../components/bar/tool-bar.jsx'
@@ -37,22 +38,46 @@ const PostForm = React.createClass({
     },
     getInitialState() {
         return {
-            sel: this.props.sel
+            sel: this.props.sel,
         }
     },
     doPublish() {
         // let address
         // let file
+        // let selectImgsObj = this.props.ImageFiles
+        // let imgs = []
+        // for (var s in selectImgsObj) {
+        //     imgs.push(selectImgsObj[s])
+        // }
+
         let data = {}
         data.txt_content = this.refs.txt_content.value().trim()
+        data.address = this.props.address
         this.props.onSubmit(data)
     },
+    onDeliverEmotionName(name) {
+        let val = this.refs.txt_content.value()
+        this.refs.txt_content.setValue(val + '[' + name + ']')
+    },
+    onDeleEmotion() {
+        let val = this.refs.txt_content.value()
+        val = val.replace(/(\[.{1,3}\])$|(.{1})$/, '')
+        this.refs.txt_content.setValue(val)
+    },
     rendImageFiles() {
-        return this.props.ImageFiles.map((item, i) => {
-            return (
-                <GalleryItem  key={i} src={item+'!small'}/>
-            )
-        })
+        let selectImgsObj = this.props.ImageFiles
+        if (selectImgsObj) {
+            let imgs = []
+            for (var s in selectImgsObj) {
+                imgs.push(selectImgsObj[s])
+            }
+            return imgs.map((item, i) => {
+                return (
+                    <GalleryItem  key={i} src={item.base64}/>
+                )
+            })
+
+        }
 
     },
     render() {
@@ -65,13 +90,13 @@ const PostForm = React.createClass({
             display: this.state.sel == 'photo' ? 'block' : 'none'
         }
         let _emoticonsPicker = this.state.sel == 'face' ? (
-            <EmoticonsPicker />
+            <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName} deleEmotion={this.onDeleEmotion}/>
         ) : ''
         return (
             <div className='cex-post-form'>
                 <List style={{ backgroundColor: '#e8e8e8' }}>
                     <XTextArea ref='txt_content' placeholder='说点什么吧' max={20}  height={120} >
-                        <AddressLabel />
+                        <AddressLabel txt={this.props.address}/>
                     </XTextArea>
                     <ToolBar style={{ paddingLeft: '0px' }}>
                         <BarToolsGroup>
@@ -86,7 +111,7 @@ const PostForm = React.createClass({
                     </ToolBar>
                     <div style={_styleUpload}>
                         <Gallery style={{ minHeight: '100px' }}>
-                            {this.rendImageFiles()}
+                            {this.rendImageFiles() }
                             <Uploader onSelectImg={this.props.onSelectImage}/>
                         </Gallery>
                     </div>

@@ -23,7 +23,7 @@ import TimeLabel from 'cex/components/label/time-label.jsx'
 import {contentParse} from '../../helpers/content-parse.js'
 
 const BlogCard = React.createClass({
-    toggleShowAll(e){
+    toggleShowAll(e) {
         e.stopPropagation()
         e.preventDefault()
         this.setState({
@@ -33,15 +33,15 @@ const BlogCard = React.createClass({
     getDefaultProps() {
         return {
             user: {
-                name:'朱朱',
+                name: '朱朱',
                 avatar: {
-                    img:'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
-                    icon:null,
-                    plus:null
+                    img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
+                    icon: null,
+                    plus: null
                 },
             },
-            address:'北京，朝阳区，远洋国际中心',
-            txt:'女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
+            address: '北京，朝阳区，远洋国际中心',
+            txt: '女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
             showAllTxt: false,
             isFavorite: true,
             favoriteNum: 11,
@@ -58,41 +58,47 @@ const BlogCard = React.createClass({
             showAllTxt: this.props.showAllTxt
         }
     },
-    renderAvatar(){
+    renderAvatar() {
         let {avatar} = this.props.user
         return (
             <Avatar src={avatar.img}
-            plus={avatar.plus}
-            icon={avatar.icon}
-            style={{margin:'0px'}}
-            size={40}
-            />
+                plus={avatar.plus}
+                icon={avatar.icon}
+                style={{ margin: '0px' }}
+                size={40}
+                />
         )
     },
-    renderMoreBtn(hasMore){
+    renderMoreBtn(hasMore) {
         if (hasMore) {
-            let str = this.state.showAllTxt?'收起':'展开'
+            let str = this.state.showAllTxt ? '收起' : '展开'
             return <a onClick={this.toggleShowAll}>{str}</a>
         }
     },
-    renderFavoriteBtn(){
-        let {favoriteNum} = this.props
-        let color = this.props.isFavorite?'#FFAE46':null
-        let str = favoriteNum==0?'点赞':favoriteNum
-        return <IconButton size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
+    onFavorite() {
+        if (this.props.onFavorite) {
+            this.props.onFavorite(this.props.blogId,this.props.isFavorite)
+        }
     },
-    renderCommentBtn(){
+
+    renderFavoriteBtn() {
+        let {favoriteNum} = this.props
+        let color = this.props.isFavorite ? '#FFAE46' : null
+        let str = favoriteNum == 0 ? '点赞' : favoriteNum
+        return <IconButton onClick={this.onFavorite} size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
+    },
+    renderCommentBtn() {
         let {commentNum} = this.props
-        let str = commentNum==0?'评论':commentNum
+        let str = commentNum == 0 ? '评论' : commentNum
         return <IconButton size={16} icon='icon-chat'>{str}</IconButton>
     },
-    renderGallery(){
+    renderGallery() {
         let {gallery} = this.props
         if (gallery.length == 0) return
         let items = []
         for (var i = 0; i < gallery.length; i++) {
             items.push(<GalleryItem key={i} src={gallery[i]} />)
-            if (i>9) break
+            if (i > 9) break
         }
         return (
             <Gallery>
@@ -100,9 +106,9 @@ const BlogCard = React.createClass({
             </Gallery>
         )
     },
-    renderAddress(){
+    renderAddress() {
         let {address} = this.props
-        if (address && address!='') {
+        if (address && address != '') {
             return (
                 <div>
                     <AddressLabel mode='view' txt={address} />
@@ -110,16 +116,16 @@ const BlogCard = React.createClass({
             )
         }
     },
-    render () {
-        let {txt,user,time} = this.props
+    render() {
+        let {txt, user, time} = this.props
         let txtObj = contentParse(txt)
-        let contHTML=txtObj.txt
+        let contHTML = txtObj.txt
         let txtHTML = {
-            __html:contHTML
+            __html: contHTML
         }
         let classes_cont = {
-            'cex-item-text':true,
-            'flod':!this.state.showAllTxt
+            'cex-item-text': true,
+            'flod': !this.state.showAllTxt
         }
         return (
             <Card>
@@ -137,9 +143,9 @@ const BlogCard = React.createClass({
                                     </ItemTitleAfter>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
+                                    <TimeLabel style={{ fontSize: '10px', color: '#777' }} time={time} />
                                 </ItemSubtitle>
-                                <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                                <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
                                 { this.renderMoreBtn(txtObj.hasMore) }
                                 { this.renderGallery() }
                                 { this.renderAddress() }
