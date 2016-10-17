@@ -33,7 +33,10 @@ const PostForm = React.createClass({
     getDefaultProps() {
         return {
             color: '#02a882',
-            sel: 'photo'
+            sel: 'photo',
+            isPhoto: true,
+            isFace: true,
+            isAddress: true,
         }
     },
     getInitialState() {
@@ -42,14 +45,6 @@ const PostForm = React.createClass({
         }
     },
     doPublish() {
-        // let address
-        // let file
-        // let selectImgsObj = this.props.ImageFiles
-        // let imgs = []
-        // for (var s in selectImgsObj) {
-        //     imgs.push(selectImgsObj[s])
-        // }
-
         let data = {}
         data.txt_content = this.refs.txt_content.value().trim()
         data.address = this.props.address
@@ -80,42 +75,76 @@ const PostForm = React.createClass({
         }
 
     },
-    render() {
-        let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
-        let _col_face = this.state.sel == 'face' ? this.props.color : '#777'
-        let _styleUpload = {
-            padding: '15px',
-            backgroundColor: '#e8e8e8',
-            minHeight: '200px',
-            display: this.state.sel == 'photo' ? 'block' : 'none'
+    rendPhotoBtn() {
+        if (this.props.isPhoto) {
+            let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
+            return (
+                <BarTools>
+                    <IconButton onClick={ this.changeSel2Photo } color={_col_photo} icon='icon-photo' />
+                </BarTools>
+            )
         }
-        let _emoticonsPicker = this.state.sel == 'face' ? (
-            <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName} deleEmotion={this.onDeleEmotion}/>
-        ) : ''
+    },
+    rendPhotoContent() {
+        if (this.props.isPhoto) {
+            let _styleUpload = {
+                padding: '15px',
+                backgroundColor: '#e8e8e8',
+                minHeight: '200px',
+                display: this.state.sel == 'photo' ? 'block' : 'none'
+            }
+            return (
+                <div style={_styleUpload}>
+                    <Gallery style={{ minHeight: '100px' }}>
+                        {this.rendImageFiles() }
+                        <Uploader onSelectImg={this.props.onSelectImage}/>
+                    </Gallery>
+                </div>
+            )
+        }
+    },
+    rendFaceBtn() {
+        if (this.props.isFace) {
+            let _col_face = this.state.sel == 'face' ? this.props.color : '#777'
+            return (
+                <BarTools>
+                    <IconButton onClick={ this.changeSel2Face } color={_col_face} icon='icon-tag_faces' />
+                </BarTools>
+            )
+        }
+    },
+
+    rendFaceContent() {
+        if (this.props.isFace) {
+            let _emoticonsPicker = this.state.sel == 'face' ? (
+                <EmoticonsPicker deliverEmotionName={this.onDeliverEmotionName} deleEmotion={this.onDeleEmotion}/>
+            ) : ''
+            return _emoticonsPicker
+        }
+    },
+    renderAddress() {
+        if (this.props.isAddress) {
+            return (
+                <AddressLabel txt={this.props.address}/>
+            )
+        } 
+    },
+    render() {
         return (
             <div className='cex-post-form'>
                 <List style={{ backgroundColor: '#e8e8e8' }}>
                     <XTextArea ref='txt_content' placeholder='说点什么吧' max={20}  height={120} >
-                        <AddressLabel txt={this.props.address}/>
+                        {this.renderAddress()}
                     </XTextArea>
                     <ToolBar style={{ paddingLeft: '0px' }}>
                         <BarToolsGroup>
-                            <BarTools>
-                                <IconButton onClick={ this.changeSel2Photo } color={_col_photo} icon='icon-photo' />
-                            </BarTools>
-                            <BarTools>
-                                <IconButton onClick={ this.changeSel2Face } color={_col_face} icon='icon-tag_faces' />
-                            </BarTools>
+                            {this.rendPhotoBtn}
+                            {this.rendFaceBtn}
                         </BarToolsGroup>
                         <XButton mini type='primary' onClick={this.doPublish}>发表</XButton>
                     </ToolBar>
-                    <div style={_styleUpload}>
-                        <Gallery style={{ minHeight: '100px' }}>
-                            {this.rendImageFiles() }
-                            <Uploader onSelectImg={this.props.onSelectImage}/>
-                        </Gallery>
-                    </div>
-                    { _emoticonsPicker }
+                    {this.rendPhotoContent}
+                    {this.rendFaceContent}
                 </List>
             </div>
         )
