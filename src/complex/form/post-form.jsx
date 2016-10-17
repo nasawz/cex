@@ -76,6 +76,8 @@ const PostForm = React.createClass({
 
     },
     rendPhotoBtn() {
+        console.log('this.props.isPhoto')
+        console.log(this.props.isPhoto)
         if (this.props.isPhoto) {
             let _col_photo = this.state.sel == 'photo' ? this.props.color : '#777'
             return (
@@ -138,13 +140,13 @@ const PostForm = React.createClass({
                     </XTextArea>
                     <ToolBar style={{ paddingLeft: '0px' }}>
                         <BarToolsGroup>
-                            {this.rendPhotoBtn}
-                            {this.rendFaceBtn}
+                            {this.rendPhotoBtn()}
+                            {this.rendFaceBtn()}
                         </BarToolsGroup>
                         <XButton mini type='primary' onClick={this.doPublish}>发表</XButton>
                     </ToolBar>
-                    {this.rendPhotoContent}
-                    {this.rendFaceContent}
+                    {this.rendPhotoContent()}
+                    {this.rendFaceContent()}
                 </List>
             </div>
         )
