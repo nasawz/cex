@@ -1,7 +1,5 @@
 import React from 'react'
 import classNames from 'classnames'
-import Card from 'cex/components/card/card.jsx'
-import CardContent from 'cex/components/card/card-content.jsx'
 import List from 'cex/components/list/list.jsx'
 import Item from 'cex/components/list/item.jsx'
 import ItemMedia from 'cex/components/list/item-media.jsx'
@@ -65,27 +63,23 @@ const CommentCard = React.createClass({
             'flod':!this.state.showAllTxt
         }
         return (
-            <Card >
-                <CardContent>
-                    <List>
-                        <Item>
-                            <ItemMedia>
-                                { this.renderAvatar() }
-                            </ItemMedia>
-                            <ItemContent>
-                                <ItemTitleRow>
-                                    <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
-                                </ItemTitleRow>
-                                <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
-                                </ItemSubtitle>
-                                <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
-                            </ItemContent>
-                        </Item>
+            <List>
+                <Item>
+                    <ItemMedia>
+                        { this.renderAvatar() }
+                    </ItemMedia>
+                    <ItemContent>
+                        <ItemTitleRow>
+                            <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
+                        </ItemTitleRow>
+                        <ItemSubtitle>
+                            <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
+                        </ItemSubtitle>
+                        <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                    </ItemContent>
+                </Item>
 
-                    </List>
-                </CardContent>
-            </Card>
+            </List>
         )
     }
 })
