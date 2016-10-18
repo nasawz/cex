@@ -42,9 +42,9 @@ const CommentCard = React.createClass({
         }
     },
     renderAvatar(){
-        let {avatar,user,time} = this.props
+        let {avatar} = this.props
         return (
-            <Avatar src={user.avatar.img}
+            <Avatar src={avatar.img}
             plus={avatar.plus}
             icon={avatar.icon}
             style={{margin:'0px'}}
@@ -53,7 +53,7 @@ const CommentCard = React.createClass({
         )
     },
     render () {
-        let {txt} = this.props
+        let {txt,user,time} = this.props
         let txtObj = contentParse(txt)
         // let contHTML=txtObj.hasMore?(this.state.showAllTxt?txt:txtObj.cate_txt):txtObj.txt
         let contHTML=txtObj.txt
