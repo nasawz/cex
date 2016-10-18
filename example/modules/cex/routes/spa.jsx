@@ -30,6 +30,7 @@ import VAlert from '../views/valert.jsx'
 import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 import VCommentCard from '../views/vcommentcard.jsx'
+import VChecker from '../views/vchecker.jsx'
 import VClocker from '../views/vclocker.jsx'
 import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
@@ -74,6 +75,7 @@ const Routes = React.createClass({
         '/confirm': 'confirm',
         '/blogcard': 'blogcard',
         '/commentcard': 'commentcard',
+        '/checker': 'checker',
         '/clocker': 'clocker',
         '/blur': 'blur',
         '/switch': 'switch',
@@ -167,6 +169,9 @@ const Routes = React.createClass({
     },
     commentcard(params) {
         return <VCommentCard params={params} />
+    },
+    checker(params) {
+        return <VChecker params={params} />
     },
     clocker(params) {
         return <VClocker params={params} />

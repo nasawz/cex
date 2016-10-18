@@ -41,7 +41,8 @@ const Toast = React.createClass({
             'cex-toast' : true
         }
         let toastStyle = {
-            display:show?'':'none',
+            display: show ? '' : 'none',
+            zIndex: 5000,
         }
         let fadeClass={
             'cex-toast':true,
