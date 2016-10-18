@@ -47,6 +47,21 @@ const Home = React.createClass({
                     </ItemTitle>
                 </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
+                <ItemCell link={{params:['example','selector']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        selector
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','blur']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        blur
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','switch']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        switch
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','dialog']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         dialog
@@ -165,6 +180,15 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','checker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         checker
+                    </ItemTitle>
+                <ItemCell link={{params:['example','clocker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        clocker
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','popup']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        popup
                     </ItemTitle>
                 </ItemCell>
             </List >

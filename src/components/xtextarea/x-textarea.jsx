@@ -25,6 +25,10 @@ const XTextArea = React.createClass({
         let el = ReactDOM.findDOMNode(this.refs['textarea'])
         return el.value
     },
+    setValue(value) {
+        ReactDOM.findDOMNode(this.refs['textarea']).value=value
+    },
+
     getDefaultProps() {
         return {
             placeholder:'',
@@ -55,10 +59,10 @@ const XTextArea = React.createClass({
             return (
                 <Flexbox>
                     <div className='row'>
-                        <div className='col-1-2' style={{paddingLeft:'0px'}}>
+                        <div className='col-3-4' style={{paddingLeft:'0px'}}>
                             { children }
                         </div>
-                        <div className='col-1-2' style={{paddingRight:'0px'}}>
+                        <div className='col-1-4' style={{paddingRight:'0px'}}>
                             { this.renderCounter() }
                         </div>
                     </div>

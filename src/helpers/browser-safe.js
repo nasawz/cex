@@ -1,7 +1,7 @@
 /* eslint-disable */
 
 import trim from 'trim'
-
+import {isArray} from './is-type.js'
 /**
  * @browser safe functions
  */

@@ -11,6 +11,8 @@ import './icon-button.less'
 
 const IconButton = React.createClass({
     clickHandle(e){
+        e.stopPropagation()
+        e.preventDefault()
         let {onClick} = this.props
         if (onClick) {
             onClick(e)

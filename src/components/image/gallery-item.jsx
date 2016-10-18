@@ -21,7 +21,7 @@ const GalleryItem = React.createClass({
             })
         }, 500)
     },
-    render () {
+    render() {
         let {style} = this.props
         let classes = {
             'cex-gallery-item' : true
@@ -36,6 +36,7 @@ const GalleryItem = React.createClass({
             width: '100%',
             height: '100%',
             position: 'relative'
+            
         }
         return (
             <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
