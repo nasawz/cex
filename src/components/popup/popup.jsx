@@ -4,7 +4,6 @@
 
 import React from 'react'
 import classNames from 'classnames'
-import forEach from 'lodash/forEach'
 import './popup.less'
 
 
