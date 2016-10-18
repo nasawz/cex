@@ -1,8 +1,5 @@
 import React from 'react'
 import classNames from 'classnames'
-import Card from 'cex/components/card/card.jsx'
-import CardContent from 'cex/components/card/card-content.jsx'
-import List from 'cex/components/list/list.jsx'
 import Item from 'cex/components/list/item.jsx'
 import ItemMedia from 'cex/components/list/item-media.jsx'
 import ItemTitle from 'cex/components/list/item-title.jsx'
@@ -42,7 +39,7 @@ const CommentCard = React.createClass({
         }
     },
     renderAvatar(){
-        let {avatar,user,time} = this.props
+        let {avatar} = this.props.user
         return (
             <Avatar src={avatar.img}
             plus={avatar.plus}
@@ -53,7 +50,7 @@ const CommentCard = React.createClass({
         )
     },
     render () {
-        let {txt} = this.props
+        let {txt,user,time} = this.props
         let txtObj = contentParse(txt)
         // let contHTML=txtObj.hasMore?(this.state.showAllTxt?txt:txtObj.cate_txt):txtObj.txt
         let contHTML=txtObj.txt
@@ -65,27 +62,20 @@ const CommentCard = React.createClass({
             'flod':!this.state.showAllTxt
         }
         return (
-            <Card >
-                <CardContent>
-                    <List>
-                        <Item>
-                            <ItemMedia>
-                                { this.renderAvatar() }
-                            </ItemMedia>
-                            <ItemContent>
-                                <ItemTitleRow>
-                                    <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
-                                </ItemTitleRow>
-                                <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
-                                </ItemSubtitle>
-                                <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
-                            </ItemContent>
-                        </Item>
-
-                    </List>
-                </CardContent>
-            </Card>
+            <Item style={{background:'#fff'}}>
+                <ItemMedia>
+                    { this.renderAvatar() }
+                </ItemMedia>
+                <ItemContent>
+                    <ItemTitleRow>
+                        <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
+                    </ItemTitleRow>
+                    <ItemSubtitle>
+                        <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
+                    </ItemSubtitle>
+                    <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                </ItemContent>
+            </Item>
         )
     }
 })
