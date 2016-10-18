@@ -44,7 +44,7 @@ const CommentCard = React.createClass({
     renderAvatar(){
         let {avatar,user,time} = this.props
         return (
-            <Avatar src={avatar.img}
+            <Avatar src={user.avatar.img}
             plus={avatar.plus}
             icon={avatar.icon}
             style={{margin:'0px'}}
