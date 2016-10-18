@@ -13,12 +13,14 @@ const VChecker = React.createClass({
             checkVal2:values,
         })
     },
+    // no default value
     getRadioValues(values){
         this.setState({
             radioVal1:values,
         })
 
     },
+    // default value 2
     getRadioValues2(values){
         this.setState({
                 radioVal2:values,
@@ -33,7 +35,7 @@ const VChecker = React.createClass({
         let checkVal1 = []
         let checkVal2 = []
         let radioVal1 = []
-        let radioVal2 = ['数学']
+        let radioVal2 = []
         let radioVal3 = []
         return{
             checkVal1:checkVal1,
@@ -45,6 +47,11 @@ const VChecker = React.createClass({
     },
 
     render () {
+        // 默认单选相内容
+        let defaultSelected = {
+            idx:[1],
+            value:['英语']
+        }
         let styles = {
             'color':'#000',
             'textIndent':'10px',
@@ -81,7 +88,7 @@ const VChecker = React.createClass({
                 <div style={styles}>current Value is : {this.state.checkVal2}</div>
 
                 <Divider>radio:default value 2</Divider>
-                <Checker type='radio' getValues={this.getRadioValues2} className='cex-50'>
+                <Checker type='radio' getValues={this.getRadioValues2} defaultClass='cex-demo1 cex-50' selectedClass='cex-demo1-selected' defaultVal={defaultSelected} >
                     <CheckerItem value='数学' checked>数学</CheckerItem>
                     <CheckerItem value='英语' >英语</CheckerItem>
                     <CheckerItem value='语文' >语文</CheckerItem>

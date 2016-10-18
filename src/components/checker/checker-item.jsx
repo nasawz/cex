@@ -6,8 +6,9 @@ import './checker-item.less'
 const CheckerItem = React.createClass({
 
     changeSelect(e){
+        let idx = this.props.idx
         let currentVal = e.currentTarget.getAttribute('value')
-        this.props.onItemClick(currentVal,e)
+        this.props.onItemClick(currentVal,e,idx)
     },
 
     render () {

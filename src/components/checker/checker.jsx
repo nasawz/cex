@@ -5,83 +5,61 @@ import classNames from 'classnames'
 import './checker.less'
 
 const Checker = React.createClass({
-    //找到元素的所有兄弟节点
-    siblings(elm) {
-        var a = [];
-        var p = elm.parentNode.children;
-        for(var i =0,pl= p.length;i<pl;i++) {
-            if(p[i] !== elm) a.push(p[i]);
-        }
-        return a;
-    },
-    selectRadio (currentVal,e) {
+    selectRadio (currentVal,e,idx) {
         let newVal = [currentVal]
+        let newIdx = [idx]
         if (!this.props.disabled) {
-             this.props.getValues(newVal)
-          }
-        let cls = e.currentTarget.getAttribute('class')
-        if(cls.indexOf(this.props.selectedClass)<0){
-            //点击的元素添加class
-            e.currentTarget.setAttribute('class',cls+' '+this.props.selectedClass)
-            //兄弟元素去除class
-            this.siblings(e.currentTarget).map((item)=>{
-                let cls2 = item.getAttribute('class')
-                if(cls2.indexOf(this.props.selectedClass)>-1){
-                    cls2 = cls2.replace(this.props.selectedClass,'')
-                }
-                item.setAttribute('class',cls2)
+            this.setState({
+                activeIdx:newIdx
             })
-        }
+            this.props.getValues(newVal)
+          }
     },
-    selectCheckbox(currentVal,e){
+    selectCheckbox(currentVal,e,idx){
         if (!this.props.disabled) {
             let index = this.props.curentValue.indexOf(currentVal)
             if(index > -1){
                 this.state.selectVal.splice(index, 1)
-                let cls2 = e.currentTarget.getAttribute('class')
-                if(cls2.indexOf(this.props.selectedClass)>-1){
-                    cls2 = cls2.replace(this.props.selectedClass,'')
-                    e.currentTarget.setAttribute('class',cls2)
-                }
+                this.state.activeIdx.splice(this.state.activeIdx.indexOf(idx),1)
 
             }else{
                 let newVal = this.state.selectVal
+                let newIdx = this.state.activeIdx
                 if(!this.props.max || (this.props.max && this.state.selectVal.length<this.props.max )){
                     newVal.push(currentVal)
+                    newIdx.push(idx)
                     this.setState({
-                        selectVal:newVal
+                        selectVal:newVal,
+                        activeIdx:newIdx
                     })
-                    let cls = e.currentTarget.getAttribute('class')
-                    if(cls.indexOf(this.props.selectedClass)<0){
-                        e.currentTarget.setAttribute('class',cls+' '+this.props.selectedClass)
-                    }
+
                 }
-
-
             }
             this.props.getValues(this.state.selectVal)
         }
     },
-    changeValue(currentVal,e){
+    changeValue(currentVal,e,idx){
         if (this.props.type == 'radio') {
-            this.selectRadio(currentVal,e)
+            this.selectRadio(currentVal,e,idx)
           } else {
-            this.selectCheckbox(currentVal,e)
+            this.selectCheckbox(currentVal,e,idx)
           }
-
-    },
-    getDefaultProps(){
-        return{
-            defaultColor:'#666',
-            activeColor:'green'
-        }
     },
     getInitialState(){
         let selectVal = []
+        let activeIdx = []
+        if(this.props.defaultVal){
+            selectVal = this.props.defaultVal.value
+            activeIdx = this.props.defaultVal.idx
+        }
         return{
+            activeIdx:activeIdx,
             selectVal:selectVal,
             class:this.props.defaultClass,
         }
+    },
+    componentDidMount() {
+        this.props.getValues(this.state.selectVal)
     },
     render () {
         let {style,children} = this.props
@@ -92,14 +70,22 @@ const Checker = React.createClass({
         return (
             <div className={classNames(this.props.className,classes)} style={style}>
                 {React.Children.map(children, (element, idx) => {
+                    let cls = this.props.defaultClass
+                    this.state.activeIdx.map((item)=>{
+                        if(item == idx){
+                            cls = this.props.defaultClass +' '+ this.props.selectedClass
+                        }
+                    })
+
                     return React.cloneElement(element, {
+                        idx:idx,
                         type:this.props.type,
                         limit:this.props.limit,
                         selectedNum:this.state.selectVal,
                         onItemClick:self.changeValue,
                         style:this.props.style,
                         curentValue:this.props.curentValue,
-                        selectedClass:this.props.selectedClass,
+                        className:cls,
                         })
                 })}
             </div>
