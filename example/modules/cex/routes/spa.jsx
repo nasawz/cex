@@ -30,6 +30,7 @@ import VAlert from '../views/valert.jsx'
 import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 import VCommentCard from '../views/vcommentcard.jsx'
+import VChecker from '../views/vchecker.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -69,6 +70,7 @@ const Routes = React.createClass({
         '/confirm': 'confirm',
         '/blogcard': 'blogcard',
         '/commentcard': 'commentcard',
+        '/checker': 'checker',
     },
     render () {
         return (
@@ -157,6 +159,9 @@ const Routes = React.createClass({
     },
     commentcard(params) {
         return <VCommentCard params={params} />
+    },
+    checker(params) {
+        return <VChecker params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

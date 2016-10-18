@@ -162,6 +162,11 @@ const Home = React.createClass({
                         toast
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','checker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        checker
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
