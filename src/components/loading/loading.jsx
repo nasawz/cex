@@ -31,13 +31,14 @@ const Loading = React.createClass({
             'cex-loading' : true
         }
         let _style = {
-            display:show?'block':'none'
+            display: show ? 'block' : 'none',
+            zIndex:5000
         }
         let loadingText=this.props.text || this.state.text
         return (
             <div className={classNames(this.props.className,classes)}  style={merge({},_style,style)}>
                 <div className="cex-mask-transparent"></div>
-                <div className="cex-loadPanel">
+                <div className="cex-loadPanel" style={{zIndex:999}}>
                   { this.renderLoading() }
                   <p className="cex-toast-content">{loadingText}</p>
                 </div>
