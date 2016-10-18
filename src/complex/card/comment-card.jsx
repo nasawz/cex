@@ -42,7 +42,7 @@ const CommentCard = React.createClass({
         }
     },
     renderAvatar(){
-        let {avatar} = this.props
+        let {avatar} = this.props.user
         return (
             <Avatar src={avatar.img}
             plus={avatar.plus}
