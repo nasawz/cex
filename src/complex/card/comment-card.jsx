@@ -1,6 +1,5 @@
 import React from 'react'
 import classNames from 'classnames'
-import List from 'cex/components/list/list.jsx'
 import Item from 'cex/components/list/item.jsx'
 import ItemMedia from 'cex/components/list/item-media.jsx'
 import ItemTitle from 'cex/components/list/item-title.jsx'
@@ -63,23 +62,20 @@ const CommentCard = React.createClass({
             'flod':!this.state.showAllTxt
         }
         return (
-            <List>
-                <Item>
-                    <ItemMedia>
-                        { this.renderAvatar() }
-                    </ItemMedia>
-                    <ItemContent>
-                        <ItemTitleRow>
-                            <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
-                        </ItemTitleRow>
-                        <ItemSubtitle>
-                            <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
-                        </ItemSubtitle>
-                        <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
-                    </ItemContent>
-                </Item>
-
-            </List>
+            <Item style={{background:'#fff'}}>
+                <ItemMedia>
+                    { this.renderAvatar() }
+                </ItemMedia>
+                <ItemContent>
+                    <ItemTitleRow>
+                        <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
+                    </ItemTitleRow>
+                    <ItemSubtitle>
+                        <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
+                    </ItemSubtitle>
+                    <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                </ItemContent>
+            </Item>
         )
     }
 })
