@@ -16,10 +16,13 @@ import {contentParse} from '../../helpers/content-parse.js'
 const CommentCard = React.createClass({
     getDefaultProps() {
         return {
-            avatar: {
-                img:'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
-                icon:null,
-                plus:null
+            user: {
+                name: '朱朱',
+                avatar: {
+                    img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
+                    icon: null,
+                    plus: null
+                },
             },
             txt:'女王的头冠，现在国博展览。',
             showAllTxt: false,
@@ -39,7 +42,7 @@ const CommentCard = React.createClass({
         }
     },
     renderAvatar(){
-        let {avatar} = this.props
+        let {avatar,user,time} = this.props
         return (
             <Avatar src={avatar.img}
             plus={avatar.plus}
@@ -71,15 +74,15 @@ const CommentCard = React.createClass({
                             </ItemMedia>
                             <ItemContent>
                                 <ItemTitleRow>
-                                    <ItemTitle style={{'color':'#536893'}}>朱文英</ItemTitle>
+                                    <ItemTitle style={{'color':'#536893'}}>{user.name}</ItemTitle>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
-                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time='2016-010-10T11:58:15.524502Z' />
+                                    <TimeLabel style={{fontSize:'10px',color:'#777'}} time={time} />
                                 </ItemSubtitle>
                                 <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
                             </ItemContent>
                         </Item>
-                        
+
                     </List>
                 </CardContent>
             </Card>
