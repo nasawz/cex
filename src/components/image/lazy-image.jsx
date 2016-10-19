@@ -20,6 +20,7 @@ const LazyImage = React.createClass({
         let classes = {
             'cex-lazy-image' : true
         }
+        console.log(this.props.src,'______________');
         return (
             <div className={classNames(classes)} style={_style}>
                 <LazyLoad
