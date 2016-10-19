@@ -100,7 +100,9 @@ const BlogCard = React.createClass({
     goInfo(e) {
         e.stopPropagation()
         e.preventDefault()
-        this.props.goInfo(this.props.blogId)
+        if (this.props.goInfo) {
+            this.props.goInfo(this.props.blogId)
+        }
     },
     renderFavoriteBtn() {
         let {favoriteNum} = this.props
