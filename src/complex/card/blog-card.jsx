@@ -92,8 +92,10 @@ const BlogCard = React.createClass({
     onComment(e) {
         e.stopPropagation()
         e.preventDefault()
-        let {blogId, commentNum} = this.props
-        this.props.onComment(blogId, commentNum)
+        if (this.props.onComment) {
+            let {blogId, commentNum} = this.props
+            this.props.onComment(blogId, commentNum)
+        }
     },
     goInfo(e) {
         e.stopPropagation()
