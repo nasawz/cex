@@ -44,6 +44,7 @@ const VSearch = React.createClass({
                 isFocus={this.state.isFocus}
                 hasVal={this.state.hasVal}
                 value={this.state.value}
+                placeholder='搜索'
                 onHide={this.hideMask}
                 onChange={this.changeHandler}
                 onClear={this.clearHandler}
