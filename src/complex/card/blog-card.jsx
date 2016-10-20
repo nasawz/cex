@@ -48,6 +48,8 @@ const BlogCard = React.createClass({
             isFavorite: true,
             favoriteNum: 11,
             commentNum: 10,
+            essential: false,
+            essentialImg: '',
             gallery: ['http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg', 'http://ces00.b0.upaiyun.com/2016/10/10/upload_cce5c9c2abe8733ec638b8a3285e5de1.jpg', 'http://ces00.b0.upaiyun.com/2016/10/09/upload_19e65d722b72075383f6ba3cd7d23e32.jpg']
         }
     },
@@ -172,9 +174,12 @@ const BlogCard = React.createClass({
         }
     },
     render() {
-        let {txt, user, time} = this.props
+        let {txt, user, time, essential, essentialImg} = this.props
         let txtObj = contentParse(txt)
         let contHTML = txtObj.txt
+        if (essential) {
+            contHTML = essentialImg + contHTML
+        }
         let txtHTML = {
             __html: contHTML
         }
