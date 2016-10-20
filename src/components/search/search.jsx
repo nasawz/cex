@@ -27,7 +27,7 @@ const Search = React.createClass({
         this.props.doSearch && this.props.doSearch(val)
     },
     render () {
-        let {isFocus,hasVal,value,style} = this.props
+        let {isFocus,hasVal,value,placeholder,style} = this.props
         let classes = {
             'cex-search' : true
         }
@@ -47,14 +47,14 @@ const Search = React.createClass({
                         <b className='cex-search-icon'>
                             <Icon icon='icon-search' size={20} color='#9b9b9b' />
                         </b>
-                        <input ref='input' type='input' className='cex-search-input' placeholder='Search' defaultValue={value} onChange={this.changeHandler} />
+                        <input ref='input' type='input' className='cex-search-input' placeholder={placeholder} defaultValue={value} onChange={this.changeHandler} />
                         <a href='javascript:' className={classNames('cex-search-clear',showCls)} onClick={this.clearHandler}>
                             <Icon icon="icon-highlight_off" size={20} color='#999' />
                         </a>
                     </div>
                     <label className={classNames('cex-search-text',hideCls)} onClick={this.clickHandler}>
                         <Icon icon='icon-search' size={20} color='#9b9b9b' />
-                        <span>Search</span>
+                        <span>{placeholder}</span>
                     </label>
                 </div>
                 <a href='javascript:' className={classNames('cex-search-btn',showCls)} onClick={this.searchHandler}>搜索</a>
