@@ -13,6 +13,7 @@ const VSearch = React.createClass({
         if (val.length) {
             this.setState({
                 hasVal: true,
+                value: val
             })
         } else {
             this.setState({
@@ -23,6 +24,7 @@ const VSearch = React.createClass({
     clearHandler() {
         this.setState({
             hasVal: false,
+            value: ''
         })
     },
     searchHandler(val) {
@@ -31,7 +33,8 @@ const VSearch = React.createClass({
     getInitialState() {
         return {
             isFocus: false,
-            hasVal: false
+            hasVal: false,
+            value: ''
         }
     },
     render () {
@@ -40,7 +43,7 @@ const VSearch = React.createClass({
                 ref='search'
                 isFocus={this.state.isFocus}
                 hasVal={this.state.hasVal}
-                onShow={this.showMask}
+                value={this.state.value}
                 onHide={this.hideMask}
                 onChange={this.changeHandler}
                 onClear={this.clearHandler}
