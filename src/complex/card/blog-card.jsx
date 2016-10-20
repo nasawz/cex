@@ -33,6 +33,7 @@ const BlogCard = React.createClass({
     getDefaultProps() {
         return {
             user: {
+                id:'',
                 name: '朱朱',
                 avatar: {
                     img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
@@ -62,6 +63,7 @@ const BlogCard = React.createClass({
         let {avatar} = this.props.user
         return (
             <Avatar src={avatar.img}
+                onClick={this.onClickAvatar}
                 plus={avatar.plus}
                 icon={avatar.icon}
                 style={{ margin: '0px' }}
@@ -73,6 +75,13 @@ const BlogCard = React.createClass({
         if (hasMore) {
             let str = this.state.showAllTxt ? '收起' : '展开'
             return <a onClick={this.toggleShowAll}>{str}</a>
+        }
+    },
+    onClickAvatar(e){
+        e.stopPropagation()
+        e.preventDefault()
+        if (this.props.onClickAvatar) {
+            this.props.onClickAvatar(this.props.user)
         }
     },
     onFavorite(e) {
