@@ -22,7 +22,7 @@ const Search = React.createClass({
         this.refs.input.focus()
         this.props.onClear && this.props.onClear()
     },
-    searchHandler() {
+    searchHandler(e) {
         let val = e.currentTarget.value
         this.props.doSearch && this.props.doSearch(val)
     },
