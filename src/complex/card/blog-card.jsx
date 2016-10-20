@@ -79,19 +79,30 @@ const BlogCard = React.createClass({
         e.stopPropagation()
         e.preventDefault()
         if (this.props.onFavorite) {
-            this.props.onFavorite(this.props.blogId,this.props.isFavorite)
+            this.props.onFavorite(this.props.blogId, this.props.isFavorite)
+        }
+    },
+    onActionSheet(e) {
+        e.stopPropagation()
+        e.preventDefault()
+        if (this.props.onActionSheet) {
+            this.props.onActionSheet(this.props.blogId)
         }
     },
     onComment(e) {
         e.stopPropagation()
         e.preventDefault()
-        let {blogId,commentNum} = this.props
-        this.props.onComment(blogId,commentNum)
+        if (this.props.onComment) {
+            let {blogId, commentNum} = this.props
+            this.props.onComment(blogId, commentNum)
+        }
     },
-    goInfo(e){
+    goInfo(e) {
         e.stopPropagation()
         e.preventDefault()
-        this.props.goInfo(this.props.blogId)
+        if (this.props.goInfo) {
+            this.props.goInfo(this.props.blogId)
+        }
     },
     renderFavoriteBtn() {
         let {favoriteNum} = this.props
@@ -151,7 +162,7 @@ const BlogCard = React.createClass({
                                 <ItemTitleRow>
                                     <ItemTitle>{user.name}</ItemTitle>
                                     <ItemTitleAfter>
-                                        <IconButton icon='icon-keyboard_arrow_down'></IconButton>
+                                        <IconButton onClick={this.onActionSheet}icon='icon-keyboard_arrow_down'></IconButton>
                                     </ItemTitleAfter>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
