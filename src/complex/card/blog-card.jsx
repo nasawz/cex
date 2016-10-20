@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from "react-dom"
 import classNames from 'classnames'
 import Card from 'cex/components/card/card.jsx'
 import CardContent from 'cex/components/card/card-content.jsx'
@@ -33,13 +34,13 @@ const BlogCard = React.createClass({
     getDefaultProps() {
         return {
             user: {
-                id:'',
+                id: '',
                 name: '朱朱',
                 avatar: {
                     img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
                     icon: null,
                     plus: null
-                },
+                }
             },
             address: '北京，朝阳区，远洋国际中心',
             txt: '女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
@@ -47,37 +48,27 @@ const BlogCard = React.createClass({
             isFavorite: true,
             favoriteNum: 11,
             commentNum: 10,
-            gallery: [
-                'http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg',
-                'http://ces00.b0.upaiyun.com/2016/10/10/upload_cce5c9c2abe8733ec638b8a3285e5de1.jpg',
-                'http://ces00.b0.upaiyun.com/2016/10/09/upload_19e65d722b72075383f6ba3cd7d23e32.jpg',
-            ]
+            gallery: ['http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg', 'http://ces00.b0.upaiyun.com/2016/10/10/upload_cce5c9c2abe8733ec638b8a3285e5de1.jpg', 'http://ces00.b0.upaiyun.com/2016/10/09/upload_19e65d722b72075383f6ba3cd7d23e32.jpg']
         }
     },
     getInitialState() {
-        return {
-            showAllTxt: this.props.showAllTxt
-        }
+        return {showAllTxt: this.props.showAllTxt}
     },
     renderAvatar() {
         let {avatar} = this.props.user
-        return (
-            <Avatar src={avatar.img}
-                onClick={this.onClickAvatar}
-                plus={avatar.plus}
-                icon={avatar.icon}
-                style={{ margin: '0px' }}
-                size={40}
-                />
-        )
+        return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
+            margin: '0px'
+        }} size={40}/>)
     },
     renderMoreBtn(hasMore) {
         if (hasMore) {
-            let str = this.state.showAllTxt ? '收起' : '展开'
+            let str = this.state.showAllTxt
+                ? '收起'
+                : '展开'
             return <a onClick={this.toggleShowAll}>{str}</a>
         }
     },
-    onClickAvatar(e){
+    onClickAvatar(e) {
         e.stopPropagation()
         e.preventDefault()
         if (this.props.onClickAvatar) {
@@ -113,28 +104,60 @@ const BlogCard = React.createClass({
             this.props.goInfo(this.props.blogId)
         }
     },
+    componentDidMount() {
+        let self = this
+        let el = ReactDOM.findDOMNode(this)
+        let go_search = el.querySelector('.go_search')
+        if (go_search) {
+            go_search.onclick = function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+                let searchTxt = e.currentTarget.getAttribute('data-search')
+                if (self.props.goSearch) {
+                    self.props.goSearch(searchTxt)
+                }
+            }
+        }
+        let go_url = el.querySelector('.go_url')
+        if (go_url) {
+            go_url.onclick = function(e) {
+                e.stopPropagation()
+                e.preventDefault()
+                let href = e.currentTarget.getAttribute('data-url')
+                window.location.href = href
+            }
+        }
+    },
     renderFavoriteBtn() {
         let {favoriteNum} = this.props
-        let color = this.props.isFavorite ? '#FFAE46' : null
-        let str = favoriteNum == 0 ? '点赞' : favoriteNum
+        let color = this.props.isFavorite
+            ? '#FFAE46'
+            : null
+        let str = favoriteNum == 0
+            ? '点赞'
+            : favoriteNum
         return <IconButton onClick={this.onFavorite} size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
     },
     renderCommentBtn() {
         let {commentNum} = this.props
-        let str = commentNum == 0 ? '评论' : commentNum
+        let str = commentNum == 0
+            ? '评论'
+            : commentNum
         return <IconButton onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
     },
     renderGallery() {
         let {gallery} = this.props
-        if (gallery.length == 0) return
+        if (gallery.length == 0)
+            return
         let items = []
         for (var i = 0; i < gallery.length; i++) {
-            items.push(<GalleryItem key={i} src={gallery[i]} />)
-            if (i > 9) break
+            items.push(<GalleryItem key={i} src={gallery[i]}/>)
+            if (i > 9)
+                break
         }
         return (
             <Gallery>
-                { items }
+                {items}
             </Gallery>
         )
     },
@@ -143,7 +166,7 @@ const BlogCard = React.createClass({
         if (address && address != '') {
             return (
                 <div>
-                    <AddressLabel mode='view' txt={address} />
+                    <AddressLabel mode='view' txt={address}/>
                 </div>
             )
         }
@@ -165,30 +188,33 @@ const BlogCard = React.createClass({
                     <List>
                         <Item>
                             <ItemMedia>
-                                { this.renderAvatar() }
+                                {this.renderAvatar()}
                             </ItemMedia>
                             <ItemContent>
                                 <ItemTitleRow>
                                     <ItemTitle>{user.name}</ItemTitle>
                                     <ItemTitleAfter>
-                                        <IconButton onClick={this.onActionSheet}icon='icon-keyboard_arrow_down'></IconButton>
+                                        <IconButton icon='icon-keyboard_arrow_down' onClick={this.onActionSheet}></IconButton>
                                     </ItemTitleAfter>
                                 </ItemTitleRow>
                                 <ItemSubtitle>
-                                    <TimeLabel style={{ fontSize: '10px', color: '#777' }} time={time} />
+                                    <TimeLabel style={{
+                                        fontSize: '10px',
+                                        color: '#777'
+                                    }} time={time}/>
                                 </ItemSubtitle>
-                                <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
-                                { this.renderMoreBtn(txtObj.hasMore) }
-                                { this.renderGallery() }
-                                { this.renderAddress() }
+                                <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                                {this.renderMoreBtn(txtObj.hasMore)}
+                                {this.renderGallery()}
+                                {this.renderAddress()}
                             </ItemContent>
                         </Item>
                     </List>
                 </CardContent>
 
                 <CardFooter>
-                    { this.renderCommentBtn() }
-                    { this.renderFavoriteBtn() }
+                    {this.renderCommentBtn()}
+                    {this.renderFavoriteBtn()}
                 </CardFooter>
             </Card>
         )
