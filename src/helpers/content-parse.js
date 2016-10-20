@@ -21,7 +21,8 @@ export function contentParse(txt){
     let regexTxt = '#[^#]+#'
     if(txt.match(regexTxt)){
         let searchTxt = txt.match(regexTxt)
-        let search_html = '<a href="javascript:;" data-search='+searchTxt+' class="go_search">'+searchTxt+'</a>'
+        let _searchTxt = searchTxt.replace(/#/g,'')
+        let search_html = '<a href="javascript:;" data-search='+_searchTxt+' class="go_search">'+searchTxt+'</a>'
         txt = txt.replace(searchTxt,search_html)
     }
     let cate_txt = truncate(txt, {
