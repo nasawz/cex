@@ -88,7 +88,7 @@ const BlogCard = React.createClass({
         e.stopPropagation()
         e.preventDefault()
         if (this.props.onActionSheet) {
-            this.props.onActionSheet(this.props.blogId)
+            this.props.onActionSheet(this.props.blogId,this.props.user.id)
         }
     },
     onComment(e) {
