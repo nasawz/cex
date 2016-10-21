@@ -11,6 +11,14 @@ import './avatar.less'
 
 
 const Avatar = React.createClass({
+    clickHandle(e){
+        e.stopPropagation()
+        e.preventDefault()
+        let {onClick} = this.props
+        if (onClick) {
+            onClick(e)
+        }
+    },
     getDefaultProps: function() {
         return {
             size: 44,
@@ -43,7 +51,7 @@ const Avatar = React.createClass({
             fontSize: this.props.size+'px',
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
+            <div onClick={this.clickHandle} className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
                 <LazyImage width={this.props.size} height={this.props.size} className='cex-avatar-img' style={_style} src={src} />
                 { this.renderPlus() }
                 { this.renderIcon() }
