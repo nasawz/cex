@@ -37,11 +37,8 @@ import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
 import VPopup from '../views/vpopup.jsx'
 import VSelector from '../views/vselector.jsx'
-<<<<<<< HEAD
 import VPopupPicker from '../views/vpopuppicker.jsx'
-=======
 import VSearch from '../views/vsearch.jsx'
->>>>>>> d52e25dee6a52587c03d397360d4f5ce5e1ac9cd
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -88,7 +85,7 @@ const Routes = React.createClass({
         '/switch': 'switch',
         '/popup': 'popup',
         '/selector': 'selector',
-        '/popup-picker':'popuppicker'
+        '/popup-picker':'popuppicker',
         '/search': 'search',
     },
     render () {
