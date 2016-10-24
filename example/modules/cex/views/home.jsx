@@ -187,6 +187,11 @@ const Home = React.createClass({
                         checker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','checklist']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        checklist
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','clocker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         clocker

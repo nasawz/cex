@@ -31,6 +31,7 @@ import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 import VCommentCard from '../views/vcommentcard.jsx'
 import VChecker from '../views/vchecker.jsx'
+import VCheckList from '../views/vchecklist.jsx'
 import VClocker from '../views/vclocker.jsx'
 import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
@@ -77,6 +78,7 @@ const Routes = React.createClass({
         '/blogcard': 'blogcard',
         '/commentcard': 'commentcard',
         '/checker': 'checker',
+        '/checklist': 'checklist',
         '/clocker': 'clocker',
         '/blur': 'blur',
         '/switch': 'switch',
@@ -174,6 +176,9 @@ const Routes = React.createClass({
     },
     checker(params) {
         return <VChecker params={params} />
+    },
+    checklist(params) {
+        return <VCheckList params={params} />
     },
     clocker(params) {
         return <VClocker params={params} />
