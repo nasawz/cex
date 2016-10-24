@@ -31,12 +31,17 @@ import VConfirm from '../views/vconfirm.jsx'
 import VBlogCard from '../views/vblogcard.jsx'
 import VCommentCard from '../views/vcommentcard.jsx'
 import VChecker from '../views/vchecker.jsx'
+import VCheckList from '../views/vchecklist.jsx'
 import VClocker from '../views/vclocker.jsx'
 import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
 import VPopup from '../views/vpopup.jsx'
 import VSelector from '../views/vselector.jsx'
+<<<<<<< HEAD
 import VPopupPicker from '../views/vpopuppicker.jsx'
+=======
+import VSearch from '../views/vsearch.jsx'
+>>>>>>> d52e25dee6a52587c03d397360d4f5ce5e1ac9cd
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -77,12 +82,14 @@ const Routes = React.createClass({
         '/blogcard': 'blogcard',
         '/commentcard': 'commentcard',
         '/checker': 'checker',
+        '/checklist': 'checklist',
         '/clocker': 'clocker',
         '/blur': 'blur',
         '/switch': 'switch',
         '/popup': 'popup',
         '/selector': 'selector',
         '/popup-picker':'popuppicker'
+        '/search': 'search',
     },
     render () {
         return (
@@ -175,6 +182,9 @@ const Routes = React.createClass({
     checker(params) {
         return <VChecker params={params} />
     },
+    checklist(params) {
+        return <VCheckList params={params} />
+    },
     clocker(params) {
         return <VClocker params={params} />
     },
@@ -192,6 +202,9 @@ const Routes = React.createClass({
     },
     popuppicker(params) {
         return <VPopupPicker params={params} />
+    },
+    search(params) {
+        return <VSearch params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

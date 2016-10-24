@@ -47,6 +47,11 @@ const Home = React.createClass({
                     </ItemTitle>
                 </ItemCell>
                 <ItemDivider>基础控件</ItemDivider>
+                <ItemCell link={{params:['example','search']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        search
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','selector']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         selector
@@ -180,6 +185,11 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','checker']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         checker
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','checklist']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        checklist
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','clocker']}} onClickLink={this.onClickLink}>
