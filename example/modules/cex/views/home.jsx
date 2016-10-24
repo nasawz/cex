@@ -192,6 +192,11 @@ const Home = React.createClass({
                         popup
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','popup-picker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        popup-picker
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }

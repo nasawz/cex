@@ -36,6 +36,7 @@ import VBlur from '../views/vblur.jsx'
 import VSwitch from '../views/vswitch.jsx'
 import VPopup from '../views/vpopup.jsx'
 import VSelector from '../views/vselector.jsx'
+import VPopupPicker from '../views/vpopuppicker.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -81,6 +82,7 @@ const Routes = React.createClass({
         '/switch': 'switch',
         '/popup': 'popup',
         '/selector': 'selector',
+        '/popup-picker':'popuppicker'
     },
     render () {
         return (
@@ -187,6 +189,9 @@ const Routes = React.createClass({
     },
     selector(params) {
         return <VSelector params={params} />
+    },
+    popuppicker(params) {
+        return <VPopupPicker params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
