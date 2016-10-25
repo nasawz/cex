@@ -61,18 +61,18 @@ const PostForm = React.createClass({
     },
     rendImageFiles() {
         let selectImgsObj = this.props.ImageFiles
-        if (selectImgsObj) {
-            let imgs = []
-            for (var s in selectImgsObj) {
-                imgs.push(selectImgsObj[s])
-            }
-            return imgs.map((item, i) => {
-                return (
-                    <GalleryItem  key={i} src={item.base64}/>
-                )
-            })
-
+        if(!selectImgsObj){
+            return <div/>
         }
+        let imgs = []
+        for (var s in selectImgsObj) {
+            imgs.push(selectImgsObj[s])
+        }
+        return imgs.map((item, i) => {
+            return (
+                <GalleryItem  key={i} src={item.base64}/>
+            )
+        })
 
     },
     rendPhotoBtn() {
@@ -127,7 +127,7 @@ const PostForm = React.createClass({
             return (
                 <AddressLabel txt={this.props.address}/>
             )
-        } 
+        }
     },
     render() {
         return (
