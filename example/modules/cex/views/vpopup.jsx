@@ -130,7 +130,7 @@ const VPopup = React.createClass({
                         <List>
                             <ItemCell>
                                 <ItemTitle>
-                                    <div onClick={this.showToast}>Toast</div>
+                                    <div onClick={this.showToast}>Toast(show1)</div>
                                 </ItemTitle>
                             </ItemCell>
                         </List>

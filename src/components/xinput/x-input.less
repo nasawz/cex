@@ -1,0 +1,52 @@
+.cex-x-input {
+    position: relative;
+    overflow: hidden;
+    padding-left: 15px;
+    min-height: 30px;
+    color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 16px;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: auto;
+        top: auto;
+        height: 1px;
+        width: 100%;
+        background-color: #ddd;
+        display: block;
+        z-index: 5;
+    }
+    .cex-x-input-label {
+        display: block;
+        // min-width: 50px;
+        margin-right: 10px;
+        color: #000;
+        word-wrap: break-word;
+        word-break: break-all;
+    }
+    .cex-x-input-ele {
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        .input {
+            width: 100%;
+            border: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            background-color: transparent;
+            font-size: inherit;
+            color: inherit;
+            height: 1.41176471em;
+            line-height: 1.41176471;
+        }
+    }
+}
