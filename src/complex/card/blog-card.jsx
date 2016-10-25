@@ -62,7 +62,7 @@ const BlogCard = React.createClass({
     },
     renderAvatar() {
         let {avatar,silence} = this.props.user
-        if(silence==false){
+        if(silence==true){
             return(<LazyImage src={this.props.silenceImgUrl} />)
         } 
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
