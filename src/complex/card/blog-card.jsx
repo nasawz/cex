@@ -34,6 +34,7 @@ const BlogCard = React.createClass({
     },
     getDefaultProps() {
         return {
+            silenceImgUrl:'',
             user: {
                 id: '',
                 name: '朱朱',
@@ -61,8 +62,8 @@ const BlogCard = React.createClass({
     },
     renderAvatar() {
         let {avatar,silence} = this.props.user
-        if(silence==true){
-            return(<LazyImage src={require('../../../../../img/banSpeech.png')} />)
+        if(silence==false){
+            return(<LazyImage src={this.props.silenceImgUrl} />)
         } 
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
             margin: '0px'
