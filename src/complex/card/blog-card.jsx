@@ -18,6 +18,7 @@ import Gallery from 'cex/components/image/gallery.jsx'
 import GalleryItem from 'cex/components/image/gallery-item.jsx'
 import Avatar from 'cex/components/image/avatar.jsx'
 import AddressLabel from 'cex/components/label/address-label.jsx'
+import LazyImage from 'cex/components/image/lazy-image.jsx'
 // import ColorLabel from 'cex/components/label/color-label.jsx'
 import TimeLabel from 'cex/components/label/time-label.jsx'
 
@@ -33,6 +34,7 @@ const BlogCard = React.createClass({
     },
     getDefaultProps() {
         return {
+            silenceImgUrl:'',
             user: {
                 id: '',
                 name: '朱朱',
@@ -40,7 +42,8 @@ const BlogCard = React.createClass({
                     img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
                     icon: null,
                     plus: null
-                }
+                },
+                silence:false
             },
             address: '北京，朝阳区，远洋国际中心',
             txt: '女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
@@ -58,7 +61,10 @@ const BlogCard = React.createClass({
         return {showAllTxt: this.props.showAllTxt}
     },
     renderAvatar() {
-        let {avatar} = this.props.user
+        let {avatar,silence} = this.props.user
+        if(silence==true){
+            return(<LazyImage src={this.props.silenceImgUrl} />)
+        } 
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
             margin: '0px'
         }} size={40}/>)
@@ -176,6 +182,7 @@ const BlogCard = React.createClass({
     },
     renderCard(){
         let {txt, user, time, essential, essentialImg} = this.props
+        console.log(this.props);
         let txtObj = contentParse(txt)
         let contHTML = txtObj.txt
         if (essential) {
