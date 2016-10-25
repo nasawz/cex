@@ -21,6 +21,14 @@ const GalleryItem = React.createClass({
             })
         }, 500)
     },
+    renderDelete(){
+        if(this.props.onDeleImg && this.props.src !=null){
+            return (
+                <i className='btn-delete' data-key={this.props.imgKey} onClick={this.props.onDeleImg}></i>
+            )
+        }
+
+    },
     render() {
         let {style} = this.props
         let classes = {
@@ -35,12 +43,14 @@ const GalleryItem = React.createClass({
         let _style_lazy = {
             width: '100%',
             height: '100%',
-            position: 'relative'
-            
+            position: 'relative',
+            overflow:'hidden'
+
         }
         return (
             <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
                 <LazyImage _style={_style_lazy} src={this.props.src} />
+                {this.renderDelete()}
             </div>
         )
     }
