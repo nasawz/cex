@@ -45,6 +45,10 @@
 .preloader() {
   width: 20px;
   height: 20px;
+    -webkit-transition:-webkit-transform 1s;
+    transition:-webkit-transform 1s;
+    transition:transform 1s;
+    transition:transform 1s,-webkit-transform 1s;
   transform-origin: 50%;
   animation: preloader-spin 1s steps(12, end) infinite;
   &:after {

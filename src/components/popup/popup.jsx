@@ -7,7 +7,7 @@ import classNames from 'classnames'
 import './popup.less'
 
 
-const ActionSheet = React.createClass({
+const Popup = React.createClass({
     clickComp(){
         if(this.props.clickSheet){
             this.props.closePopup()
@@ -28,10 +28,11 @@ const ActionSheet = React.createClass({
     },
     render () {
         let {show,children,showCancel,fullScreen,isChild} = this.props
-        let mashClass={
+        let maskClass={
             'cex-mask-transition':true,
             'cex-fade-toggle':show && !isChild,
         }
+
         let sheetClass={
             'cex-actionsheet':true,
             'cex-actionsheet-toggle':show,
@@ -42,7 +43,7 @@ const ActionSheet = React.createClass({
         return (
             <div className="cex-popup">
 
-                    <div className={classNames(this.props.className,mashClass)} style={{display: show ? 'block' : 'none'}} onClick={this.cancelComp}>
+                    <div className={classNames(this.props.className,maskClass)} style={{display: show ? 'block' : 'none'}} onClick={this.cancelComp}>
                     </div>
                     <div className={classNames(this.props.className,sheetClass)}>
                         <div className="cex-actionsheet-tpl">
@@ -56,4 +57,4 @@ const ActionSheet = React.createClass({
     }
 })
 
-export default ActionSheet
+export default Popup
