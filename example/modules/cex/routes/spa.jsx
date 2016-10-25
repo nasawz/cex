@@ -38,6 +38,7 @@ import VSwitch from '../views/vswitch.jsx'
 import VPopup from '../views/vpopup.jsx'
 import VSelector from '../views/vselector.jsx'
 import VSearch from '../views/vsearch.jsx'
+import VInput from '../views/vinput.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -85,6 +86,7 @@ const Routes = React.createClass({
         '/popup': 'popup',
         '/selector': 'selector',
         '/search': 'search',
+        '/input': 'input',
     },
     render () {
         return (
@@ -197,6 +199,9 @@ const Routes = React.createClass({
     },
     search(params) {
         return <VSearch params={params} />
+    },
+    input(params) {
+        return <VInput params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
