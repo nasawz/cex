@@ -10,9 +10,9 @@ const VPopupPicker = React.createClass({
         }
         let val = ''
         for (var i = 0; i < arr.length; i++) {
-            val = val + arr[i] + ''
+            val = val + arr[i] + ' '
         }
-        return val
+        return val.substring(0,val.length-1)
     },
     showPopupPicker(e) {
         let id = e.currentTarget.getAttribute('data-id')
@@ -21,20 +21,28 @@ const VPopupPicker = React.createClass({
     hidePopupPicker() {
         this.setState({show: ''})
     },
-    closePopupPicker1(val) {
-        this.setState({
-            data1: {
-                value: val
-            }
-        })
 
+    closePopupPicker1(val) {
+        // this.setState({
+        //     data1: {
+        //         value: val
+        //     }
+        // })
+        this.setState({
+            valueOfP1:val
+        })
+        console.log(val)
     },
     closePopupPicker2(val) {
+        // this.setState({
+        //     data2: {
+        //         value: val
+        //     }
+        // })
         this.setState({
-            data2: {
-                value: val
-            }
+            valueOfP2:val
         })
+        console.log(val)
     },
     getInitialState() {
         return {
@@ -73,7 +81,7 @@ const VPopupPicker = React.createClass({
                     ]
                 ],
                 value: ['2003'],
-                columns: 0,
+                // columns: 1,
                 id: 'data1'
             },
             data2: {
@@ -88,7 +96,9 @@ const VPopupPicker = React.createClass({
                 ],
                 // columns:2,
                 id: 'data2'
-            }
+            },
+            valueOfP1:['2003'],
+            valueOfP2:['你', 'I'],
         }
     },
 
@@ -99,8 +109,8 @@ const VPopupPicker = React.createClass({
         let showT2 = (this.state.show == 't2')
             ? true
             : false
-
         return (
+
             <List>
                 <ItemCell>
                     <div style={{
@@ -112,7 +122,7 @@ const VPopupPicker = React.createClass({
                         <span style={{
                             float: 'right',
                             color: '#aaa'
-                        }}>{this.getPopupValue(this.state.data1.value)}</span>
+                        }}>{this.getPopupValue(this.state.valueOfP1)}</span>
                     </div>
                 </ItemCell>
                 <ItemCell>
@@ -125,7 +135,7 @@ const VPopupPicker = React.createClass({
                         <span style={{
                             float: 'right',
                             color: '#aaa'
-                        }}>{this.getPopupValue(this.state.data2.value)}</span>
+                        }}>{this.getPopupValue(this.state.valueOfP2)}</span>
                     </div>
                 </ItemCell>
 
