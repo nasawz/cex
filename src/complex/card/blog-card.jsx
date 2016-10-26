@@ -154,13 +154,16 @@ const BlogCard = React.createClass({
             : commentNum
         return <IconButton onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
     },
+    getAllImg(image){
+        this.props.onShowImg(image,this.props.gallery)
+    },
     renderGallery() {
         let {gallery} = this.props
         if (gallery.length == 0)
             return
         let items = []
         for (var i = 0; i < gallery.length; i++) {
-            items.push(<GalleryItem key={i} src={gallery[i]} onGetImgUrl={this.props.onShowImg}/>)
+            items.push(<GalleryItem key={i} src={gallery[i]} onGetImgUrl={this.getAllImg}/>)
             if (i > 9)
                 break
         }
