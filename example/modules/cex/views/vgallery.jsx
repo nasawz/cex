@@ -10,7 +10,7 @@ const VGallery = React.createClass({
             <div>
                 <Divider>1张图</Divider>
                 <Gallery>
-                    <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg' />
+                    <GalleryItem src='http://www.rmzxb.com.cn/upload/resources/image/2016/10/26/1214318.jpg' />
                 </Gallery>
                 <Divider>4张图</Divider>
                 <Gallery>
