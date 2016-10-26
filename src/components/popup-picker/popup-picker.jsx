@@ -14,7 +14,7 @@ import ItemTitle from 'cex/components/list/item-title.jsx'
 
 const PopupPicker = React.createClass({
     clickComp(){
-        this.props.closePopupPicker(this.state.changeValue)
+        this.props.closePopupPicker(this.state.changeValue || this.props.pickerData.value)
         this.cancelComp()
     },
     cancelComp(){
@@ -27,14 +27,8 @@ const PopupPicker = React.createClass({
     },
     getInitialState(){
         return{
-            changeValue:[],
-            DefaultValue:false
+            changeValue:false,
         }
-    },
-    componentWillReceiveProps(nextProps){
-        this.setState({
-            DefaultValue:nextProps.value
-        })
     },
     render () {
         let {show,pickerData} = this.props
