@@ -30,7 +30,7 @@ const IconButton = React.createClass({
             'cex-icon-gap':children?true:false
         }
         return (
-            <div onClick={this.clickHandle} className={classNames(this.props.className,'cex-icon-button','flex-center','flex-middle')} style={style}>
+            <div onClick={this.clickHandle} className={classNames(this.props.className,'cex-icon-button','flex-left','flex-middle')} style={style}>
                 <Icon className={classNames(classes)} icon={icon} color={color} size={size}></Icon>
                 { children }
             </div>
