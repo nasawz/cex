@@ -64,7 +64,7 @@ const BlogCard = React.createClass({
         let {avatar,silence} = this.props.user
         if(silence==true){
             return(<LazyImage src={this.props.silenceImgUrl} />)
-        } 
+        }
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
             margin: '0px'
         }} size={40}/>)
@@ -160,7 +160,7 @@ const BlogCard = React.createClass({
             return
         let items = []
         for (var i = 0; i < gallery.length; i++) {
-            items.push(<GalleryItem key={i} src={gallery[i]}/>)
+            items.push(<GalleryItem key={i} src={gallery[i]} onGetImgUrl={this.props.onShowImg}/>)
             if (i > 9)
                 break
         }
