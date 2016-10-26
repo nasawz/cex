@@ -22,7 +22,7 @@ const GalleryItem = React.createClass({
         }, 500)
     },
     renderDelete(){
-        if(this.props.onDeleImg && this.props.src !=null){
+        if(this.props.onDeleImg && this.props.src.length>0){
             return (
                 <i className='btn-delete' data-key={this.props.imgKey} onClick={this.props.onDeleImg}></i>
             )
@@ -51,9 +51,13 @@ const GalleryItem = React.createClass({
         if(this.props.onDeleImg){
             suffix = ''
         }
+        let src = this.props.src
+        if (src.indexOf('upaiyun') >= 1) {
+            src = this.props.src+suffix
+        }
         return (
             <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
-                <LazyImage _style={_style_lazy} src={this.props.src+suffix} />
+                <LazyImage _style={_style_lazy} src={src} />
                 {this.renderDelete()}
             </div>
         )
