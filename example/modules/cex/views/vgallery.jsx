@@ -5,12 +5,16 @@ import GalleryItem from 'cex/components/image/gallery-item.jsx'
 import Divider from 'cex/components/divider/divider.jsx'
 
 const VGallery = React.createClass({
+    showImg(image){
+        // 点击小图看大图
+        // global.appHistory.previewImage(image, this.props.data.content.images)
+    },
     render () {
         return (
             <div>
                 <Divider>1张图</Divider>
                 <Gallery>
-                    <GalleryItem src='http://www.rmzxb.com.cn/upload/resources/image/2016/10/26/1214318.jpg' />
+                    <GalleryItem onGetImgUrl={this.showImg} src='http://www.rmzxb.com.cn/upload/resources/image/2016/10/26/1214318.jpg' />
                 </Gallery>
                 <Divider>4张图</Divider>
                 <Gallery>

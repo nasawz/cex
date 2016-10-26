@@ -7,6 +7,14 @@ import merge from 'lodash/merge'
 import './gallery-item.less'
 
 const GalleryItem = React.createClass({
+    getImgUrl(e){
+        e.stopPropagation()
+        e.preventDefault()
+        let el = e.currentTarget
+        let image = el.getAttribute('data-image')
+        this.props.onGetImgUrl(image)
+
+    },
     getInitialState(){
         return{
             height:0
@@ -56,7 +64,7 @@ const GalleryItem = React.createClass({
             src = this.props.src+suffix
         }
         return (
-            <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
+            <div className={classNames(this.props.className , classes)} data-image={this.props.src} style={merge({},_style,style)} onClick={this.getImgUrl}>
                 <LazyImage _style={_style_lazy} src={src} />
                 {this.renderDelete()}
             </div>
