@@ -182,7 +182,6 @@ const BlogCard = React.createClass({
     },
     renderCard(){
         let {txt, user, time, essential, essentialImg} = this.props
-        console.log(this.props);
         let txtObj = contentParse(txt)
         let contHTML = txtObj.txt
         if (essential) {

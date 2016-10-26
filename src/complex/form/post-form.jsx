@@ -59,6 +59,7 @@ const PostForm = React.createClass({
         val = val.replace(/(\[.{1,3}\])$|(.{1})$/, '')
         this.refs.txt_content.setValue(val)
     },
+
     rendImageFiles() {
         let selectImgsObj = this.props.ImageFiles
         if(!selectImgsObj){
@@ -66,11 +67,15 @@ const PostForm = React.createClass({
         }
         let imgs = []
         for (var s in selectImgsObj) {
-            imgs.push(selectImgsObj[s])
+            let obj = {}
+            obj.key = s
+            obj.value = selectImgsObj[s]
+            imgs.push(obj)
+            // imgs.push(selectImgsObj[s])
         }
         return imgs.map((item, i) => {
             return (
-                <GalleryItem  key={i} src={item.base64}/>
+                <GalleryItem  key={i} src={item.value.base64} imgKey={item.key} onDeleImg={this.props.onDeleteImage}/>
             )
         })
 

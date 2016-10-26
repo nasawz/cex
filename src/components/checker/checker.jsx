@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 
 import './checker.less'
@@ -13,7 +12,7 @@ const Checker = React.createClass({
                 activeIdx:newIdx
             })
             this.props.getValues(newVal)
-          }
+        }
     },
     selectCheckbox(currentVal,e,idx){
         if (!this.props.disabled) {
@@ -41,9 +40,9 @@ const Checker = React.createClass({
     changeValue(currentVal,e,idx){
         if (this.props.type == 'radio') {
             this.selectRadio(currentVal,e,idx)
-          } else {
+        } else {
             this.selectCheckbox(currentVal,e,idx)
-          }
+        }
     },
     getInitialState(){
         let selectVal = []
@@ -86,7 +85,7 @@ const Checker = React.createClass({
                         style:this.props.style,
                         curentValue:this.props.curentValue,
                         className:cls,
-                        })
+                    })
                 })}
             </div>
         )

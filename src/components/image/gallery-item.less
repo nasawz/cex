@@ -9,12 +9,27 @@
     // background-size: cover;
     color: #333;
     margin-bottom: 1.5%;
-    overflow: hidden;
+    // overflow: auto;;
+    position: relative;
     &:nth-child(3n){
         margin-right: 0px;
     }
     img{
         width: 100%;
+    }
+    .btn-delete{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 30px;
+        color: #fff;
+        width: 16px;
+        height: 16px;
+        right: -4px;
+        top: -5px;
+        background: url(../../img/dele_icon.png) no-repeat;
+        background-size: cover;
+        z-index: 11;
     }
 }
 .cex-gallery-one{
