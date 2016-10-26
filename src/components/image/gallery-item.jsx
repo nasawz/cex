@@ -47,9 +47,13 @@ const GalleryItem = React.createClass({
             overflow:'hidden'
 
         }
+        let suffix = this.props.suffix
+        if(this.props.onDeleImg){
+            suffix = ''
+        }
         return (
             <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
-                <LazyImage _style={_style_lazy} src={this.props.src+this.props.suffix} />
+                <LazyImage _style={_style_lazy} src={this.props.src+suffix} />
                 {this.renderDelete()}
             </div>
         )
