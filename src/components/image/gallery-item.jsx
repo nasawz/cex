@@ -49,7 +49,7 @@ const GalleryItem = React.createClass({
         }
         return (
             <div className={classNames(this.props.className , classes)} style={merge({},_style,style)}>
-                <LazyImage _style={_style_lazy} src={this.props.src} />
+                <LazyImage _style={_style_lazy} src={this.props.src+this.props.suffix} />
                 {this.renderDelete()}
             </div>
         )
