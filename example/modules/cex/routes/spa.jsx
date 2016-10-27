@@ -40,6 +40,7 @@ import VSelector from '../views/vselector.jsx'
 import VPopupPicker from '../views/vpopuppicker.jsx'
 import VSearch from '../views/vsearch.jsx'
 import VInput from '../views/vinput.jsx'
+import VDateTime from '../views/vdatetime.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -89,6 +90,7 @@ const Routes = React.createClass({
         '/popup-picker':'popuppicker',
         '/search': 'search',
         '/input': 'input',
+        '/datetime': 'datetime',
     },
     render () {
         return (
@@ -207,6 +209,9 @@ const Routes = React.createClass({
     },
     input(params) {
         return <VInput params={params} />
+    },
+    datetime(params) {
+        return <VDateTime params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
