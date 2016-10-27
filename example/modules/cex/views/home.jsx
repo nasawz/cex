@@ -212,6 +212,11 @@ const Home = React.createClass({
                         popup-picker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','datetime']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        datetime
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
