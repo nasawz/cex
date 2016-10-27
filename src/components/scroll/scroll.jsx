@@ -146,18 +146,26 @@ const Scroll = React.createClass({
     },
     renderInfiniteLayer(){
         if (!this.props.onInfinite) return
-        if (!this.props.showInfinite) return
-        if (this.state.hasMore) {
+        if (this.props.showInfinite) {
+            if (this.state.hasMore) {
+                return (
+                    <div className="infinite-layer">
+                        <div className="infinite-preloader"></div>
+                        <div>加载中...</div>
+                    </div>
+                )
+            }else{
+                return (
+                    <div className="infinite-layer">
+                        <Divider>没有了</Divider>
+                    </div>
+                )
+            }
+        } else {
+            let src = require('../../img/empty.png')
             return (
-                <div className="infinite-layer">
-                    <div className="infinite-preloader"></div>
-                    <div>加载中...</div>
-                </div>
-            )
-        }else{
-            return (
-                <div className="infinite-layer">
-                    <Divider>没有了</Divider>
+                <div className='empty'>
+                    <img src={src} />
                 </div>
             )
         }
