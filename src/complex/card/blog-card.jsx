@@ -143,16 +143,22 @@ const BlogCard = React.createClass({
             ? '#FFAE46'
             : null
         let str = favoriteNum == 0
-            ? '点赞'
+            ? ''
             : favoriteNum
-        return <IconButton onClick={this.onFavorite} size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
+        let _style={
+            width:'55px'
+        }
+        return <IconButton style={_style} onClick={this.onFavorite} size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
     },
     renderCommentBtn() {
         let {commentNum} = this.props
         let str = commentNum == 0
-            ? '评论'
+            ? ''
             : commentNum
-        return <IconButton onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
+        let _style={
+            width:'55px'
+        }
+        return <IconButton style={_style} onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
     },
     getAllImg(image){
         this.props.onShowImg(image,this.props.gallery)
