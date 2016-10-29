@@ -23,7 +23,6 @@ const Scroll = React.createClass({
         }
         let diff = e.targetTouches[0].pageY - this.startY
         if (diff > 0) e.preventDefault()
-        // console.log(diff);
         this.setState({
             top: Math.pow(diff, 0.8) + (this.state.state === 2 ? this.offset : 0)
         })
@@ -115,6 +114,13 @@ const Scroll = React.createClass({
     componentDidMount() {
         this.el = ReactDOM.findDOMNode(this.refs.scroll)
     },
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.showInfinite!=this.state.hasMore) {
+            this.setState({
+                hasMore: nextProps.showInfinite
+            })
+        }
+    },
     getInitialState() {
         this.startY = 0
         this.offset = this.props.offset
@@ -140,17 +146,26 @@ const Scroll = React.createClass({
     },
     renderInfiniteLayer(){
         if (!this.props.onInfinite) return
-        if (this.state.hasMore) {
+        if (this.props.showInfinite) {
+            if (this.state.hasMore) {
+                return (
+                    <div className="infinite-layer">
+                        <div className="infinite-preloader"></div>
+                        <div>加载中...</div>
+                    </div>
+                )
+            }else{
+                return (
+                    <div className="infinite-layer">
+                        <Divider>没有了</Divider>
+                    </div>
+                )
+            }
+        } else {
+            let src = require('../../img/empty.png')
             return (
-                <div className="infinite-layer">
-                    <div className="infinite-preloader"></div>
-                    <div>加载中...</div>
-                </div>
-            )
-        }else{
-            return (
-                <div className="infinite-layer">
-                    <Divider>没有了</Divider>
+                <div className='empty'>
+                    <img src={src} />
                 </div>
             )
         }

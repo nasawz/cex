@@ -10,7 +10,7 @@ import './x-input.less'
 
 const XInput = React.createClass({
     getValue() {
-        return val = this.refs.input.value
+        return this.refs.input.value
     },
     changeHandler(){
         let val = this.refs.input.value
