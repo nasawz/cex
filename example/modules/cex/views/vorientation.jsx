@@ -6,10 +6,7 @@ const VOrientation = React.createClass({
     componentDidMount() {
         Orientation.change((e) => { 
             let info = Orientation.getInfo()
-            alert('landscape--',info.landscape)
-            alert('orientation--',info.orientation)
-            alert('portrait',info.portrait)
-
+            console.log(info)
         })
     },
 
