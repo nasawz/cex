@@ -224,12 +224,12 @@ const Home = React.createClass({
                 </ItemCell>
                 <ItemCell link={{params:['example','shake']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
-                        reddot
+                        shake
                     </ItemTitle>
                 </ItemCell>
                 <ItemCell link={{params:['example','orientation']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
-                        reddot
+                        orientation
                     </ItemTitle>
                 </ItemCell>
             </List >

@@ -38,7 +38,7 @@ const ShakeIndex = React.createClass({
             z = acceleration.z
             var speed = Math.abs(x + y + z - last_x - last_y - last_z) / diffTime * 10000
             if (speed > this.props.SHAKE_THRESHOLD) {
-                alert('摇动了')
+                this.onShake()
             }
             last_x = x
             last_y = y
