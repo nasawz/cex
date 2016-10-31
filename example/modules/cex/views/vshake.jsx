@@ -1,18 +1,15 @@
 import React from 'react'
 
-import Shake from 'cex/components/shake/shake.jsx'
+import ShakeIndex from 'cex/components/shake/shakeIndex.jsx'
 
 const VShake = React.createClass({
     onShake() { 
-        alert('shake')
+        alert('摇动了')
     },
-    // componentDidMount() {
-    // },
-
     render() {
         return ( 
             <div>
-                <Shake onShake={this.onShake}/>
+                <ShakeIndex onShake={this.onShake} stop={false}/>
             </div>
         )
     }
