@@ -3,33 +3,20 @@ import React from 'react'
 import Orientation from 'cex/components/orientation/orientation.js'
 
 const VOrientation = React.createClass({
-    componentWillMount() { 
-        // Orientation.change((e) => { 
-        //     let info = Orientation.getInfo()
-        //     console.log('-------------')
-        //     console.log(e)
-        //     console.log(info)
-
-        // })
-
-    },
-    componentDidMount() { 
-        console.log('componentDidMount')
+    componentDidMount() {
         Orientation.change((e) => { 
             let info = Orientation.getInfo()
-            console.log('-------------')
-            console.log(e)
-            console.log(info)
+            alert('landscape--',info.landscape)
+            alert('orientation--',info.orientation)
+            alert('portrait',info.portrait)
 
         })
     },
 
     render() {
-
-
-        return (
+        return ( 
             <div>
-                aaaaaaa
+                横屏竖屏测试
             </div>
         )
     }
