@@ -217,6 +217,11 @@ const Home = React.createClass({
                         datetime
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','reddot']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        reddot
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
