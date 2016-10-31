@@ -43,6 +43,7 @@ import VInput from '../views/vinput.jsx'
 import VDateTime from '../views/vdatetime.jsx'
 import VOrientation from '../views/vorientation.jsx'
 import VRedDot from '../views/vreddot.jsx'
+import VShake from '../views/vshake.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -95,6 +96,7 @@ const Routes = React.createClass({
         '/datetime': 'datetime',
         '/orientation': 'orientation',
         '/reddot': 'reddot',
+        '/shake': 'shake',
     },
     render () {
         return (
@@ -222,6 +224,9 @@ const Routes = React.createClass({
     },
     reddot(params) {
         return <VRedDot params={params} />
+    },
+    shake(params) {
+        return <VShake params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

@@ -14,7 +14,7 @@ const VOrientation = React.createClass({
     },
 
     render() {
-        return (
+        return ( 
             <div>
                 横屏竖屏测试
             </div>
