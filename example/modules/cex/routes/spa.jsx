@@ -43,6 +43,8 @@ import VInput from '../views/vinput.jsx'
 import VDateTime from '../views/vdatetime.jsx'
 import VOrientation from '../views/vorientation.jsx'
 import VRedDot from '../views/vreddot.jsx'
+import VQRCode from '../views/vqrcode.jsx'
+
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -95,6 +97,7 @@ const Routes = React.createClass({
         '/datetime': 'datetime',
         '/orientation': 'orientation',
         '/reddot': 'reddot',
+        '/qrcode': 'qrcode',
     },
     render () {
         return (
@@ -222,6 +225,9 @@ const Routes = React.createClass({
     },
     reddot(params) {
         return <VRedDot params={params} />
+    },
+    qrcode(params) {
+        return <VQRCode params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
