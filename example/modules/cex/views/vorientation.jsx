@@ -7,6 +7,7 @@ const VOrientation = React.createClass({
         Orientation.change((e) => { 
             let info = Orientation.getInfo()
             console.log(info)
+            alert('横屏－－',info.landscape)
         })
     },
 
