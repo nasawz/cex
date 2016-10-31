@@ -42,6 +42,7 @@ import VSearch from '../views/vsearch.jsx'
 import VInput from '../views/vinput.jsx'
 import VDateTime from '../views/vdatetime.jsx'
 import VOrientation from '../views/vorientation.jsx'
+import VRedDot from '../views/vreddot.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -93,6 +94,7 @@ const Routes = React.createClass({
         '/input': 'input',
         '/datetime': 'datetime',
         '/orientation': 'orientation',
+        '/reddot': 'reddot',
     },
     render () {
         return (
@@ -217,6 +219,9 @@ const Routes = React.createClass({
     },
     orientation(params) {
         return <VOrientation params={params} />
+    },
+    reddot(params) {
+        return <VRedDot params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

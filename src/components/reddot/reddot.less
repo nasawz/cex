@@ -1,0 +1,24 @@
+.cex-reddot {
+    position: relative;
+    display: inline-block;
+    &:after {
+        content: '';
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-radius: 5px;
+        background-clip: padding-box;
+        background-color: #f74c31;
+    }
+}
+.cex-reddot.cex-reddot-s {
+    &:after {
+        width: 6px;
+        height: 6px;
+        top: -5px;
+        right: -5px;
+    }
+}
