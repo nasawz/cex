@@ -49,7 +49,7 @@ const VCard = React.createClass({
                     <CardContent>
                         card
                     </CardContent>
-                    <CardFooter>
+                    <CardFooter style={{justifyContent:'space-between'}}>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                         <IconButton icon='icon-share'>分享</IconButton>
@@ -85,7 +85,7 @@ const VCard = React.createClass({
                             </Item>
                         </List>
                     </CardContent>
-                    <CardFooter>
+                    <CardFooter style={{justifyContent:'space-between'}}>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                     </CardFooter>
@@ -110,14 +110,14 @@ const VCard = React.createClass({
                                         <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
                                         <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
                                         <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
-   
+
                                     </Gallery>
                                 </ItemContent>
                             </Item>
                         </List>
                     </CardContent>
 
-                    <CardFooter>
+                    <CardFooter style={{justifyContent:'space-between'}}>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                     </CardFooter>
@@ -146,7 +146,7 @@ const VCard = React.createClass({
                         </List>
                     </CardContent>
 
-                    <CardFooter>
+                    <CardFooter style={{justifyContent:'space-between'}}>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                     </CardFooter>
@@ -178,7 +178,7 @@ const VCard = React.createClass({
                         </List>
                     </CardContent>
 
-                    <CardFooter>
+                    <CardFooter style={{justifyContent:'space-between'}}>
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                     </CardFooter>
