@@ -10,9 +10,13 @@ import './item-media.less'
 
 const ItemMedia = React.createClass({
     render () {
-        let {style,children} = this.props
+        let {style,children,squarePicture} = this.props
+        let classes = {
+            'cex-item-media' : true ,
+            'cex-square-picture' : squarePicture
+        }
         return (
-            <div className={classNames(this.props.className,'cex-item-media')} style={style}>
+            <div className={classNames(this.props.className,classes)} style={style}>
                 {children}
             </div>
         )

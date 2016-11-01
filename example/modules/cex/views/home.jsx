@@ -212,6 +212,30 @@ const Home = React.createClass({
                         popup-picker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','datetime']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        datetime
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','reddot']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        reddot
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','qrcode']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        qrcode
+                    </ItemTitle>
+                <ItemCell link={{params:['example','shake']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        shake
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','orientation']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        orientation
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
