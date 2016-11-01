@@ -222,6 +222,10 @@ const Home = React.createClass({
                         reddot
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','qrcode']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        qrcode
+                    </ItemTitle>
                 <ItemCell link={{params:['example','shake']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         shake
