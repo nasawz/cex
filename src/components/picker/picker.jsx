@@ -50,11 +50,7 @@ const Picker = React.createClass({
         this.columns = columns
         return {count: 0, value: this.value, data: this.data}
     },
-    componentWillReceiveProps(nextProps){
-        this.data = nextProps.data
-        this.value = this.props.value
-        this._render(this.data, this.value)
-    },
+
     // ready
     componentDidMount() {
         this._render(this.data, this.value)
