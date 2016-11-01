@@ -58,6 +58,7 @@
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
     "react-hot-loader": "^3.0.0-beta.3",
+    "react-mini-router": "git+https://github.com/nasawz/react-mini-router.git",
     "run-sequence": "^1.2.2",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
@@ -65,8 +66,7 @@
     "webpack-dev-middleware": "^1.8.2",
     "webpack-dev-server": "^1.15.1",
     "webpack-hot-middleware": "^2.12.2",
-    "webpack-md5-hash": "0.0.5",
-    "react-mini-router": "git+https://github.com/nasawz/react-mini-router.git"
+    "webpack-md5-hash": "0.0.5"
   },
   "dependencies": {
     "autoprefixer": "^6.5.0",
@@ -74,10 +74,10 @@
     "gulp-sftp": "^0.1.5",
     "image-webpack-loader": "^2.0.0",
     "precss": "^1.4.0",
+    "qr.js": "^0.0.0",
     "react-lazy-load": "^3.0.10",
     "run-sequence": "^1.2.2",
     "trim": "0.0.1",
-    "vinyl-ftp": "^0.5.0",
-    "qr.js": "0.0.0"
+    "vinyl-ftp": "^0.5.0"
   }
 }
