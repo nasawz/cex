@@ -226,6 +226,15 @@ const Home = React.createClass({
                     <ItemTitle>
                         qrcode
                     </ItemTitle>
+                <ItemCell link={{params:['example','shake']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        shake
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','orientation']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        orientation
+                    </ItemTitle>
                 </ItemCell>
             </List >
         )
