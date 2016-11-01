@@ -1,6 +1,8 @@
 @import "./emoticons.less";
 
 .cex-emoticons-picker {
+    -webkit-user-select: none;
+    -moz-user-select: none;  
     .cex-emotion-item{
         display: inline-block;
         width: 10%;
@@ -8,6 +10,8 @@
         height: auto;
         i{
             display: inline-block;
+            -webkit-user-select: none;
+            -moz-user-select: none;
         }
     }
 
@@ -21,7 +25,6 @@
             margin: 3%;
         }
     }
-
      .hehe {
      	.sprite(@hehe);
      }
