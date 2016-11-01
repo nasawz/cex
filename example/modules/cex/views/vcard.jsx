@@ -106,10 +106,10 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png'/>
 
                                     </Gallery>
                                 </ItemContent>
@@ -138,7 +138,7 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg'/>
 
                                     </Gallery>
                                 </ItemContent>
@@ -167,10 +167,10 @@ const VCard = React.createClass({
                                         网通二区
                                     </ItemSubtitle>
                                     <Gallery>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
-                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg!small'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg'/>
+                                        <GalleryItem src='http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg'/>
 
                                     </Gallery>
                                 </ItemContent>
