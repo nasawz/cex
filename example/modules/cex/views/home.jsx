@@ -237,6 +237,11 @@ const Home = React.createClass({
                         orientation
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','progress']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        progress
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
