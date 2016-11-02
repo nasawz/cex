@@ -19,7 +19,7 @@ import NavigateMixin from '../../common/navigate-mixin.js'
 
 const Home = React.createClass({
     mixins:[NavigateMixin],
-    onClickLink(obj){
+    onClickLink(obj) {
         this.navTo(obj.params)
     },
     render () {
