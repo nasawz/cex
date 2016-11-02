@@ -9,9 +9,9 @@ import './item-cell.less'
 
 
 const ItemCell = React.createClass({
-    onClick(e){
+    onClick(){
         if (this.props.onClickLink) {
-            this.props.onClickLink(e)
+            this.props.onClickLink(this.props.link)
         }
     },
     getDefaultProps: function() {
