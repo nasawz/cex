@@ -1,15 +1,22 @@
 import React from 'react'
-
+import Progress from 'cex/components/progress/progress.jsx'
 
 const VProgress = React.createClass({
+    cancleProgress(){
+        console.log('cancle');
+    },
     getInitialState() {
         return {
-            show: '',
+            percent: 50,
         }
     },
     render () {
         return(
-            <div>111</div>
+            <div>
+                <Progress percent={this.state.percent} cancle={this.cancleProgress} />
+                <div style={{height:'10px'}} />
+                <Progress percent={this.state.percent} />
+            </div>
         )
     }
 })
