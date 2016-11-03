@@ -242,13 +242,11 @@ const Routes = React.createClass({
     progress(params) {
         return <VProgress params={params} />
     },
-<<<<<<< HEAD
     radio(params) {
         return <VRadio params={params} />
-=======
+    },        
     range(params) {
         return <VRange params={params} />
->>>>>>> 7cc3a5c6f230b140d8a1cbb19e7a69d242e1e207
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
