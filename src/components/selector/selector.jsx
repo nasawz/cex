@@ -12,6 +12,9 @@ const Selector = React.createClass({
     changeHandler(e) {
         this.props.onChange && this.props.onChange(e.currentTarget.value)
     },
+    getValue() {
+        return this.refs.selector.value
+    },
     renderOption() {
         if (this.props.options) {
             return this.props.options.map((item, index) => {
@@ -44,6 +47,7 @@ const Selector = React.createClass({
         } else {
             return (
                 <select
+                    ref='selector'
                     className={classNames(this.props.className,classes)}
                     style={merge({},_style,style)}
                     defaultValue={defaultValue}

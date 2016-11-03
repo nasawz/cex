@@ -19,7 +19,7 @@ import NavigateMixin from '../../common/navigate-mixin.js'
 
 const Home = React.createClass({
     mixins:[NavigateMixin],
-    onClickLink(obj){
+    onClickLink(obj) {
         this.navTo(obj.params)
     },
     render () {
@@ -235,6 +235,11 @@ const Home = React.createClass({
                 <ItemCell link={{params:['example','orientation']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         orientation
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell link={{params:['example','progress']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        progress
                     </ItemTitle>
                 </ItemCell>
             </List >

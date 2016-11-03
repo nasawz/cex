@@ -34,7 +34,7 @@ const BlogCard = React.createClass({
     },
     getDefaultProps() {
         return {
-            silenceImgUrl:'',
+            silenceImgUrl: '',
             user: {
                 id: '',
                 name: '朱朱',
@@ -43,7 +43,7 @@ const BlogCard = React.createClass({
                     icon: null,
                     plus: null
                 },
-                silence:false
+                silence: false
             },
             address: '北京，朝阳区，远洋国际中心',
             txt: '女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心][太开心]女王的头冠，现在国博展览。 有没有人想干票大的？[太开心]',
@@ -53,17 +53,17 @@ const BlogCard = React.createClass({
             commentNum: 10,
             essential: false,
             essentialImg: '',
-            time:'2016-10-21',
+            time: '2016-10-21',
             gallery: ['http://ces00.b0.upaiyun.com/2016/09/17/upload_6f046a3cba5894c8deb72fd1b568021c.jpg', 'http://ces00.b0.upaiyun.com/2016/10/10/upload_cce5c9c2abe8733ec638b8a3285e5de1.jpg', 'http://ces00.b0.upaiyun.com/2016/10/09/upload_19e65d722b72075383f6ba3cd7d23e32.jpg']
         }
     },
     getInitialState() {
-        return {showAllTxt: this.props.showAllTxt}
+        return { showAllTxt: this.props.showAllTxt }
     },
     renderAvatar() {
-        let {avatar,silence} = this.props.user
-        if(silence==true){
-            return(<LazyImage src={this.props.silenceImgUrl} />)
+        let {avatar, silence} = this.props.user
+        if (silence == true) {
+            return (<LazyImage src={this.props.silenceImgUrl} />)
         }
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
             margin: '0px'
@@ -95,7 +95,7 @@ const BlogCard = React.createClass({
         e.stopPropagation()
         e.preventDefault()
         if (this.props.onActionSheet) {
-            this.props.onActionSheet(this.props.blogId,this.props.user.id)
+            this.props.onActionSheet(this.props.blogId, this.props.user.id)
         }
     },
     onComment(e) {
@@ -118,7 +118,7 @@ const BlogCard = React.createClass({
         let el = ReactDOM.findDOMNode(this)
         let go_search = el.querySelector('.go_search')
         if (go_search) {
-            go_search.onclick = function(e) {
+            go_search.onclick = function (e) {
                 e.stopPropagation()
                 e.preventDefault()
                 let searchTxt = e.currentTarget.getAttribute('data-search')
@@ -129,7 +129,7 @@ const BlogCard = React.createClass({
         }
         let go_url = el.querySelector('.go_url')
         if (go_url) {
-            go_url.onclick = function(e) {
+            go_url.onclick = function (e) {
                 e.stopPropagation()
                 e.preventDefault()
                 let href = e.currentTarget.getAttribute('data-url')
@@ -145,8 +145,8 @@ const BlogCard = React.createClass({
         let str = favoriteNum == 0
             ? ''
             : favoriteNum
-        let _style={
-            width:'55px'
+        let _style = {
+            width: '55px'
         }
         return <IconButton style={_style} onClick={this.onFavorite} size={16} color={color} icon='icon-thumb_up'>{str}</IconButton>
     },
@@ -155,13 +155,13 @@ const BlogCard = React.createClass({
         let str = commentNum == 0
             ? ''
             : commentNum
-        let _style={
-            width:'55px'
+        let _style = {
+            width: '55px'
         }
         return <IconButton style={_style} onClick={this.onComment} size={16} icon='icon-chat'>{str}</IconButton>
     },
-    getAllImg(image){
-        this.props.onShowImg(image,this.props.gallery)
+    getAllImg(image) {
+        this.props.onShowImg(image, this.props.gallery)
     },
     renderGallery() {
         let {gallery} = this.props
@@ -189,7 +189,7 @@ const BlogCard = React.createClass({
             )
         }
     },
-    renderCard(){
+    renderCard() {
         let {txt, user, time, essential, essentialImg} = this.props
         let txtObj = contentParse(txt)
         let contHTML = txtObj.txt
@@ -203,8 +203,8 @@ const BlogCard = React.createClass({
             'cex-item-text': true,
             'flod': !this.state.showAllTxt
         }
-        if(this.props.isFullScreen){
-            return(
+        if (this.props.isFullScreen) {
+            return (
                 <Item>
                     <ItemContent>
                         <ItemTitleRow>
@@ -221,10 +221,10 @@ const BlogCard = React.createClass({
                         </ItemTitleRow>
                         <ItemSubtitle>
                         </ItemSubtitle>
-                        <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
-                        {this.renderMoreBtn(txtObj.hasMore)}
-                        {this.renderGallery()}
-                        {this.renderAddress()}
+                        <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
+                        {this.renderMoreBtn(txtObj.hasMore) }
+                        {this.renderGallery() }
+                        {this.renderAddress() }
                     </ItemContent>
                 </Item>
             )
@@ -232,7 +232,7 @@ const BlogCard = React.createClass({
         return (
             <Item>
                 <ItemMedia>
-                    {this.renderAvatar()}
+                    {this.renderAvatar() }
                 </ItemMedia>
                 <ItemContent>
                     <ItemTitleRow>
@@ -247,10 +247,10 @@ const BlogCard = React.createClass({
                             color: '#777'
                         }} time={time}/>
                     </ItemSubtitle>
-                    <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
-                    {this.renderMoreBtn(txtObj.hasMore)}
-                    {this.renderGallery()}
-                    {this.renderAddress()}
+                    <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
+                    {this.renderMoreBtn(txtObj.hasMore) }
+                    {this.renderGallery() }
+                    {this.renderAddress() }
                 </ItemContent>
             </Item>
         )
@@ -266,8 +266,8 @@ const BlogCard = React.createClass({
                 </CardContent>
 
                 <CardFooter>
-                    {this.renderCommentBtn()}
-                    {this.renderFavoriteBtn()}
+                    {this.renderCommentBtn() }
+                    {this.renderFavoriteBtn() }
                 </CardFooter>
             </Card>
         )
