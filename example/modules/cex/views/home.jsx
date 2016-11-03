@@ -247,7 +247,12 @@ const Home = React.createClass({
                         radio
                     </ItemTitle>
                 </ItemCell>
-            </List >
+                <ItemCell link={{params:['example','range']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        range
+                    </ItemTitle>
+                </ItemCell>
+            </List>
         )
     }
 })
