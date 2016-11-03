@@ -1,0 +1,78 @@
+/**
+ * create by nasa.wang
+ */
+ .cex-timeline{
+       p {
+           color: #888;
+           margin:0 0 0 9px;
+
+       }
+       h4 {
+           color: #666;
+           font-weight: normal;
+           margin:0 0 0 9px;
+           font-size: 14px;
+       }
+       .recent{
+           p {
+               color: rgb(4, 190, 2);
+           }
+           h4 {
+               color: rgb(4, 190, 2);
+           }
+       }
+}
+ .cex-timeline > ul > li {
+   list-style: none;
+ }
+
+.cex-timeline{
+    &-item {
+        position:relative;
+    }
+
+    &-item-content {
+        padding:0 0 1.5rem 1.2rem;
+    }
+
+    &-item-head, &-item-head-first {
+        position:absolute;
+        content:'';
+        z-index:99;
+        border-radius:99px;
+        text-align: center;
+    }
+
+    &-item-head {
+        width:10px;
+        height:10px;
+        left:1px;top:4px;
+    }
+
+    &-item-head-first {
+        width:20px;
+        height:20px;
+        left:-4px;top:5px;
+    }
+
+    &-item-tail {
+        position:absolute;
+        content:'';
+        height:100%;
+        width:2px;
+        left:5px;
+        top:5px;
+        background-color:#04be02;
+    }
+
+    &-item-checked {
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+}
+.cex-timeline-item-color {
+    background-color:#04be02;
+}
