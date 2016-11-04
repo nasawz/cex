@@ -7,7 +7,10 @@ const Radio = React.createClass({
     getValue(e){
         let val = [e.currentTarget.value]
         if(e.currentTarget.type == 'radio'){
-            this.refs.cex_other.value = ''
+            if(this.refs.cex_other){
+                this.refs.cex_other.value = ''
+            }
+            
         }
         this.props.getValue(val)
     },

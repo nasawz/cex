@@ -14,8 +14,10 @@ import './uploader.less'
 
 const Uploader = React.createClass({
     handelSelectFile(e) {
-        let file = e.target.files[0]
-        this.props.onSelectImg(file)
+        if (this.props.onSelectImg) {
+            let file = e.target.files[0]
+            this.props.onSelectImg(file)
+        }
 
     },
     getInitialState() {
