@@ -262,7 +262,7 @@ const Home = React.createClass({
                         timeline
                     </ItemTitle>
                 </ItemCell>
-            </List >
+            </List>
         )
     }
 })
