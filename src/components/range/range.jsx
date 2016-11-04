@@ -1,0 +1,68 @@
+/**
+ * create by nasa.wang
+ */
+
+import React from 'react'
+import classNames from 'classnames'
+import merge from 'lodash/merge'
+import Powerange from './range/lib/powerange'
+
+import './range.less'
+
+const Range = React.createClass({
+    changeHandler(e) {
+        console.log(111111);
+        console.log(e.currentTarget.value);
+    },
+    getDefaultProps() {
+        return {
+            defaultValue: 0,
+            min: 0,
+            max: 100,
+            minHTML: 0,
+            maxHTML: 100,
+            disable: false,
+            disabledOpacity: 1,
+            step: 100,
+            rangeHandleHeight: 30,
+            rangeBarHeight: 1
+        }
+    },
+    componentDidMount() {
+        let {start, min, max, minHTML, maxHTML, disabled, disabledOpacity, step} = this.props
+        let options = {
+            decimal: 100,
+            start: this.props.value,
+            min: this.props.min,
+            max: this.props.max,
+            minHTML: this.props.minHTML,
+            maxHTML: this.props.maxHTML,
+            disabled: this.props.disabled,
+            disabledOpacity: this.props.disabledOpacity,
+            // initialBarWidth: getComputedStyle(this.$el.parentNode).width.replace('px', '') - 80
+        }
+        if (this.props.step !== 0) {
+          options.step = this.props.step
+        }
+        this.range = new Powerange(document.querySelector('.cex-range-input'), options)
+        const handleTop = (this.props.rangeHandleHeight - this.props.rangeBarHeight) / 2
+        document.querySelector('.range-handle').style.top = -handleTop+'px'
+        document.querySelector('.range-bar').style.height = this.props.rangeBarHeight+'px'
+    },
+    render () {
+        let {style, children} = this.props
+        let classes = {
+            'cex-range' : true
+        }
+        let _style = {
+
+        }
+        return (
+            <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
+                <input className='cex-range-input' defaultValue={20} onChange={this.changeHandler} />
+            </div>
+        )
+    }
+})
+
+export default Range

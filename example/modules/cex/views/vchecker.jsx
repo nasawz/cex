@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import Checker from 'cex/components/checker/checker.jsx'
 import CheckerItem from 'cex/components/checker/checker-item.jsx'
 import Divider from 'cex/components/divider/divider.jsx'
