@@ -46,6 +46,7 @@ import VRedDot from '../views/vreddot.jsx'
 import VQRCode from '../views/vqrcode.jsx'
 import VShake from '../views/vshake.jsx'
 import VProgress from '../views/vprogress.jsx'
+import VRange from '../views/vrange.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -101,6 +102,7 @@ const Routes = React.createClass({
         '/qrcode': 'qrcode',
         '/shake': 'shake',
         '/progress': 'progress',
+        '/range': 'range',
     },
     render () {
         return (
@@ -237,6 +239,9 @@ const Routes = React.createClass({
     },
     progress(params) {
         return <VProgress params={params} />
+    },
+    range(params) {
+        return <VRange params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

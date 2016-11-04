@@ -242,6 +242,11 @@ const Home = React.createClass({
                         progress
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','range']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        range
+                    </ItemTitle>
+                </ItemCell>
             </List >
         )
     }
