@@ -47,6 +47,9 @@ import VQRCode from '../views/vqrcode.jsx'
 import VShake from '../views/vshake.jsx'
 import VProgress from '../views/vprogress.jsx'
 import VRadio from '../views/vradio.jsx'
+import VRange from '../views/vrange.jsx'
+import VStep from '../views/vstep.jsx'
+import VTimeLine from '../views/vtimeline.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -103,6 +106,9 @@ const Routes = React.createClass({
         '/shake': 'shake',
         '/progress': 'progress',
         '/radio': 'radio',
+        '/range': 'range',
+        '/step': 'step',
+        '/timeline': 'timeline',
     },
     render () {
         return (
@@ -242,6 +248,15 @@ const Routes = React.createClass({
     },
     radio(params) {
         return <VRadio params={params} />
+    },
+    range(params) {
+        return <VRange params={params} />
+    },
+    step(params) {
+        return <VStep params={params} />
+    },
+    timeline(params) {
+        return <VTimeLine params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
