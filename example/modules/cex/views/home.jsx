@@ -242,6 +242,11 @@ const Home = React.createClass({
                         progress
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','radio']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        radio
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','range']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         range
@@ -257,7 +262,7 @@ const Home = React.createClass({
                         timeline
                     </ItemTitle>
                 </ItemCell>
-            </List >
+            </List>
         )
     }
 })
