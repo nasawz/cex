@@ -45,10 +45,7 @@ import VRedDot from '../views/vreddot.jsx'
 import VQRCode from '../views/vqrcode.jsx'
 import VShake from '../views/vshake.jsx'
 import VProgress from '../views/vprogress.jsx'
-<<<<<<< HEAD
-=======
 import VRadio from '../views/vradio.jsx'
->>>>>>> e471654f59354249469faec04870244f8ed10ad2
 import VRange from '../views/vrange.jsx'
 import VStep from '../views/vstep.jsx'
 import VTimeLine from '../views/vtimeline.jsx'
