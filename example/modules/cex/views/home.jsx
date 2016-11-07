@@ -272,6 +272,11 @@ const Home = React.createClass({
                         spinner
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','rater']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        rater
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
