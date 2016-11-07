@@ -262,6 +262,11 @@ const Home = React.createClass({
                         timeline
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','masker']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        masker
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
