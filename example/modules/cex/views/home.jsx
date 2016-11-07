@@ -267,6 +267,11 @@ const Home = React.createClass({
                         masker
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','spinner']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        spinner
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }

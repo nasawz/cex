@@ -51,6 +51,7 @@ import VStep from '../views/vstep.jsx'
 import VTimeLine from '../views/vtimeline.jsx'
 import VRankCard from '../views/vrankcard.jsx'
 import VMasker from '../views/vmasker.jsx'
+import VSpinner from '../views/vspinner.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -110,6 +111,7 @@ const Routes = React.createClass({
         '/timeline': 'timeline',
         '/rankcard': 'rankcard',
         '/masker': 'masker',
+        '/spinner': 'spinner',
     },
     render() {
         return (
@@ -264,6 +266,9 @@ const Routes = React.createClass({
     },
     masker(params) {
         return <VMasker params={params} />
+    },
+    spinner(params) {
+        return <VSpinner params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
