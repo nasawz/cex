@@ -10,15 +10,15 @@ const VRange = React.createClass({
 
     getInitialState() {
         return {
-
+            value: 0
         }
     },
     render () {
         return (
-            <List>
-                <ItemDivider>default range</ItemDivider>
-                <Range  />
-            </List>
+            <div style={{'padding': '40px 20px'}}>
+                <Range value={this.state.value} />
+                <p>value: </p>
+            </div>
         )
     }
 })
