@@ -2,6 +2,93 @@
  * create by nasa.wang
  */
 
-.cex-step{
+.cex-step {
+  display: flex;
 
+	.cex-step-item {
+	  display: inline-block;
+	  position: relative;
+	  overflow: hidden;
+	}
+
+	.cex-step-item-with-tail {
+	  flex: 1;
+	}
+
+	.cex-step-item-tail {
+	  height: 1px;
+	  position: absolute;
+	  left: 0;
+	  top: 10px;
+	  padding: 0 0;
+	  transition: all 0.4s ease 0s;
+	}
+
+	.cex-step-item-tail-finish {
+	  background: #09bb07 none repeat scroll 0 0;
+	}
+
+	.cex-step-item-tail-process, .cex-step-item-tail-wait {
+	  background: #CCC none repeat scroll 0 0;
+	}
+
+	.cex-step-item-checked::before {
+	  font-size: 15px;
+	  transform: translateY(-10%);
+	}
+
+	.cex-step-item-title {
+	  font-size: 12px;
+	  padding:0 5px
+	}
+
+	.cex-step-item-head {
+	  position: relative;
+	  display: inline-block;
+	  margin-right: -4px;
+
+	  .cex-step-item-head-inner {
+	    width: 20px;
+	    height: 20px;
+	    border-radius: 99px;
+	    text-align: center;
+	    font-size: 0.9rem;
+	    transition: all 0.4s ease 0s;
+	    background: #fff none repeat scroll 0 0;
+	  }
+	}
+
+	.cex-step-item-head-finish .cex-step-item-head-inner{
+	  border: 1px solid #09bb07;
+	  color: #09bb07;
+	}
+
+	.cex-step-item-head-process .cex-step-item-head-inner{
+	  border: 1px solid #09bb07;
+	  color: #FFF;
+	  background: #09bb07 none repeat scroll 0 0;
+	}
+
+	.cex-step-item-head-wait .cex-step-item-head-inner {
+	  border: 1px solid #888;
+	  color: #888;
+	}
+
+	.cex-step-item-main {
+	  display: inline-block;
+	  position: relative;
+	  vertical-align: top;
+	  color: #888;
+	  padding-left: 5px;
+	}
+
+	.cex-step-item-main-process {
+	  font-weight: bold;
+	  color: #666;
+	}
+	.cex-step-item-icon-word{	
+		font-size: 14px;
+	    margin-top: -2px;
+	    display: block
+	}
 }

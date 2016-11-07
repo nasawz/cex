@@ -255,7 +255,7 @@ const Routes = React.createClass({
         return <VStep params={params}/>
     },
     timeline(params) {
-        return <VTimeLine params={params}/>
+        return <VTimeLine params={params} />
     },
     rankcard(params) {
         return <VRankCard params={params} />

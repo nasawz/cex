@@ -7,7 +7,7 @@ const CheckerItem = React.createClass({
 
     changeSelect(e){
         let idx = this.props.idx
-        let currentVal = e.currentTarget.getAttribute('value')
+        let currentVal = e.currentTarget.getAttribute('data-value')
         this.props.onItemClick(currentVal,e,idx)
     },
 
@@ -17,7 +17,7 @@ const CheckerItem = React.createClass({
             'cex-checker-item' : true,
         }
         return (
-            <div className={classNames(this.props.className,classes)} value={this.props.value} style={style} onClick={this.changeSelect}>
+            <div className={classNames(this.props.className,classes)} data-value={this.props.value} style={style} onClick={this.changeSelect}>
                 {this.props.children}
             </div>
 
