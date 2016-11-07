@@ -47,8 +47,7 @@ const CommentCard = React.createClass({
         )
     },
     renderOrder() {
-      let {rank} = this.props.data
-      console.log(rank)
+        let {rank} = this.props.data
         let imgStyle = {
             width: '15px',
             height: '20px',
@@ -82,16 +81,16 @@ const CommentCard = React.createClass({
         )
     },
     render() {
-      let {data,filter} = this.props
-      let source
-      if(filter=='exp'){
-        source=data.experience
-      }else if(filter=='gold'){
-        source=data.rewards
-      }
+        let {data,filter,style} = this.props
+        let source
+        if(filter=='exp'){
+            source=data.experience
+        }else if(filter=='gold'){
+            source=data.rewards
+        }
 
         return (
-            <Card onClick={this.goUserProfile}>
+            <Card onClick={this.goUserProfile} style={style}>
                 <Item style={{ background: '#fff' }}>
                 {this.renderOrder() }
                 <ItemMedia>

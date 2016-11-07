@@ -11,27 +11,32 @@ import './range.less'
 
 const Range = React.createClass({
     changeHandler(e) {
-        console.log(111111);
-        console.log(e.currentTarget.value);
+        
     },
     getDefaultProps() {
         return {
-            defaultValue: 0,
+            decimal: true,
+            value: 0,
             min: 0,
             max: 100,
             minHTML: 0,
             maxHTML: 100,
             disable: false,
             disabledOpacity: 1,
-            step: 100,
+            step: 1,
             rangeHandleHeight: 30,
             rangeBarHeight: 1
+        }
+    },
+    getInitialState() {
+        return {
+
         }
     },
     componentDidMount() {
         let {start, min, max, minHTML, maxHTML, disabled, disabledOpacity, step} = this.props
         let options = {
-            decimal: 100,
+            decimal: this.props.decimal,
             start: this.props.value,
             min: this.props.min,
             max: this.props.max,
@@ -39,7 +44,7 @@ const Range = React.createClass({
             maxHTML: this.props.maxHTML,
             disabled: this.props.disabled,
             disabledOpacity: this.props.disabledOpacity,
-            // initialBarWidth: getComputedStyle(this.$el.parentNode).width.replace('px', '') - 80
+            initialBarWidth: document.querySelector('.cex-range').style.width.replace('px', '') - 80
         }
         if (this.props.step !== 0) {
           options.step = this.props.step
@@ -59,7 +64,7 @@ const Range = React.createClass({
         }
         return (
             <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
-                <input className='cex-range-input' defaultValue={20} onChange={this.changeHandler} />
+                <input className='cex-range-input' onChange={this.changeHandler} />
             </div>
         )
     }
