@@ -82,7 +82,7 @@ const CommentCard = React.createClass({
         )
     },
     render() {
-      let {data,filter} = this.props
+      let {data,filter,style} = this.props
       let source
       if(filter=='exp'){
         source=data.experience
@@ -91,7 +91,7 @@ const CommentCard = React.createClass({
       }
 
         return (
-            <Card onClick={this.goUserProfile}>
+            <Card onClick={this.goUserProfile} style={style}>
                 <Item style={{ background: '#fff' }}>
                 {this.renderOrder() }
                 <ItemMedia>
