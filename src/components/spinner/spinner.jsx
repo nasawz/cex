@@ -3,9 +3,6 @@ import Spinner1 from './spinner'
 import classNames from 'classNames'
 import './spinner.less'
 const Spinner = React.createClass({
-    ready(){
-        Spinner1(this.refs.txt , 'android')
-    },
     getDefaultProps(){
         return{
             suffix:'android' ,
