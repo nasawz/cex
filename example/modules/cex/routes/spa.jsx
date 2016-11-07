@@ -49,6 +49,7 @@ import VRadio from '../views/vradio.jsx'
 import VRange from '../views/vrange.jsx'
 import VStep from '../views/vstep.jsx'
 import VTimeLine from '../views/vtimeline.jsx'
+import VRankCard from '../views/vrankcard.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -106,6 +107,7 @@ const Routes = React.createClass({
         '/range': 'range',
         '/step': 'step',
         '/timeline': 'timeline',
+        '/rankcard': 'rankcard',
     },
     render() {
         return (
@@ -254,6 +256,9 @@ const Routes = React.createClass({
     },
     timeline(params) {
         return <VTimeLine params={params} />
+    },
+    rankcard(params) {
+        return <VRankCard params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
