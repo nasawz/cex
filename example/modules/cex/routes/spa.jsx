@@ -50,6 +50,8 @@ import VRange from '../views/vrange.jsx'
 import VStep from '../views/vstep.jsx'
 import VTimeLine from '../views/vtimeline.jsx'
 import VRankCard from '../views/vrankcard.jsx'
+import VCircle from '../views/vcircle.jsx'
+// import VPopover from '../views/vpopover.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -108,6 +110,8 @@ const Routes = React.createClass({
         '/step': 'step',
         '/timeline': 'timeline',
         '/rankcard': 'rankcard',
+        '/circle': 'circle',
+        '/popover': 'popover',
     },
     render() {
         return (
@@ -259,6 +263,12 @@ const Routes = React.createClass({
     },
     rankcard(params) {
         return <VRankCard params={params} />
+    },
+    circle(params) {
+        return <VCircle params={params} />
+    },
+    popover(params) {
+        // return <VPopover params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
