@@ -56,6 +56,7 @@ import VRater from '../views/vrater.jsx'
 import VPreviewer from '../views/vpreviewer.jsx'
 import VPopover from '../views/vpopover.jsx'
 import VCircle from '../views/vcircle.jsx'
+import VLotteryTurntable from '../views/vlotteryturntable.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -120,6 +121,7 @@ const Routes = React.createClass({
         '/previewer': 'previewer',
         '/circle': 'circle',
         '/popover': 'popover',
+        '/lottery-turntable': 'lotteryturntable',
     },
     render() {
         return (
@@ -289,6 +291,9 @@ const Routes = React.createClass({
     },
     circle(params) {
         return <VCircle params={params} />
+    },
+    lotteryturntable(params) {
+        return <VLotteryTurntable params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
