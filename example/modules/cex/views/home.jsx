@@ -267,6 +267,11 @@ const Home = React.createClass({
                         rater
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','circle']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        circle
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','popover']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         popover
