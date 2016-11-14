@@ -1,0 +1,50 @@
+.cex-popover {
+    .cex-popover-box {
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: #35495e;
+        color: #fff;
+        border-radius: 3px;
+        z-index: 500;
+        display: none;
+        .cex-popover-arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+        }
+        .cex-popover-arrow-down, .cex-popover-arrow-up {
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        .cex-popover-arrow-down {
+            border-top: 5px solid #35495e;
+            bottom: -5px;
+        }
+        .cex-popover-arrow-up {
+            border-bottom: 5px solid #35495e;
+            top: -5px;
+        }
+        .cex-popover-arrow-left, .cex-popover-arrow-right {
+            border-top: 5px solid transparent;
+            border-bottom: 5px solid transparent;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+        }
+        .cex-popover-arrow-right {
+            border-left: 5px solid #35495e;
+            right: -5px;
+        }
+        .cex-popover-arrow-left {
+            border-right: 5px solid #35495e;
+            left: -5px;
+        }
+        .cex-popover-content {
+            padding: 5px 10px;
+        }
+    }
+}

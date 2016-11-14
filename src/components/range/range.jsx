@@ -10,8 +10,8 @@ import Powerange from './range/lib/powerange'
 import './range.less'
 
 const Range = React.createClass({
-    changeHandler(e) {
-        
+    changeHandler(value) {
+        this.props.onChange && this.props.onChange(value)
     },
     getDefaultProps() {
         return {
@@ -28,11 +28,6 @@ const Range = React.createClass({
             rangeBarHeight: 1
         }
     },
-    getInitialState() {
-        return {
-
-        }
-    },
     componentDidMount() {
         let {start, min, max, minHTML, maxHTML, disabled, disabledOpacity, step} = this.props
         let options = {
@@ -44,7 +39,8 @@ const Range = React.createClass({
             maxHTML: this.props.maxHTML,
             disabled: this.props.disabled,
             disabledOpacity: this.props.disabledOpacity,
-            initialBarWidth: document.querySelector('.cex-range').style.width.replace('px', '') - 80
+            initialBarWidth: document.querySelector('.cex-range').style.width.replace('px', '') - 80,
+            callback: this.changeHandler
         }
         if (this.props.step !== 0) {
           options.step = this.props.step
@@ -64,7 +60,7 @@ const Range = React.createClass({
         }
         return (
             <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
-                <input className='cex-range-input' onChange={this.changeHandler} />
+                <input className='cex-range-input' />
             </div>
         )
     }
