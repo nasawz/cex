@@ -53,6 +53,7 @@ import VRankCard from '../views/vrankcard.jsx'
 import VMasker from '../views/vmasker.jsx'
 import VSpinner from '../views/vspinner.jsx'
 import VRater from '../views/vrater.jsx'
+import VPreviewer from '../views/vpreviewer.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -114,6 +115,7 @@ const Routes = React.createClass({
         '/masker': 'masker',
         '/spinner': 'spinner',
         '/rater': 'rater',
+        '/previewer': 'previewer',
     },
     render() {
         return (
@@ -274,6 +276,9 @@ const Routes = React.createClass({
     },
     rater(params) {
         return <VRater params={params} />
+    },
+    previewer(params) {
+        return <VPreviewer params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>

@@ -277,6 +277,11 @@ const Home = React.createClass({
                         rater
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','previewer']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        previewer
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }
