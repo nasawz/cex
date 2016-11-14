@@ -50,6 +50,8 @@ import VRange from '../views/vrange.jsx'
 import VStep from '../views/vstep.jsx'
 import VTimeLine from '../views/vtimeline.jsx'
 import VRankCard from '../views/vrankcard.jsx'
+import VMasker from '../views/vmasker.jsx'
+import VSpinner from '../views/vspinner.jsx'
 import VRater from '../views/vrater.jsx'
 import VPopover from '../views/vpopover.jsx'
 import VCircle from '../views/vcircle.jsx'
@@ -111,6 +113,8 @@ const Routes = React.createClass({
         '/step': 'step',
         '/timeline': 'timeline',
         '/rankcard': 'rankcard',
+        '/masker': 'masker',
+        '/spinner': 'spinner',
         '/rater': 'rater',
         '/circle': 'circle',
         '/popover': 'popover',
@@ -265,6 +269,12 @@ const Routes = React.createClass({
     },
     rankcard(params) {
         return <VRankCard params={params} />
+    },
+    masker(params) {
+        return <VMasker params={params} />
+    },
+    spinner(params) {
+        return <VSpinner params={params} />
     },
     rater(params) {
         return <VRater params={params} />
