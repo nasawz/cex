@@ -1,6 +1,6 @@
 import React from 'react'
 import Spinner1 from './spinner'
-import classNames from 'classNames'
+import classNames from 'classnames'
 import './spinner.less'
 const Spinner = React.createClass({
     getDefaultProps(){
