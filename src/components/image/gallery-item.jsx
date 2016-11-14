@@ -38,7 +38,6 @@ const GalleryItem = React.createClass({
 
     },
     render() {
-        console.log('suffix')
         let {style} = this.props
         let classes = {
             'cex-gallery-item' : true
@@ -60,7 +59,6 @@ const GalleryItem = React.createClass({
         if(this.props.onDeleImg){
             suffix = ''
         }
-        console.log(suffix)
         let src = this.props.src
         if (src.indexOf('upaiyun') >= 1) {
             src = this.props.src+suffix

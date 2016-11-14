@@ -31,7 +31,6 @@ const VPopupPicker = React.createClass({
         this.setState({
             valueOfP1:val
         })
-        console.log(val)
     },
     closePopupPicker2(val) {
         // this.setState({
@@ -42,7 +41,6 @@ const VPopupPicker = React.createClass({
         this.setState({
             valueOfP2:val
         })
-        console.log(val)
     },
     getInitialState() {
         return {

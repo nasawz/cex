@@ -4,7 +4,6 @@ import EmoticonsPicker from 'cex/components/picker/emoticons-picker.jsx'
 import Picker from 'cex/components/picker/picker.jsx'
 const VPicker = React.createClass({
     demo1Change(val) {
-        console.log('demo1Change', val);
     },
     render() {
         let years = []

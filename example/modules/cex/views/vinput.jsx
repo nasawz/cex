@@ -8,7 +8,6 @@ import XInput from 'cex/components/xinput/x-input.jsx'
 
 const VInput = React.createClass({
     onChange(val) {
-        console.log(val)
     },
     getInitialState() {
         return {

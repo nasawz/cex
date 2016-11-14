@@ -28,7 +28,6 @@ const VSearch = React.createClass({
         })
     },
     searchHandler(val) {
-        console.log(val)
     },
     getInitialState() {
         return {

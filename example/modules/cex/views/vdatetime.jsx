@@ -26,13 +26,11 @@ const VDateTime = React.createClass({
         this.setState({
             valueOfP1:val
         })
-        console.log(val)
     },
     closeDateTime2(val) {
         this.setState({
             valueOfP2:val
         })
-        console.log(val)
     },
     getInitialState() {
         return {

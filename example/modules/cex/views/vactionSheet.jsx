@@ -6,10 +6,8 @@ import ActionSheet from 'cex/components/actionsheet/actionsheet.jsx'
 
 const VActionSheet = React.createClass({
     clickSheet1(){
-        console.log('111');
     },
     clickSheet2(){
-        console.log('222');
     },
     showSheet(e){
         let id = e.currentTarget.getAttribute('data-id')

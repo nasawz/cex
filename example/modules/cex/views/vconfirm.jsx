@@ -18,7 +18,6 @@ const VConfirm = React.createClass({
         })
     },
     confirmHandler() {
-        console.log('确定')
         this.setState({
             show: false
         })

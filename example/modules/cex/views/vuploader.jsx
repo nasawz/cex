@@ -7,8 +7,6 @@ import GalleryItem from 'cex/components/image/gallery-item.jsx'
 
 const VUploader = React.createClass({
     onSelectImg(file) {
-        console.log("-------")
-        console.log(file)
     },
     render() {
         return (
