@@ -38,7 +38,7 @@ const CommentCard = React.createClass({
     renderAvatar() {
         let {avatar} = this.props.data
         return (
-            <Avatar src={avatar.img}
+            <Avatar onClick={this.goUserProfile} src={avatar.img}
                 plus={avatar.plus}
                 icon={avatar.icon}
                 style={{ margin: '0px' }}
@@ -90,7 +90,7 @@ const CommentCard = React.createClass({
         }
 
         return (
-            <Card onClick={this.goUserProfile} style={style}>
+            <Card style={style}>
                 <Item style={{ background: '#fff' }}>
                 {this.renderOrder() }
                 <ItemMedia>
