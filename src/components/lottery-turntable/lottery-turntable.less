@@ -1,4 +1,91 @@
 // font-size: 14px
 .cex-lottery-turntable{
-	width: px;
+	position: relative;
+    margin: 15px auto 25px;
+    width: 315px;
+    height: 315px;
+	.circle {
+		position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    display: block;
+	    width: 315px;
+	    height: 315px;
+	    margin: -153px 0 0 -157px;
+	}
+	.pointer {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: block;
+		width: 96px;
+		height: 125px;
+		margin: -73px 0 0 -48px;
+		transform-origin: 48px 77px;
+		&.pointer-angle1 {
+			transform: rotate(1103deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle2 {
+			transform: rotate(1148deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32,0.99)
+		}
+		&.pointer-angle3 {
+			transform: rotate(1193deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle4 {
+			transform: rotate(1238deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle5 {
+			transform: rotate(1283deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle6 {
+			transform: rotate(1328deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle7 {
+			transform: rotate(1373deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+		&.pointer-angle8 {
+			transform: rotate(1418deg);
+			transition: all 2s cubic-bezier(0, 0, 0.32, 0.99)
+		}
+	}
+	.text {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		z-index: 9;
+		width: 96px;
+		margin-top: -25px;
+		margin-left: -48px;
+		text-align: center;
+		h4 {
+			// position: absolute;
+			// top: 50%;
+			// left: 50%;
+			// z-index: 2;
+			// margin-left: -25px;
+			// margin-top: -10px;
+			margin: 0;
+			font-size: 24px;
+			color: #fff;
+			font-weight: normal;
+		}
+		p {
+			// position: absolute;
+		    // top: 50%;
+		    // left: 50%;
+		    // z-index: 2;
+		    // margin-left: -23px;
+		    // margin-top: 22px;
+			margin: 0;
+		    font-size: 13px;
+		    color: #fff;
+		}
+	}
 }
