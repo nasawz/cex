@@ -10,6 +10,10 @@ import './lottery-turntable.less'
 
 const LotteryTurntable = React.createClass({
     clickHandler() {
+        if(!this.props.time) return
+        this.setState({
+            pointerCls: 'pointer'
+        })
         this.props.onClick && this.props.onClick()
     },
     endHandler() {

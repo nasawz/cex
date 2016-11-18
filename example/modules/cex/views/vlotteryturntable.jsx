@@ -6,10 +6,8 @@ import Icon from 'cex/components/icon/icon.jsx'
 
 const VLotteryTurntable = React.createClass({
     clickHandler() {
-        if (this.state.time <= 0) return
         let num = Math.floor(Math.random()*8+1)
         let time = this.state.time - 1
-        if(time <= 0) time = 0
         this.setState({
             reward: num,
             time: time
