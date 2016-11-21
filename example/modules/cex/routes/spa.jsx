@@ -58,6 +58,7 @@ import VPopover from '../views/vpopover.jsx'
 import VCircle from '../views/vcircle.jsx'
 import VLotteryTurntable from '../views/vlotteryturntable.jsx'
 import VNotice from '../views/vnotice.jsx'
+import VReceiverForm from '../views/vreceiverform.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -124,6 +125,7 @@ const Routes = React.createClass({
         '/popover': 'popover',
         '/lottery-turntable': 'lotteryturntable',
         '/notice': 'notice',
+        '/receiver-form': 'receiverform',
     },
     render() {
         return (
@@ -299,6 +301,9 @@ const Routes = React.createClass({
     },
     lotteryturntable(params) {
         return <VLotteryTurntable params={params} />
+    },
+    receiverform(params) {
+        return <VReceiverForm params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
