@@ -57,6 +57,7 @@ import VPreviewer from '../views/vpreviewer.jsx'
 import VPopover from '../views/vpopover.jsx'
 import VCircle from '../views/vcircle.jsx'
 import VLotteryTurntable from '../views/vlotteryturntable.jsx'
+import VNotice from '../views/vnotice.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -122,6 +123,7 @@ const Routes = React.createClass({
         '/circle': 'circle',
         '/popover': 'popover',
         '/lottery-turntable': 'lotteryturntable',
+        '/notice': 'notice',
     },
     render() {
         return (
@@ -291,6 +293,9 @@ const Routes = React.createClass({
     },
     circle(params) {
         return <VCircle params={params} />
+    },
+    notice(params) {
+        return <VNotice params={params} />
     },
     lotteryturntable(params) {
         return <VLotteryTurntable params={params} />

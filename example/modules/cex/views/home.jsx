@@ -292,6 +292,11 @@ const Home = React.createClass({
                         popover
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','notice']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        notice
+                    </ItemTitle>
+                </ItemCell>
                 <ItemCell link={{params:['example','lottery-turntable']}} onClickLink={this.onClickLink}>
                     <ItemTitle>
                         lottery-turntable

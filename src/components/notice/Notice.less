@@ -1,0 +1,57 @@
+.cex-notice{
+    padding: 15px;
+    position: relative;
+    padding-left: 70px;
+    .cex-img{
+        position: absolute;
+        left: 15px;
+        width: 38px;
+        height: 32px;
+
+        font-size: 0px;
+        img{
+            display: inline-block;
+            width: 100%;
+            height: auto;
+            max-height: 32px;
+            overflow: hidden;
+        }
+        i{
+            position: absolute;
+            right: -10px;
+            height: 80%;
+            width: 1px;
+            top: 10%;
+            background: #d9d9d9;
+        }
+    }
+    .marquee{
+        font-size: 14px;
+        color: #333;
+        line-height: 1.3;
+
+        div{
+            white-space: nowrap;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            .cex-icon{
+                display: inline-block;
+                width: 4px;
+                height: 4px;
+                border-radius: 50%;
+                background: #f5a623;
+                margin-right:6px;
+                vertical-align: middle;
+                margin-top: -5px;
+            }
+            // animation: fade 5s;
+        }
+        // .up{
+        //
+        // }
+    }
+    @keyframes fade{
+        from {transform: translateY(0px);}
+        to {transform: translateY(-20px);}
+    }
+}
