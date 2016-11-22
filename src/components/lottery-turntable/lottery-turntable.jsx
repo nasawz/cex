@@ -54,7 +54,7 @@ const LotteryTurntable = React.createClass({
                     background: "url("+circle+") 0 0 no-repeat",
                     backgroundSize: '100% 100%'
                 }}></div>
-            <div className={this.state.pointerCls} style={{
+                <div className={this.state.pointerCls} style={{
                     background: "url("+pointer+") 0 0 no-repeat",
                     backgroundSize: '100% 100%'
                 }} onClick={this.clickHandler} onTransitionEnd={this.endHandler}></div>
@@ -63,7 +63,6 @@ const LotteryTurntable = React.createClass({
                     { this.renderTime() }
                 </div>
             </div>
-
         )
     }
 
