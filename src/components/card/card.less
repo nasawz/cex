@@ -19,3 +19,30 @@
   .hairline(bottom, @color-border);
   // .depth(1);
 }
+.cex-card-abreast{
+  width: 50%;
+  float: left;
+  border-bottom: 1px solid #ddd;
+  &:nth-child(odd){
+    border-right: 1px solid #ddd;
+  }
+  .cex-item{
+    padding:16px 10px 5px;
+    display:block
+  }
+  .cex-item-content{
+    padding-bottom:3px;
+  }
+  .cex-item-title{
+    color: #333;
+  }
+  .cex-item-sub-title{
+    color: #da3651;
+  }
+  .cex-item-content{
+    padding-top: 6px
+  }
+  .LazyLoad img{
+    width: 100%
+  }
+}

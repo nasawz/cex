@@ -18,9 +18,10 @@ const Card = React.createClass({
         }
     },
     render () {
-        let {style,children} = this.props
+        let {style,children,abreast} = this.props
         let classes = {
-            'cex-card' : true
+            'cex-card' : true,
+            'cex-card-abreast': abreast
         }
         return (
             <div onClick={this.clickHandle}  className={classNames(this.props.className,classes)} style={style}>

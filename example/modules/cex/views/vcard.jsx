@@ -18,6 +18,7 @@ import ItemTitleAfter from 'cex/components/list/item-title-after.jsx'
 import IconButton from 'cex/components/icon/icon-button.jsx'
 import Gallery from 'cex/components/image/gallery.jsx'
 import GalleryItem from 'cex/components/image/gallery-item.jsx'
+import LazyImage from 'cex/components/image/lazy-image'
 
 const VCard = React.createClass({
     render () {
@@ -182,6 +183,74 @@ const VCard = React.createClass({
                         <IconButton icon='icon-favorite'>喜欢</IconButton>
                         <IconButton icon='icon-chat'>评论</IconButton>
                     </CardFooter>
+                </Card>
+                <Card abreast>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <LazyImage src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png' />             
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚-商品商品商品</ItemTitle>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        2000 金币
+                                    </ItemSubtitle> 
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+                </Card>
+                <Card abreast>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <LazyImage src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png' />             
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle> 
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+                </Card>
+                <Card abreast>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <LazyImage src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png' />             
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle> 
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
+                </Card>
+                <Card abreast>
+                    <CardContent>
+                        <List>
+                            <Item>
+                                <LazyImage src='http://ces00.b0.upaiyun.com/2016/07/27/upload_3184ba6f69a11468104cc90c2c546b43.png' />             
+                                <ItemContent>
+                                    <ItemTitleRow>
+                                        <ItemTitle>德玛西亚</ItemTitle>
+                                    </ItemTitleRow>
+                                    <ItemSubtitle>
+                                        网通二区
+                                    </ItemSubtitle> 
+                                </ItemContent>
+                            </Item>
+                        </List>
+                    </CardContent>
                 </Card>
             </div>
         )
