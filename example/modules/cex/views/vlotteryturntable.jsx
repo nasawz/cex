@@ -7,7 +7,7 @@ import Icon from 'cex/components/icon/icon.jsx'
 const VLotteryTurntable = React.createClass({
     clickHandler() {
         // 随机一、二、三等奖
-        let arr = [0]
+        let arr = [0, 1, 2, 3]
         let rdm = arr[Math.floor(Math.random()*arr.length)]
         let nodrawArr = [4, 5, 6, 7, 8]
         // 未中奖时，随机5个角度
