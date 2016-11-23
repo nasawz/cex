@@ -6,10 +6,17 @@ import Icon from 'cex/components/icon/icon.jsx'
 
 const VLotteryTurntable = React.createClass({
     clickHandler() {
-        let num = Math.floor(Math.random()*8+1)
+        // 随机一、二、三等奖
+        let arr = [0, 1, 2, 3]
+        let rdm = arr[Math.floor(Math.random()*arr.length)]
+        let nodrawArr = [4, 5, 6, 7, 8]
+        // 未中奖时，随机5个角度
+        if(rdm == 0) {
+            rdm = nodrawArr[Math.floor(Math.random()*nodrawArr.length)]
+        }
         let time = this.state.time - 1
         this.setState({
-            reward: num,
+            reward: rdm,
             time: time
         })
     },
