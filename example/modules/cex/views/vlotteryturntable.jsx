@@ -41,6 +41,8 @@ const VLotteryTurntable = React.createClass({
         return (
             <div>
                 <LotteryTurntable
+                    circle={require('../../../img/circle.png')}
+                    pointer={require('../../../img/pointer.png')}
                     time={this.state.time}
                     onClick={this.clickHandler}
                     onTransitionEnd={this.endHandler}
