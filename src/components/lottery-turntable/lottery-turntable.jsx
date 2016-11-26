@@ -17,7 +17,7 @@ const LotteryTurntable = React.createClass({
     },
     endHandler() {
         this.props.onTransitionEnd && this.props.onTransitionEnd()
-    },    
+    },
     getInitialState() {
         return {pointerCls: 'pointer'}
     },
@@ -35,7 +35,7 @@ const LotteryTurntable = React.createClass({
             return children
         }
         return (
-            <div className='text' onClick={this.clickHandler}>
+            <div className='text' onTouchEnd={this.clickHandler}>
                 <h4>抽奖</h4>
                 {this.renderTime()}
             </div>
@@ -57,7 +57,7 @@ const LotteryTurntable = React.createClass({
                 <div className={this.state.pointerCls} style={{
                     background: "url(" + pointer + ") 0 0 no-repeat",
                     backgroundSize: '100% 100%'
-                }} onClick={this.clickHandler} onTransitionEnd={this.endHandler}></div>
+                }} onTouchEnd={this.clickHandler} onTransitionEnd={this.endHandler}></div>
                 {this.renderInner()}
             </div>
         )
