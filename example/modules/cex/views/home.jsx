@@ -302,6 +302,11 @@ const Home = React.createClass({
                         lottery-turntable
                     </ItemTitle>
                 </ItemCell>
+                <ItemCell link={{params:['example','msgpage']}} onClickLink={this.onClickLink}>
+                    <ItemTitle>
+                        msgpage
+                    </ItemTitle>
+                </ItemCell>
             </List>
         )
     }

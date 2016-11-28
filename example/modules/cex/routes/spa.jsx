@@ -59,6 +59,7 @@ import VCircle from '../views/vcircle.jsx'
 import VLotteryTurntable from '../views/vlotteryturntable.jsx'
 import VNotice from '../views/vnotice.jsx'
 import VReceiverForm from '../views/vreceiverform.jsx'
+import VMsgPage from '../views/vmsgpage.jsx'
 
 const Routes = React.createClass({
     mixins: [RouterMixin],
@@ -126,6 +127,7 @@ const Routes = React.createClass({
         '/lottery-turntable': 'lotteryturntable',
         '/notice': 'notice',
         '/receiver-form': 'receiverform',
+        '/msgpage': 'msgpage',
     },
     render() {
         return (
@@ -304,6 +306,9 @@ const Routes = React.createClass({
     },
     receiverform(params) {
         return <VReceiverForm params={params} />
+    },
+    msgpage(params) {
+        return <VMsgPage params={params} />
     },
     notFound(path) {
         return <div className="not-found">Page Not Found: {path}</div>
