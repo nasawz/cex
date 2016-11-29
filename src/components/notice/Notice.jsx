@@ -11,10 +11,10 @@ const Notice = React.createClass({
     },
     getDefaultProps(){
         let data = [
-            {text:'哈哈',id:'1'},
-            {text:'呵呵',id:'2'},
-            {text:'嘿嘿',id:'3'},
-            {text:'嘻嘻',id:'4'},
+            {title:'哈哈',id:'1'},
+            {title:'呵呵',id:'2'},
+            {title:'嘿嘿',id:'3'},
+            {title:'嘻嘻',id:'4'},
         ]
         return{
             data:data,
@@ -47,12 +47,12 @@ const Notice = React.createClass({
     renderContent(){
         let content = <div />
         if(this.props.data[this.state.curr+1]){
-            content = <div className='up'><i className='cex-icon' data-id={this.props.data[this.state.curr+1].id}></i>{this.props.data[this.state.curr+1].text}</div>
+            content = <div className='up'><i className='cex-icon' data-id={this.props.data[this.state.curr+1].id}></i>{this.props.data[this.state.curr+1].title}</div>
 
         }
         return(
          <div ref='marquee' className='marquee'>
-           <div className='up' onClick={this.goHref} data-id={this.props.data[this.state.curr].id}><i className='cex-icon'></i>{this.props.data[this.state.curr].text}</div>
+           <div className='up' onClick={this.goHref} data-id={this.props.data[this.state.curr].id}><i className='cex-icon'></i>{this.props.data[this.state.curr].title}</div>
            {content}
          </div>
         )
