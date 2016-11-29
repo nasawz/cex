@@ -24,6 +24,9 @@ const Picker = React.createClass({
         set(this.value, i, value)
         if (this.columns !== 0) {
             this.data = this.store.getColumns(this.value)
+            this.setState({
+                data: this.data
+            });
         }
     },
     getDefaultProps() {
@@ -125,9 +128,10 @@ const Picker = React.createClass({
                 _this._renderChain(i + 1)
             }
         })
-        _this.setVal(i, list[0].value)
-        // this.value.$set(i, list[0].value)
-        this._renderChain(i + 1)
+        if (list[0]) {
+            _this.setVal(i, list[0].value)
+            this._renderChain(i + 1)
+        }
     },
     _getValue() {
         let data = []
@@ -157,7 +161,9 @@ const Picker = React.createClass({
             'cex-picker': true
         }
         let _style = {}
-        let _item = this.data.map((item, index) => {
+        // console.log(this.data);
+        // console.log(this.columns);
+        let _item = this.state.data.map((item, index) => {
             return (
                 <div className='cex-picker-item' key={index} style={{
                     marginLeft: 0

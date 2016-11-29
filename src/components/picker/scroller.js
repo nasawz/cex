@@ -62,7 +62,7 @@ var Scroller = function(container, options) {
     }
     content.innerHTML = html
 
-    self.__container.appendChild(component)
+    if(self.__container)self.__container.appendChild(component)
 
     self.__itemHeight = parseInt(getComputedStyle(indicator, 'height'), 10)
 
