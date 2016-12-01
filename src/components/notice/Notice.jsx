@@ -59,13 +59,14 @@ const Notice = React.createClass({
             )
         }
     },
-    render () {
+    render() {
+        let {style} = this.props
         let classes = {
             'cex-notice':true,
             'cex-notice1':!this.props.src
         }
         return (
-            <div ref='notice' onClick={this.props.onLinkHref} className={classNames(this.props.className,classes)}>
+            <div ref='notice' style={style} onClick={this.props.onLinkHref} className={classNames(this.props.className,classes)}>
                 {this.renderImg() }
                 {this.renderContent() }
             </div>
