@@ -8,17 +8,34 @@ const ReceiverForm = React.createClass({
     clickHandler() {
         this.props.showPopupPicker && this.props.showPopupPicker()
     },
+    closeHandler(val) {
+        this.setState({
+            province: val[0],
+            city: val[2] ? val[1]+val[2] : val[1]
+        })
+        this.props.closePopupPicker && this.props.closePopupPicker()
+    },
     getValue() {
         return {
             name: this.refs.name.getValue(),
             tel: this.refs.tel.getValue(),
-            city: this.refs.city.getValue(),
-            detail: this.refs.detail.getValue()
+            province: this.state.province,
+            city: this.state.city,
+            street: this.refs.street.getValue()
+        }
+    },
+    getInitialState() {
+        let city = ''
+        if (this.props.pickerData.value) {
+            city = this.props.pickerData.value[2] ? this.props.pickerData.value[1] + this.props.pickerData.value[2] : this.props.pickerData.value[1]
+        }
+        return {
+            province: this.props.pickerData.value ? this.props.pickerData.value[0] : '请选择城区',
+            city: city
         }
     },
     render() {
-        let {children, show, pickerData, showPopupPicker, hidePopupPicker, closePopupPicker} = this.props
-        let val = pickerData.value ? pickerData.value.join(' ') : '请选择城区'
+        let {children, show, pickerData, showPopupPicker, hidePopupPicker} = this.props
         return (
             <div className='cex-receiver-form'>
                 <List>
@@ -27,13 +44,13 @@ const ReceiverForm = React.createClass({
                     <ItemCell>
                         <div onClick={this.clickHandler}>
                             <label>收货地址：</label>
-                            <span>{val}</span>
+                            <span>{this.state.province + ' ' + this.state.city}</span>
                         </div>
                     </ItemCell>
-                    <XInput ref='detail' title='详细地址：' placeholder='请输入详细地址' />
+                    <XInput ref='street' title='详细地址：' placeholder='请输入详细地址' />
                     { children }
                 </List>
-                <PopupPicker show={show} pickerData={pickerData} showPopupPicker={showPopupPicker} hidePopupPicker={hidePopupPicker} closePopupPicker={closePopupPicker} />
+                <PopupPicker show={show} pickerData={pickerData} showPopupPicker={showPopupPicker} hidePopupPicker={hidePopupPicker} closePopupPicker={this.closeHandler} />
             </div>
         )
     }
