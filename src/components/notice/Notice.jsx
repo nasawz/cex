@@ -33,10 +33,10 @@ const Notice = React.createClass({
             }
         })
         // 当数组为单数时，执行下面的代码
-        if(this.props.data[this.props.data.length]%2 != 0){
+        if(this.props.data.length%2 != 0){
             dataDiv = (
                     <div>
-                        <div>{this.props.data[this.props.data[this.props.data.length-1]]}</div>
+                        <div>{this.props.data[this.props.data.length-1]}</div>
                     </div>
                 )
             let content = {content:dataDiv,time:this.props.time}

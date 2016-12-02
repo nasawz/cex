@@ -5,7 +5,7 @@ const VNotice = React.createClass({
         //  跳转到 href
     },
     render () {
-        let d = ['0','1','2','3','4','5','6']
+        let d = ['1','2','3','4','5','6','7']
         return (
             <div>
                 <Notice onLinkHref={this.goHerf} animationTime={1500} data={d} time={4} src={require('../../../img/group.png')}/>
