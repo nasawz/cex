@@ -24,7 +24,7 @@ const Card = React.createClass({
             'cex-card-abreast': abreast
         }
         return (
-            <div onClick={this.clickHandle}  className={classNames(this.props.className,classes)} style={style}>
+            <div onClick={this.clickHandle} data-id={this.props.id}  className={classNames(this.props.className,classes)} style={style}>
                 {children}
             </div>
         )
