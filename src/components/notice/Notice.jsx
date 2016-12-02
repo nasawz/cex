@@ -1,70 +1,73 @@
 import React from 'react'
-import TimerMixin from 'react-timer-mixin'
+// import TimerMixin from 'react-timer-mixin'
+import Marquee from './index.js'
 import './notice.less'
+import classNames from 'classnames'
 const Notice = React.createClass({
-    mixins: [TimerMixin],
-    goHref(e){
-        e.stopPropagation()
-        e.preventDefault()
-        let id = e.target.getAttribute('data-id')
-        this.props.onLinkHref(id)
-    },
     getDefaultProps(){
-        let data = [
-            {text:'哈哈',id:'1'},
-            {text:'呵呵',id:'2'},
-            {text:'嘿嘿',id:'3'},
-            {text:'嘻嘻',id:'4'},
-        ]
+        let data = ['微家头条','微家头条','微家头条','微家头条']
         return{
             data:data,
-            src:require('../../img/group.png')
-        }
-    },
-    getInitialState() {
-        return {
-            total: this.props.data.length,
-            curr: 0
+            time:2
         }
     },
     componentDidMount(){
-        let self = this
-        this.setInterval(
-          () => {
-              let curr = self.state.curr
-              if (self.state.curr<(self.state.total-2)) {
-                  curr = curr+2
-              }else{
-                  curr = 0
-              }
-              self.setState({
-                  curr:curr
-              })
-          },
-          4000
-        )
     },
     renderContent(){
-        let content = <div />
-        if(this.props.data[this.state.curr+1]){
-            content = <div className='up'><i className='cex-icon' data-id={this.props.data[this.state.curr+1].id}></i>{this.props.data[this.state.curr+1].text}</div>
-
+        if(!this.props.data){
+            return
+        }
+        let data = []
+        let dataDiv = <div />
+        this.props.data.map((item,index)=>{
+            if(index%2 != 0){
+                dataDiv = (
+                        <div>
+                            <div>{this.props.data[index-1]}</div>
+                            <div>{this.props.data[index]}</div>
+                        </div>
+                    )
+                    // content:显示的内容  time：延迟时间
+                let content = {content:dataDiv,time:this.props.time}
+                data.push(content)
+            }
+        })
+        // 当数组为单数时，执行下面的代码
+        if(this.props.data[this.props.data.length]%2 != 0){
+            dataDiv = (
+                    <div>
+                        <div>{this.props.data[this.props.data[this.props.data.length-1]]}</div>
+                    </div>
+                )
+            let content = {content:dataDiv,time:this.props.time}
+            data.push(content)
         }
         return(
-         <div ref='marquee' className='marquee'>
-           <div className='up' onClick={this.goHref} data-id={this.props.data[this.state.curr].id}><i className='cex-icon'></i>{this.props.data[this.state.curr].text}</div>
-           {content}
-         </div>
-        )
+            <Marquee
+              data={data}
+              animationTime={this.props.animationTime}
+             />
+          )
     },
-    render () {
-
-        return (
-            <div ref='notice' className='cex-notice'>
+    renderImg(){
+        if(this.props.src){
+            return (
                 <span className='cex-img'>
                     <img  src={this.props.src} />
                     <i></i>
                 </span>
+            )
+        }
+    },
+    render() {
+        let {style} = this.props
+        let classes = {
+            'cex-notice':true,
+            'cex-notice1':!this.props.src
+        }
+        return (
+            <div ref='notice' style={style} onClick={this.props.onLinkHref} className={classNames(this.props.className,classes)}>
+                {this.renderImg() }
                 {this.renderContent() }
             </div>
         )
