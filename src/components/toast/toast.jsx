@@ -38,7 +38,7 @@ const Toast = React.createClass({
             this.runToast()
         }
         let classes = {
-            'cex-toast' : true
+            'cex-toast-container' : true
         }
         let toastStyle = {
             display: show ? '' : 'none',
@@ -60,7 +60,7 @@ const Toast = React.createClass({
                 <div className={classNames(this.props.className,fadeClass)} style={merge({},toastStyle,style)}>
                     <div>
                         { this.renderIcon() }
-                        <p className="cex-toast-content">{children}</p>
+                        <div className="cex-toast-content">{children}</div>
                     </div>
                 </div>
             </div>

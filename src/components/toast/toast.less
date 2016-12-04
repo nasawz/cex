@@ -1,4 +1,20 @@
-.cex-toast {
+.cex-toast-container {
+    // position: fixed;
+    // z-index: 4;
+    // width: 100%;
+    // height: 100%;
+    // top: 0;
+    // left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     .cex-mask-transparent {
         position: fixed;
         z-index: 5001;
@@ -10,16 +26,15 @@
     .cex-toast {
         position: fixed;
         z-index: 50000;
-        width: 7.6em;
+        // width: 7.6em;
         padding-top: 12px;
-        top: 180px;
-        left: 50%;
-        margin-left: -3.8em;
+        // top: 180px;
+        // left: 50%;
+        // margin-left: -3.8em;
         background: rgba(40, 40, 40, 0.75);
         text-align: center;
         border-radius: 5px;
         color: #FFFFFF;
-        -webkit-transition: opacity .5s 1s;
         transition: opacity .5s 1s;
     }
     .cex-toast-toggle {
