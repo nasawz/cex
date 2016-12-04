@@ -30,7 +30,7 @@ const Dialog = React.createClass({
             <div className={classNames(this.props.className,classes)} onTouchMove={this.handleScroll}>
                 <div className={classNames(mashClass)} style={{display: show ? 'block' : 'none'}}>
                 </div>
-                <div className={classNames(dialogClass)}>
+                <div className={classNames(dialogClass)} style={{display: show ? 'block' : 'none'}}>
                     {children}
                 </div>
             </div>
