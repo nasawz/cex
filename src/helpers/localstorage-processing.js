@@ -1,5 +1,5 @@
 import {_stringify} from './common.js'
-import {setCookie,getCookie,deleteCookie} from './cookie.js'
+import {setCookie,getCookie,deleteCookie} from './cookie-processing.js'
 /**
  * @browser localstorage processing
  */
