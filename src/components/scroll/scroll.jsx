@@ -114,13 +114,14 @@ const Scroll = React.createClass({
     componentDidMount() {
         this.el = ReactDOM.findDOMNode(this.refs.scroll)
     },
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.showInfinite!=this.state.hasMore) {
-            this.setState({
-                hasMore: nextProps.showInfinite
-            })
-        }
-    },
+    // 解决从详情返回到列表时显示加载中
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.showInfinite!=this.state.hasMore) {
+    //         this.setState({
+    //             hasMore: nextProps.showInfinite
+    //         })
+    //     }
+    // },
     getInitialState() {
         this.startY = 0
         this.offset = this.props.offset
