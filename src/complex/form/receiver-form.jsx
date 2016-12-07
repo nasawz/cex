@@ -9,9 +9,11 @@ const ReceiverForm = React.createClass({
         this.props.showPopupPicker && this.props.showPopupPicker()
     },
     closeHandler(val) {
+        let province = val[0] == '省' ? '请选择...' : val[0]
+        let city = (val[0] == '省') ? '' : (val[2] ? val[1]+val[2] : val[1])
         this.setState({
-            province: val[0],
-            city: val[2] ? val[1]+val[2] : val[1]
+            province: province,
+            city: city
         })
         this.props.closePopupPicker && this.props.closePopupPicker()
     },
@@ -19,18 +21,17 @@ const ReceiverForm = React.createClass({
         return {
             name: this.refs.name.getValue(),
             tel: this.refs.tel.getValue(),
-            province: this.state.province,
+            province: this.state.province == '请选择...' ? '' : this.state.province,
             city: this.state.city,
             street: this.refs.street.getValue()
         }
     },
     getInitialState() {
-        let city = ''
-        if (this.props.pickerData.value) {
-            city = this.props.pickerData.value[2] ? this.props.pickerData.value[1] + this.props.pickerData.value[2] : this.props.pickerData.value[1]
-        }
+        let val = this.props.pickerData.value
+        let province = (val[0] == '省') ? '请选择...' : val[0]
+        let city = (val[0] == '省') ? '' : (val[2] ? val[1] + val[2] : val[1])
         return {
-            province: this.props.pickerData.value ? this.props.pickerData.value[0] : '请选择城区',
+            province: province,
             city: city
         }
     },
@@ -41,12 +42,12 @@ const ReceiverForm = React.createClass({
                 <List>
                     <XInput ref='name' title='收货人：' placeholder='请输入姓名' />
                     <XInput ref='tel' title='手机号码：' placeholder='请输入收货人手机号码' />
-                    <ItemCell>
-                        <div onClick={this.clickHandler}>
+                    <div onClick={this.clickHandler}>
+                        <ItemCell>
                             <label>收货地址：</label>
                             <span>{this.state.province + ' ' + this.state.city}</span>
-                        </div>
-                    </ItemCell>
+                        </ItemCell>
+                    </div>
                     <XInput ref='street' title='详细地址：' placeholder='请输入详细地址' />
                     { children }
                 </List>
