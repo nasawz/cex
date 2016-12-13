@@ -9,6 +9,7 @@ const VClocker = React.createClass({
         return {
             clock1:'<span class="cex-day">_D1</span> <span class="cex-day">_D2</span> 天 <span class="cex-day">_H1</span> <span class="cex-day">_H2</span> 时 <span class="cex-day">_M1</span> <span class="cex-day">_M2</span> 分 <span class="cex-day">_S1</span> <span class="cex-day">_S2</span> 秒',
             clock2:'<span style="color:red">_D</span> 天<span style="color:blue"> _H</span> 时 _M分',
+            clock3:'<span class="cex-day">_D1_D2</span> 天 <span class="cex-day">_H1_H2</span> : <span class="cex-day">_M1_M2</span> : <span class="cex-day">_S1_S2</span>',
         }
     },
 
@@ -37,6 +38,14 @@ const VClocker = React.createClass({
                         <div>
                             带参:&emsp;
                             <Clocker time="2016-10-18 18:00:00" tplData={this.state.clock2} />
+                        </div>
+                    </ItemTitle>
+                </ItemCell>
+                <ItemCell>
+                    <ItemTitle>
+                        <div>
+                            带参:&emsp;
+                            <Clocker time="2016-12-18 18:00:00" tplData={this.state.clock3} />
                         </div>
                     </ItemTitle>
                 </ItemCell>
