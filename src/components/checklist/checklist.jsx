@@ -2,25 +2,25 @@ import React, { PropTypes } from 'react'
 import CheckListItem from './checklist-item.jsx'
 const CheckList = React.createClass({
 
-    setValue(value){
+    setValue(value) {
         this.setState({
-            value:value
+            value: value
         })
     },
-    getValue(value){
+    getValue(value) {
         let val = this.state.value
         return val
     },
-    getInitialState(){
+    getInitialState() {
         let defaultValue = []
-        if(this.props.defaultValue){
+        if (this.props.defaultValue && this.props.defaultValue!='') {
             defaultValue = this.props.defaultValue
         }
-        return{
-            value:defaultValue
+        return {
+            value: defaultValue
         }
     },
-    render () {
+    render() {
         return (
             <div>
                 <CheckListItem {...this.props} value={this.state.value} getValue={this.setValue} />
