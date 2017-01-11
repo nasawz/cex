@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * 横竖屏切换监听器
  * @author ningzbruc@gmail.com

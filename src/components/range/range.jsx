@@ -29,37 +29,37 @@ const Range = React.createClass({
         }
     },
     componentDidMount() {
-        let {start, min, max, minHTML, maxHTML, disabled, disabledOpacity, step} = this.props
+        let {rangeHandleHeight, rangeBarHeight, decimal, value, min, max, minHTML, maxHTML, disabled, disabledOpacity, step} = this.props
         let options = {
-            decimal: this.props.decimal,
-            start: this.props.value,
-            min: this.props.min,
-            max: this.props.max,
-            minHTML: this.props.minHTML,
-            maxHTML: this.props.maxHTML,
-            disabled: this.props.disabled,
-            disabledOpacity: this.props.disabledOpacity,
+            decimal: decimal,
+            start: value,
+            min: min,
+            max: max,
+            minHTML: minHTML,
+            maxHTML: maxHTML,
+            disabled: disabled,
+            disabledOpacity: disabledOpacity,
             initialBarWidth: document.querySelector('.cex-range').style.width.replace('px', '') - 80,
             callback: this.changeHandler
         }
-        if (this.props.step !== 0) {
-          options.step = this.props.step
+        if (step !== 0) {
+            options.step = step
         }
         this.range = new Powerange(document.querySelector('.cex-range-input'), options)
-        const handleTop = (this.props.rangeHandleHeight - this.props.rangeBarHeight) / 2
-        document.querySelector('.range-handle').style.top = -handleTop+'px'
-        document.querySelector('.range-bar').style.height = this.props.rangeBarHeight+'px'
+        const handleTop = (rangeHandleHeight - rangeBarHeight) / 2
+        document.querySelector('.range-handle').style.top = -handleTop + 'px'
+        document.querySelector('.range-bar').style.height = rangeBarHeight + 'px'
     },
-    render () {
-        let {style, children} = this.props
+    render() {
+        let {style, className} = this.props
         let classes = {
-            'cex-range' : true
+            'cex-range': true
         }
         let _style = {
 
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
+            <div className={classNames(className, classes)} style={merge({}, _style, style)}>
                 <input className='cex-range-input' />
             </div>
         )

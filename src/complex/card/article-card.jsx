@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import Card from 'cex/components/card/card.jsx'
 import Item from 'cex/components/list/item.jsx'
 import ItemMedia from 'cex/components/list/item-media.jsx'
@@ -21,10 +20,10 @@ const ArticleCard = React.createClass({
     componentDidMount() {
 
     },
-    renderMedia(){
+    renderMedia() {
         let thumbnail = this.props.data.thumbnail
-        if(thumbnail && thumbnail.length>0){
-            return(
+        if (thumbnail && thumbnail.length > 0) {
+            return (
                 <ItemMedia squarePicture>
                     <LazyImage src={thumbnail} />
                 </ItemMedia>
@@ -34,13 +33,13 @@ const ArticleCard = React.createClass({
     },
     render() {
         let {data} = this.props
-        let styleText={
+        let styleText = {
             textOverflow: 'ellipsis',
             WebkitLineClamp: '2',
             WebkitBoxOrient: 'vertical',
             marginTop: '10px',
         }
-        let styleCont={
+        let styleCont = {
             justifyContent: 'flex-start',
             WebkitJustifyContent: 'flex-start',
         }
@@ -48,7 +47,7 @@ const ArticleCard = React.createClass({
         return (
             <Card onClick={this.goInfo}>
                 <Item>
-                    { this.renderMedia() }
+                    {this.renderMedia()}
                     <ItemContent style={styleCont}>
                         <ItemTitleRow>
                             <ItemTitle>{data.title}</ItemTitle>

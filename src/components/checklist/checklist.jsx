@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
 import CheckListItem from './checklist-item.jsx'
 const CheckList = React.createClass({
 
@@ -7,13 +7,13 @@ const CheckList = React.createClass({
             value: value
         })
     },
-    getValue(value) {
+    getValue() {
         let val = this.state.value
         return val
     },
     getInitialState() {
         let defaultValue = []
-        if (this.props.defaultValue && this.props.defaultValue!='') {
+        if (this.props.defaultValue && this.props.defaultValue != '') {
             defaultValue = this.props.defaultValue
         }
         return {

@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from "react-dom"
+import ReactDOM from 'react-dom'
 import classNames from 'classnames'
 import Card from 'cex/components/card/card.jsx'
 import CardContent from 'cex/components/card/card-content.jsx'
@@ -22,7 +22,7 @@ import LazyImage from 'cex/components/image/lazy-image.jsx'
 // import ColorLabel from 'cex/components/label/color-label.jsx'
 import TimeLabel from 'cex/components/label/time-label.jsx'
 
-import {contentParse} from '../../helpers/content-parse.js'
+import { contentParse } from '../../helpers/content-parse.js'
 
 const BlogCard = React.createClass({
     toggleShowAll(e) {
@@ -67,7 +67,7 @@ const BlogCard = React.createClass({
         }
         return (<Avatar src={avatar.img} onClick={this.onClickAvatar} plus={avatar.plus} icon={avatar.icon} style={{
             margin: '0px'
-        }} size={40}/>)
+        }} size={40} />)
     },
     renderMoreBtn(hasMore) {
         if (hasMore) {
@@ -169,7 +169,7 @@ const BlogCard = React.createClass({
             return
         let items = []
         for (var i = 0; i < gallery.length; i++) {
-            items.push(<GalleryItem key={i} src={gallery[i]} onGetImgUrl={this.getAllImg}/>)
+            items.push(<GalleryItem key={i} src={gallery[i]} onGetImgUrl={this.getAllImg} />)
             if (i > 9)
                 break
         }
@@ -184,7 +184,7 @@ const BlogCard = React.createClass({
         if (address && address != '') {
             return (
                 <div>
-                    <AddressLabel mode='view' txt={address}/>
+                    <AddressLabel mode='view' txt={address} />
                 </div>
             )
         }
@@ -212,7 +212,7 @@ const BlogCard = React.createClass({
                                 <TimeLabel style={{
                                     fontSize: '10px',
                                     color: '#777'
-                                }} time={time}/>
+                                }} time={time} />
                             </ItemTitle>
 
                             <ItemTitleAfter>
@@ -221,10 +221,10 @@ const BlogCard = React.createClass({
                         </ItemTitleRow>
                         <ItemSubtitle>
                         </ItemSubtitle>
-                        <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
-                        {this.renderMoreBtn(txtObj.hasMore) }
-                        {this.renderGallery() }
-                        {this.renderAddress() }
+                        <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                        {this.renderMoreBtn(txtObj.hasMore)}
+                        {this.renderGallery()}
+                        {this.renderAddress()}
                     </ItemContent>
                 </Item>
             )
@@ -232,7 +232,7 @@ const BlogCard = React.createClass({
         return (
             <Item>
                 <ItemMedia>
-                    {this.renderAvatar() }
+                    {this.renderAvatar()}
                 </ItemMedia>
                 <ItemContent>
                     <ItemTitleRow>
@@ -245,29 +245,27 @@ const BlogCard = React.createClass({
                         <TimeLabel style={{
                             fontSize: '10px',
                             color: '#777'
-                        }} time={time}/>
+                        }} time={time} />
                     </ItemSubtitle>
-                    <div className={classNames(classes_cont) } dangerouslySetInnerHTML={txtHTML}></div>
-                    {this.renderMoreBtn(txtObj.hasMore) }
-                    {this.renderGallery() }
-                    {this.renderAddress() }
+                    <div className={classNames(classes_cont)} dangerouslySetInnerHTML={txtHTML}></div>
+                    {this.renderMoreBtn(txtObj.hasMore)}
+                    {this.renderGallery()}
+                    {this.renderAddress()}
                 </ItemContent>
             </Item>
         )
     },
     render() {
-        let {txt, user, time, essential, essentialImg} = this.props
         return (
             <Card onClick={this.goInfo}>
                 <CardContent>
                     <List>
-                        {this.renderCard() }
+                        {this.renderCard()}
                     </List>
                 </CardContent>
-
                 <CardFooter>
-                    {this.renderCommentBtn() }
-                    {this.renderFavoriteBtn() }
+                    {this.renderCommentBtn()}
+                    {this.renderFavoriteBtn()}
                 </CardFooter>
             </Card>
         )

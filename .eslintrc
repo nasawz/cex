@@ -19,17 +19,19 @@
     "rules": {
         "react/jsx-uses-react": 2,
         "react/jsx-uses-vars": 2,
+        "no-console": 2, //禁止使用console
+        "no-alert": 2, //alert
         "indent": [
-            "error",
+            2,
             4
-        ],
+        ], //缩进风格
         "quotes": [
-            "error",
+            1,
             "single"
-        ],
+        ], //引号类型
         "semi": [
-            "error",
+            2,
             "never"
-        ]
+        ] //禁止多余的冒号
     }
 }

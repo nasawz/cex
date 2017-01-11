@@ -19,7 +19,7 @@ const CommentCard = React.createClass({
     getDefaultProps() {
         return {
             data: {
-              rank:0,
+                rank: 0,
                 name: '朱朱',
                 avatar: {
                     img: 'http://shp.qpic.cn/bizmp/bzxzibRQFVkIzjofrT0SOmuI9vZ0kWCJ4BicF1rw5qibVkKuYwiaxJnOPA/',
@@ -65,13 +65,13 @@ const CommentCard = React.createClass({
         let content
         switch (rank) {
         case 1:
-            content = <img  style={imgStyle} src={require('../../img/icon_award1.png') } />
+            content = <img style={imgStyle} src={require('../../img/icon_award1.png')} />
             break
         case 2:
-            content = <img  style={imgStyle} src={require('../../img/icon_award2.png') } />
+            content = <img style={imgStyle} src={require('../../img/icon_award2.png')} />
             break
         case 3:
-            content = <img  style={imgStyle} src={require('../../img/icon_award3.png') } />
+            content = <img style={imgStyle} src={require('../../img/icon_award3.png')} />
             break
         default:
             content = <div style={numStyle}>{rank}</div>
@@ -81,29 +81,29 @@ const CommentCard = React.createClass({
         )
     },
     render() {
-        let {data,filter,style} = this.props
+        let {data, filter, style} = this.props
         let source
-        if(filter=='exp'){
-            source=data.experience
-        }else if(filter=='gold'){
-            source=data.rewards
+        if (filter == 'exp') {
+            source = data.experience
+        } else if (filter == 'gold') {
+            source = data.rewards
         }
 
         return (
             <Card style={style}>
                 <Item style={{ background: '#fff' }}>
-                {this.renderOrder() }
-                <ItemMedia>
-                    { this.renderAvatar() }
-                </ItemMedia>
-                <ItemContent>
-                    <ItemTitleRow>
-                        <ItemTitle style={{ 'color': '#536893' }}>{data.screen_name}</ItemTitle>
-                        <ItemTitleAfter>{source}</ItemTitleAfter>
-                    </ItemTitleRow>
+                    {this.renderOrder()}
+                    <ItemMedia>
+                        {this.renderAvatar()}
+                    </ItemMedia>
+                    <ItemContent>
+                        <ItemTitleRow>
+                            <ItemTitle style={{ 'color': '#536893' }}>{data.screen_name}</ItemTitle>
+                            <ItemTitleAfter>{source}</ItemTitleAfter>
+                        </ItemTitleRow>
 
-                </ItemContent>
-            </Item>
+                    </ItemContent>
+                </Item>
             </Card>
 
 
