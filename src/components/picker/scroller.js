@@ -1,3 +1,4 @@
+/* eslint-disable */
 /*
  * Anima Scroller
  * Based Zynga Scroller (http://github.com/zynga/scroller)
@@ -22,14 +23,14 @@ import {
     easeInOutCubic
 } from './util'
 
-var Scroller = function(container, options) {
+var Scroller = function (container, options) {
     var self = this
 
     options = options || {}
 
     self.options = {
         itemClass: 'scroller-item',
-        onSelect() {},
+        onSelect() { },
         defaultValue: 0,
         data: []
     }
@@ -52,21 +53,21 @@ var Scroller = function(container, options) {
     var data = self.options.data
     var html = ''
     if (data.length && data[0].constructor === Object) {
-        data.forEach(function(row) {
+        data.forEach(function (row) {
             html += '<div class="' + self.options.itemClass + '" data-value="' + row.value + '">' + row.name + '</div>'
         })
     } else {
-        data.forEach(function(val) {
+        data.forEach(function (val) {
             html += '<div class="' + self.options.itemClass + '" data-value="' + val + '">' + val + '</div>'
         })
     }
     content.innerHTML = html
 
-    if(self.__container)self.__container.appendChild(component)
+    if (self.__container) self.__container.appendChild(component)
 
     self.__itemHeight = parseInt(getComputedStyle(indicator, 'height'), 10)
 
-    self.__callback = options.callback || function(top) {
+    self.__callback = options.callback || function (top) {
         content.style.webkitTransform = 'translate3d(0, ' + (-top) + 'px, 0)'
     }
 
@@ -81,7 +82,7 @@ var Scroller = function(container, options) {
     }
     self.select(self.options.defaultValue, false)
 
-    component.addEventListener('touchstart', function(e) {
+    component.addEventListener('touchstart', function (e) {
         if (e.target.tagName.match(/input|textarea|select/i)) {
             return
         }
@@ -89,11 +90,11 @@ var Scroller = function(container, options) {
         self.__doTouchStart(e.touches, e.timeStamp)
     }, false)
 
-    component.addEventListener('touchmove', function(e) {
+    component.addEventListener('touchmove', function (e) {
         self.__doTouchMove(e.touches, e.timeStamp)
     }, false)
 
-    component.addEventListener('touchend', function(e) {
+    component.addEventListener('touchend', function (e) {
         self.__doTouchEnd(e.timeStamp)
     }, false)
 }
@@ -438,19 +439,19 @@ var members = {
             var oldTop = self.__scrollTop
             var diffTop = top - oldTop
 
-            var step = function(percent, now, render) {
+            var step = function (percent, now, render) {
                 self.__scrollTop = oldTop + (diffTop * percent)
-                    // Push values out
+                // Push values out
                 if (self.__callback) {
                     self.__callback(self.__scrollTop)
                 }
             }
 
-            var verify = function(id) {
+            var verify = function (id) {
                 return self.__isAnimating === id
             }
 
-            var completed = function(renderedFramesPerSecond, animationId, wasFinished) {
+            var completed = function (renderedFramesPerSecond, animationId, wasFinished) {
                 if (animationId === self.__isAnimating) {
                     self.__isAnimating = false
                 }
@@ -463,7 +464,7 @@ var members = {
             self.__isAnimating = Animate.start(step, verify, completed, animationDuration, wasAnimating ? easeOutCubic : easeInOutCubic)
         } else {
             self.__scheduledTop = self.__scrollTop = top
-                // Push values out
+            // Push values out
             if (self.__callback) {
                 self.__callback(top)
             }
@@ -478,7 +479,7 @@ var members = {
         self.__maxDecelerationScrollTop = self.__maxScrollTop
 
         // Wrap class method
-        var step = function(percent, now, render) {
+        var step = function (percent, now, render) {
             self.__stepThroughDeceleration(render)
         }
 
@@ -487,7 +488,7 @@ var members = {
 
         // Detect whether it's still worth to continue animating steps
         // If we are already slow enough to not being user perceivable anymore, we stop the whole process here.
-        var verify = function() {
+        var verify = function () {
             var shouldContinue = Math.abs(self.__decelerationVelocityY) >= minVelocityToKeepDecelerating
             if (!shouldContinue) {
                 self.__didDecelerationComplete = true
@@ -495,7 +496,7 @@ var members = {
             return shouldContinue
         }
 
-        var completed = function(renderedFramesPerSecond, animationId, wasFinished) {
+        var completed = function (renderedFramesPerSecond, animationId, wasFinished) {
             self.__isDecelerating = false
             if (self.__scrollTop <= self.__minScrollTop || self.__scrollTop >= self.__maxScrollTop) {
                 self.scrollTo(self.__scrollTop)

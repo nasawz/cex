@@ -56,13 +56,13 @@ const QRCode = React.createClass({
     componentDidMount() {
         this.drawCvs()
     },
-    componentWillReceiveProps(nextProps) {
+    componentWillReceiveProps() {
         this.drawCvs()
     },
-    render () {
+    render() {
         let {style} = this.props
         let classes = {
-            'cex-qrcode' : true
+            'cex-qrcode': true
         }
         let _style = {
 
@@ -70,8 +70,8 @@ const QRCode = React.createClass({
         return (
             <canvas
                 ref='cvs'
-                className={classNames(this.props.className,classes)}
-                style={merge({},_style,style)}
+                className={classNames(this.props.className, classes)}
+                style={merge({}, _style, style)}
                 width={this.props.size}
                 height={this.props.size}>
             </canvas>

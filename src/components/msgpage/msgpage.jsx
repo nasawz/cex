@@ -19,11 +19,11 @@ const MsgPage = React.createClass({
                 </div>
             )
         } else if (iconCls) {
-            let size = size ? size : 90
-            let color = color ? color : '#09BB07'
+            let _size = size ? size : 90
+            let _color = color ? color : '#09BB07'
             return (
                 <div className='cex-msgpage-img'>
-                    <Icon icon={iconCls} size={size} color={color} />
+                    <Icon icon={iconCls} size={_size} color={_color} />
                 </div>
             )
         }
@@ -41,27 +41,27 @@ const MsgPage = React.createClass({
         }
     },
     renderBtn() {
-        let {style, children} = this.props
+        let {children} = this.props
         return (
             <div className='cex-msgpage-btn'>
-                { children }
+                {children}
             </div>
         )
     },
-    render () {
-        let {style, children} = this.props
+    render() {
+        let {style} = this.props
         let classes = {
-            'cex-msgpage' : true
+            'cex-msgpage': true
         }
         let _style = {
             minHeight: window.innerHeight
         }
         return (
-            <div className={classNames(this.props.className,classes)} style={merge({},_style,style)}>
-                { this.renderImg() }
-                { this.renderTitle() }
-                { this.renderDesc() }
-                { this.renderBtn() }
+            <div className={classNames(this.props.className, classes)} style={merge({}, _style, style)}>
+                {this.renderImg()}
+                {this.renderTitle()}
+                {this.renderDesc()}
+                {this.renderBtn()}
             </div>
         )
     }

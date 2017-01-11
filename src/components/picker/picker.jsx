@@ -7,8 +7,6 @@ import classNames from 'classnames'
 import merge from 'lodash/merge'
 import Manager from './manager.js'
 import Scroller from './scroller.js'
-// import UUID from '../../helpers/uuid.js'
-// import Flexbox from '../flexbox/flexbox.jsx'
 
 import set from 'lodash/set'
 
@@ -26,7 +24,7 @@ const Picker = React.createClass({
             this.data = this.store.getColumns(this.value)
             this.setState({
                 data: this.data
-            });
+            })
         }
     },
     getDefaultProps() {
@@ -51,7 +49,7 @@ const Picker = React.createClass({
         }
         this.value = this.props.value
         this.columns = columns
-        return {count: 0, value: this.value, data: this.data}
+        return { count: 0, value: this.value, data: this.data }
     },
 
     // ready
